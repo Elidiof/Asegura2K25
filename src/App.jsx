@@ -25,7 +25,7 @@ export default function App() {
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
     'catalana-ocidente','mutuamadrilena','santalucia',
-    'pelayo','aegon','plusultra','hiscox'
+    'pelayo','aegon','hiscox'
   ]
 
   // Dividir en dos filas
