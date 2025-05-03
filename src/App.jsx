@@ -5,7 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
-  // Todos los iconos en /public/logos/*.svg
+  // Productos con iconos en /public/logos/*.svg
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.svg' },
     { name: 'Vida', icon: '/logos/vida.svg' },
@@ -19,6 +19,7 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.svg' },
   ]
 
+  // Compañías todas en SVG
   const companias = [
     'mapfre','reale','generali','allianz','axa','asisa','dkv',
     'helvetia','zurich','adeslas','catalana-ocidente',
@@ -39,21 +40,11 @@ export default function App() {
       </div>
 
       <div className="flex-grow px-4 py-6 w-full">
-        {/* Header */}
+        {/* Header sin el botón de WhatsApp */}
         <header className="mb-8">
-          <div className="flex flex-col sm:flex-row items-center sm:justify-between">
-            <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center sm:text-left">
-              Encuentra el seguro que necesitas
-            </h1>
-            <a
-              href="https://wa.me/34658945741"
-              className="mt-4 sm:mt-0 bg-green-500 text-white px-4 py-2 rounded-full shadow hover:bg-green-600 transition text-sm sm:text-base"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contáctanos vía WhatsApp
-            </a>
-          </div>
+          <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center">
+            Encuentra el seguro que necesitas
+          </h1>
         </header>
 
         {/* Productos */}
@@ -70,7 +61,7 @@ export default function App() {
 
         {/* Carrusel de compañías */}
         <section className="mb-10 space-y-4">
-          <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center">
             Compañías aseguradoras con las que colaboramos
           </h2>
           {rows.map((row, i) => (
@@ -80,7 +71,7 @@ export default function App() {
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.toUpperCase()}
+                    alt={key.replace(/-/g, ' ').toUpperCase()}
                     className="h-10 sm:h-12 mx-4 inline-block"
                   />
                 ))}
@@ -90,17 +81,18 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer */}
+      {/* Footer alineado a la izquierda */}
       <footer className="bg-blue-900 text-white py-6">
-        <div className="px-4 text-left space-y-1">
+        <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
           <p className="text-sm">
-            <a href="tel:+34658945741" className="underline">658 945 741</a>
+            Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
           </p>
           <p className="text-sm">
-            <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
+            Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
           </p>
           <p className="text-sm">
+            Dirección:{' '}
             <a
               href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
               className="underline"
@@ -113,15 +105,27 @@ export default function App() {
         </div>
       </footer>
 
-      {/* WhatsApp flotante */}
-      <a
-        href="https://wa.me/34658945741"
-        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp size={24} />
-      </a>
+      {/* Área fija de WhatsApp (botones juntos) */}
+      <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
+        {/* Botón de texto */}
+        <a
+          href="https://wa.me/34658945741"
+          className="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition text-sm sm:text-base"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contáctanos vía WhatsApp
+        </a>
+        {/* Botón icono */}
+        <a
+          href="https://wa.me/34658945741"
+          className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaWhatsapp size={20} />
+        </a>
+      </div>
     </main>
   )
 }
