@@ -15,17 +15,18 @@ import comunidadIcon from './assets/comunidad.png';
 import transporteIcon from './assets/transporte-mercancias.png';
 import rcIcon from './assets/rc.png';
 
+// Añade bgColor para cada producto
 const products = [
-  { name: 'Hogar', icon: hogarIcon },
-  { name: 'Vida', icon: vidaIcon },
-  { name: 'Decesos', icon: decesosIcon },
-  { name: 'Salud', icon: saludIcon },
-  { name: 'Coche', icon: cocheIcon },
-  { name: 'Taxi', icon: taxiIcon },
-  { name: 'Cabeza tractora', icon: cabezaIcon },
-  { name: 'Comunidad', icon: comunidadIcon },
-  { name: 'Transporte de mercancías', icon: transporteIcon },
-  { name: 'RC', icon: rcIcon },
+  { name: 'Hogar', icon: hogarIcon, bgColor: 'bg-gray-100' },
+  { name: 'Vida', icon: vidaIcon, bgColor: 'bg-gray-100' },
+  { name: 'Decesos', icon: decesosIcon, bgColor: 'bg-gray-100' },
+  { name: 'Salud', icon: saludIcon, bgColor: 'bg-gray-100' },
+  { name: 'Coche', icon: cocheIcon, bgColor: 'bg-gray-100' },
+  { name: 'Taxi', icon: taxiIcon, bgColor: 'bg-gray-100' },
+  { name: 'Cabeza tractora', icon: cabezaIcon, bgColor: 'bg-gray-100' },
+  { name: 'Comunidad', icon: comunidadIcon, bgColor: 'bg-gray-100' },
+  { name: 'Transporte de mercancías', icon: transporteIcon, bgColor: 'bg-gray-100' },
+  { name: 'RC', icon: rcIcon, bgColor: 'bg-gray-100' },
 ];
 
 const aseguradoras = [
@@ -54,13 +55,13 @@ export default function App() {
           </a>
         </header>
 
-        {/* Productos con imagen */}
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-12">
-          {products.map((p) => (
-            <Card key={p.name} className="text-center">
+        {/* Productos: ajustar gap y recuadro gris que coincide con fondo */}
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-12">
+          {products.map((product) => (
+            <Card key={product.name} className={`${product.bgColor} p-4`}>
               <CardContent>
-                <img src={p.icon} alt={p.name} className="h-12 w-12 mx-auto mb-2" />
-                <p>{p.name}</p>
+                <img src={product.icon} alt={product.name} className="h-12 w-12 mx-auto mb-2" />
+                <p className="text-sm font-medium">{product.name}</p>
               </CardContent>
             </Card>
           ))}
@@ -82,7 +83,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Pie con datos de contacto dentro de franja azul */}
+      {/* Pie con datos de contacto */}
       <footer className="bg-blue-900 text-white text-center py-8">
         <p className="text-xl font-semibold">Elidio Ferrer</p>
         <p className="mt-2">Tel: <a href="tel:+34658945741" className="underline">658 945 741</a></p>
