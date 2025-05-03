@@ -3,17 +3,29 @@ import { Card, CardContent } from './components/ui/Card';
 import { FaWhatsapp } from 'react-icons/fa';
 import Marquee from 'react-fast-marquee';
 
+// Importa aquí tus íconos personalizados desde src/assets
+import hogarIcon from './assets/hogar.png';
+import vidaIcon from './assets/vida.png';
+import decesosIcon from './assets/decesos.png';
+import saludIcon from './assets/salud.png';
+import cocheIcon from './assets/coche.png';
+import taxiIcon from './assets/taxi.png';
+import cabezaIcon from './assets/cabeza-tractora.png';
+import comunidadIcon from './assets/comunidad.png';
+import transporteIcon from './assets/transporte-mercancias.png';
+import rcIcon from './assets/rc.png';
+
 const products = [
-  { name: 'Hogar', icon: '🏠' },
-  { name: 'Vida', icon: '❤️' },
-  { name: 'Decesos', icon: '➕' },
-  { name: 'Salud', icon: '🏥' },
-  { name: 'Coche', icon: '🚗' },
-  { name: 'Taxi', icon: '🚕' },
-  { name: 'Cabeza tractora', icon: '🚚' },
-  { name: 'Comunidad', icon: '🏢' },
-  { name: 'Transporte de mercancías', icon: '🚚' },
-  { name: 'RC', icon: '🛡️' },
+  { name: 'Hogar', icon: hogarIcon },
+  { name: 'Vida', icon: vidaIcon },
+  { name: 'Decesos', icon: decesosIcon },
+  { name: 'Salud', icon: saludIcon },
+  { name: 'Coche', icon: cocheIcon },
+  { name: 'Taxi', icon: taxiIcon },
+  { name: 'Cabeza tractora', icon: cabezaIcon },
+  { name: 'Comunidad', icon: comunidadIcon },
+  { name: 'Transporte de mercancías', icon: transporteIcon },
+  { name: 'RC', icon: rcIcon },
 ];
 
 const aseguradoras = [
@@ -42,12 +54,12 @@ export default function App() {
           </a>
         </header>
 
-        {/* Productos */}
+        {/* Productos con imagen */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-12">
           {products.map((p) => (
             <Card key={p.name} className="text-center">
               <CardContent>
-                <div className="text-3xl mb-2">{p.icon}</div>
+                <img src={p.icon} alt={p.name} className="h-12 w-12 mx-auto mb-2" />
                 <p>{p.name}</p>
               </CardContent>
             </Card>
@@ -78,10 +90,10 @@ export default function App() {
         <p className="mt-2">Calle Pino, 27 Andújar (Jaén) CP 23740</p>
       </footer>
 
-      {/* Botón flotante WhatsApp */}
+      {/* Botón flotante WhatsApp a la derecha */}
       <a
         href="https://wa.me/34658945741"
-        className="fixed bottom-6 left-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50"
         target="_blank"
         rel="noopener noreferrer"
       >
