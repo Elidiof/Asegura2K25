@@ -4,79 +4,112 @@ import { Card, CardContent } from './components/ui/Card'
 import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
-// —————— Productos (igual que antes) —————— 
-import hogarIcon from './assets/hogar.png'
-import vidaIcon from './assets/vida.png'
-import decesosIcon from './assets/decesos.png'
-import saludIcon from './assets/salud.png'
-import cocheIcon from './assets/coche.png'
-import taxiIcon from './assets/taxi.png'
-import cabezaIcon from './assets/cabeza-tractora.png'
-import comunidadIcon from './assets/comunidad.png'
-import transporteIcon from './assets/transporte-mercancias.png'
-import rcIcon from './assets/rc.png'
-
+// Ya no importamos imágenes desde src/assets, sino que referenciamos public/logos
 const products = [
-  { name: 'Hogar', icon: hogarIcon },
-  { name: 'Vida', icon: vidaIcon },
-  { name: 'Decesos', icon: decesosIcon },
-  { name: 'Salud', icon: saludIcon },
-  { name: 'Coche', icon: cocheIcon },
-  { name: 'Taxi', icon: taxiIcon },
-  { name: 'Cabeza tractora', icon: cabezaIcon },
-  { name: 'Comunidad', icon: comunidadIcon },
-  { name: 'Transporte de mercancías', icon: transporteIcon },
-  { name: 'RC', icon: rcIcon },
+  { name: 'Hogar', icon: '/logos/hogar.png' },
+  { name: 'Vida', icon: '/logos/vida.png' },
+  { name: 'Decesos', icon: '/logos/decesos.png' },
+  { name: 'Salud', icon: '/logos/salud.png' },
+  { name: 'Coche', icon: '/logos/coche.png' },
+  { name: 'Taxi', icon: '/logos/taxi.png' },
+  { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
+  { name: 'Comunidad', icon: '/logos/comunidad.png' },
+  { name: 'Transporte de mercancías', icon: '/logos/transporte-mercancias.png' },
+  { name: 'RC', icon: '/logos/rc.png' },
 ]
 
-// —————— Carrusel de logos ——————
-// 1) Glob eager a todos los SVG/PNG en src/assets/
-const logoModules = import.meta.globEager('./assets/*.{svg,png}')
-
-// 2) Construye un objeto name → URL
-const logos = Object.entries(logoModules).reduce((obj, [path, mod]) => {
-  // path = './assets/mapfre.svg' → name = 'mapfre'
-  const file = path.split('/').pop()
-  const name = file.replace(/\.(svg|png)$/, '')
-  obj[name] = mod.default
-  return obj
-}, {})
-
-// 3) Define el orden en que quieres mostrarlos
-const logoOrder = [
+// Lista de compañías y su extensión
+const pngLogos = ['asisa','dkv','pelayo']
+const compañias = [
   'mapfre','reale','generali','allianz','axa',
   'asisa','dkv','helvetia','zurich','adeslas',
-  'gco','mutuamadrilena','santalucia',
+  'catalana-ocidente','mutuamadrilena','santalucia',
   'pelayo','aegon','plusultra','hiscox'
 ]
 
 export default function App() {
   return (
     <main className="min-h-screen flex flex-col">
-      {/* …banner, header, grid de productos… */}
+      {/* Banner */}
+      <div className="bg-blue-900 text-white py-4 text-2xl font-bold text-center">
+        ASEGURA2K25
+      </div>
 
-      {/* Carrusel */}
-      <section className="mb-12">
-        <h2 className="text-lg font-semibold mb-4 text-gray-700">
-          Compañías aseguradoras con las que colaboramos
-        </h2>
-        <Marquee gradient={false} speed={50} pauseOnHover loop>
-          {logoOrder.map((key) => {
-            const src = logos[key]
-            if (!src) return null  // Omite si no existe
-            return (
-              <img
-                key={key}
-                src={src}
-                alt={key.replace(/-/g, ' ').toUpperCase()}
-                className="h-12 mx-6 inline-block"
-              />
-            )
-          })}
-        </Marquee>
-      </section>
+      <div className="flex-grow p-6 max-w-7xl mx-auto">
+        {/* Header */}
+        <header className="mb-12 text-center">
+          <h1 className="text-4xl font-bold text-blue-900">
+            Encuentra el seguro que necesitas
+          </h1>
+          <p className="text-gray-600 mt-2">
+            Trabajamos con las mejores aseguradoras en España
+          </p>
+          <a
+            href="https://wa.me/34658945741"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 bg-green-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-green-600 transition"
+          >
+            Contáctanos vía WhatsApp
+          </a>
+        </header>
 
-      {/* …footer, botón flotante… */}
+        {/* Grid de productos */}
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-16">
+          {products.map(({ name, icon }) => (
+            <Card key={name} className="bg-white shadow-lg rounded-2xl p-5 hover:shadow-xl transition">
+              <CardContent className="flex flex-col items-center">
+                <img src={icon} alt={name} className="h-12 w-12 mb-3" />
+                <p className="text-sm font-medium text-gray-800">{name}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </section>
+
+        {/* Carrusel de compañías */}
+        <section className="mb-12">
+          <h2 className="text-lg font-semibold mb-4 text-gray-700">
+            Compañías aseguradoras con las que colaboramos
+          </h2>
+          <Marquee gradient={false} speed={50} pauseOnHover loop>
+            {compañias.map(key => {
+              const ext = pngLogos.includes(key) ? 'png' : 'svg'
+              return (
+                <img
+                  key={key}
+                  src={`/logos/${key}.${ext}`}
+                  alt={key.replace(/-/g,' ').toUpperCase()}
+                  className="h-12 mx-6 inline-block"
+                />
+              )
+            })}
+          </Marquee>
+        </section>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-blue-900 text-white text-center py-8">
+        <p className="text-xl font-semibold">Elidio Ferrer</p>
+        <p className="mt-2">
+          Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
+        </p>
+        <p className="mt-2">
+          Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
+        </p>
+        <p className="mt-2">
+          Calle Pino, 27 · Andújar (Jaén) · CP 23740
+        </p>
+      </footer>
+
+      {/* Botón flotante WhatsApp */}
+      <a
+        href="https://wa.me/34658945741"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaWhatsapp size={28} />
+      </a>
     </main>
   )
 }
