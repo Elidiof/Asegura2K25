@@ -1,64 +1,61 @@
-import React from 'react';
-import { Card, CardContent } from './components/ui/Card';
-import { FaWhatsapp } from 'react-icons/fa';
-import Marquee from 'react-fast-marquee';
+// src/App.jsx (o donde tengas el carrusel)
 
-// Importa aquí tus íconos personalizados desde src/assets
-import hogarIcon from './assets/hogar.png';
-import vidaIcon from './assets/vida.png';
-import decesosIcon from './assets/decesos.png';
-import saludIcon from './assets/salud.png';
-import cocheIcon from './assets/coche.png';
-import taxiIcon from './assets/taxi.png';
-import cabezaIcon from './assets/cabeza-tractora.png';
-import comunidadIcon from './assets/comunidad.png';
-import transporteIcon from './assets/transporte-mercancias.png';
-import rcIcon from './assets/rc.png';
+// Importa todos los logos individualmente:
+import mapfre from './assets/cias/mapfre.svg';
+import reale from './assets/cias/reale.svg';
+import generali from './assets/cias/generali.svg';
+import allianz from './assets/cias/allianz.svg';
+import axa from './assets/cias/axa.svg';
+import asisa from './assets/cias/asisa.png';
+import dkv from './assets/cias/dkv.png';
+import helvetia from './assets/cias/helvetia.svg';
+import zurich from './assets/cias/zurich.svg';
+import adeslas from './assets/cias/adeslas.svg';
+import catalanaoccidente from './assets/cias/catalanaoccidente.svg';
+import mutuamadrilena from './assets/cias/mutuamadrilena.svg';
+import santalucia from './assets/cias/santalucia.svg';
+import pelayo from './assets/cias/pelayo.png';
+import aegon from './assets/cias/aegon.svg';
+import plusultra from './assets/cias/plusultra.svg';
+import hiscox from './assets/cias/hiscox.svg';
 
-const products = [
-  /* ...igual que antes... */
-];
+// Mapea nombre → módulo importado
+const logos = {
+  mapfre,
+  reale,
+  generali,
+  allianz,
+  axa,
+  asisa,
+  dkv,
+  helvetia,
+  zurich,
+  adeslas,
+  catalanaoccidente,
+  mutuamadrilena,
+  santalucia,
+  pelayo,
+  aegon,
+  plusultra,
+  hiscox,
+};
 
-// Lista de aseguradoras; la extensión se decide en tiempo de render
-const aseguradoras = [
-  'mapfre', 'reale', 'generali', 'allianz', 'axa',
-  'asisa', 'dkv', 'helvetia', 'zurich', 'adeslas',
-  'catalanaoccidente', 'mutuamadrilena', 'santalucia',
-  'pelayo', 'aegon', 'plusultra', 'hiscox'
-];
-
-// Logos que están en PNG
-const pngLogos = ['asisa', 'dkv', 'pelayo'];
+// Lista de claves para iterar
+const aseguradoras = Object.keys(logos);
 
 export default function App() {
   return (
-    <main className="min-h-screen flex flex-col">
-      {/* ...banner, header, productos... */}
-
-      {/* Carrusel horizontal de logos */}
-      <section className="mb-12">
-        <h2 className="text-lg font-semibold mb-4 text-gray-700">
-          Compañías aseguradoras con las que colaboramos
-        </h2>
-        <Marquee gradient={false} speed={50} pauseOnHover loop>
-          {aseguradoras.map((key) => {
-            // Selecciona extensión según compañía
-            const ext = pngLogos.includes(key) ? 'png' : 'svg';
-            // Require dinámico
-            const logoSrc = require(`./assets/cias/${key}.${ext}`).default;
-            return (
-              <img
-                key={key}
-                src={logoSrc}
-                alt={key.toUpperCase()}
-                className="h-12 mx-6 inline-block"
-              />
-            );
-          })}
-        </Marquee>
-      </section>
-
-      {/* ...footer, botón WhatsApp... */}
-    </main>
+    {/* ... */}
+    <Marquee gradient={false} speed={50} pauseOnHover loop>
+      {aseguradoras.map((key) => (
+        <img
+          key={key}
+          src={logos[key]}
+          alt={key.toUpperCase()}
+          className="h-12 mx-6 inline-block"
+        />
+      ))}
+    </Marquee>
+    {/* ... */}
   );
 }
