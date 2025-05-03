@@ -1,3 +1,7 @@
+Pensó durante un segundo
+
+
+```jsx
 // src/App.jsx
 import React from 'react'
 import { Card, CardContent } from './components/ui/Card'
@@ -19,12 +23,24 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Todas las compañías ahora usan SVG
+  // Compañías (todas en SVG) - “plusultra” eliminado
   const companias = [
-    'mapfre','reale','generali','allianz','axa',
-    'asisa','dkv','helvetia','zurich','adeslas',
-    'catalana-ocidente','mutuamadrilena','santalucia',
-    'pelayo','aegon','plusultra','hiscox'
+    'mapfre',
+    'reale',
+    'generali',
+    'allianz',
+    'axa',
+    'asisa',
+    'dkv',
+    'helvetia',
+    'zurich',
+    'adeslas',
+    'catalana-ocidente',
+    'mutuamadrilena',
+    'santalucia',
+    'pelayo',
+    'aegon',
+    'hiscox'
   ]
 
   // Dividir en dos filas
@@ -134,3 +150,4 @@ export default function App() {
     </main>
   )
 }
+```
