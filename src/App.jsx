@@ -46,7 +46,7 @@ const logos = Object.entries(logoModules).reduce((obj, [path, mod]) => {
 const logoOrder = [
   'mapfre','reale','generali','allianz','axa',
   'asisa','dkv','helvetia','zurich','adeslas',
-  'catalana-ocidente','mutuamadrilena','santalucia',
+  'gco','mutuamadrilena','santalucia',
   'pelayo','aegon','plusultra','hiscox'
 ]
 
