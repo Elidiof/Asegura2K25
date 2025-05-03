@@ -19,13 +19,20 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Definimos las compañías y cuáles son PNG
+  // Definimos cuáles son PNG y el array completo de compañías
   const pngLogos = ['asisa','dkv','pelayo']
   const compañias = [
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
     'catalana-ocidente','mutuamadrilena','santalucia',
     'pelayo','aegon','plusultra','hiscox'
+  ]
+
+  // Partimos el array en dos mitades
+  const mitad = Math.ceil(compañias.length / 2)
+  const rows = [
+    compañias.slice(0, mitad),
+    compañias.slice(mitad),
   ]
 
   return (
@@ -54,7 +61,7 @@ export default function App() {
           </a>
         </header>
 
-        {/* Grid de productos con iconos más grandes */}
+        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-16">
           {products.map(({ name, icon }) => (
             <Card
@@ -73,56 +80,7 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías */}
-        <section className="mb-12">
-          <h2 className="text-lg font-semibold mb-4 text-gray-700">
+        {/* Carrusel de compañías en dos líneas */}
+        <section className="mb-12 space-y-4">
+          <h2 className="text-lg font-semibold mb-4 text-gray-700 text-center">
             Compañías aseguradoras con las que colaboramos
-          </h2>
-          <Marquee
-            gradient={false}
-            speed={60}
-            pauseOnHover
-            direction="left"
-            loop={0}
-          >
-            {compañias.map(key => {
-              const ext = pngLogos.includes(key) ? 'png' : 'svg'
-              return (
-                <img
-                  key={key}
-                  src={`/logos/${key}.${ext}`}
-                  alt={key.replace(/-/g,' ').toUpperCase()}
-                  className="h-12 mx-6 inline-block"
-                />
-              )
-            })}
-          </Marquee>
-        </section>
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white text-center py-8">
-        <p className="text-xl font-semibold">Elidio Ferrer</p>
-        <p className="mt-2">
-          Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
-        </p>
-        <p className="mt-2">
-          Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
-        </p>
-        <p className="mt-2">
-          Calle Pino, 27 · Andújar (Jaén) · CP 23740
-        </p>
-      </footer>
-
-      {/* Botón flotante WhatsApp */}
-      <a
-        href="https://wa.me/34658945741"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp size={28} />
-      </a>
-    </main>
-  )
-}
