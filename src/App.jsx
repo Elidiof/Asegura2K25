@@ -49,7 +49,7 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos */}
+        {/* Grid de productos (opción 1: solo altura fija, ancho automático) */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
@@ -60,7 +60,7 @@ export default function App() {
                 <img
                   src={icon}
                   alt={name}
-                  className="h-24 w-24 sm:h-32 sm:w-32 mb-3"
+                  className="h-24 w-auto sm:h-32 sm:w-auto mb-3"
                 />
                 <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
                   {name}
@@ -70,7 +70,7 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías con 0.5cm de separación */}
+        {/* Carrusel de compañías */}
         <section className="mb-10 space-y-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
