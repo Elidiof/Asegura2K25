@@ -49,7 +49,7 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos: 2 columnas en móvil para reducir scroll vertical */}
+        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card key={name} className="bg-gray-100 shadow rounded-2xl p-4 hover:shadow-md transition">
@@ -68,15 +68,15 @@ export default function App() {
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
           </h2>
-          {rows.map((row, idx) => (
-            <div key={idx} className="overflow-hidden">
+          {rows.map((row, rowIndex) => (
+            <div key={rowIndex} className="overflow-hidden">
               <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
-                {row.map((key, i) => (
+                {row.map((key, idx) => (
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g,' ').toUpperCase()}
-                    className={`h-10 sm:h-12 inline-block ${i < row.length - 1 ? 'mr-4' : ''}`}
+                    alt={key.replace(/-/g, ' ').toUpperCase()}
+                    className={`h-10 sm:h-12 inline-block ${idx < row.length - 1 ? 'mr-4' : ''}`}
                   />
                 ))}
               </Marquee>
@@ -85,7 +85,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer alineado a la izquierda con doble espacio tras dirección */}
+      {/* Footer con contacto alineado a la izquierda y botón Legal bajo la dirección */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -106,11 +106,19 @@ export default function App() {
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
+          {/* Doble espacio tras dirección */}
           <br /><br />
+          {/* Botón Legal */}
+          <a
+            href="/legal.html"
+            className="inline-block bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
+          >
+            Legal
+          </a>
         </div>
       </footer>
 
-      {/* Botones de WhatsApp fijos */}
+      {/* Botones fijos de WhatsApp */}
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         <a
           href="https://wa.me/34658945741"
