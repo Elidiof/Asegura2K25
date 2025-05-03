@@ -19,7 +19,7 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Todas las compañías en SVG (plusultra eliminado)
+  // Compañías (todas en SVG, plusultra eliminado)
   const companias = [
     'mapfre',
     'reale',
@@ -36,7 +36,7 @@ export default function App() {
     'santalucia',
     'pelayo',
     'aegon',
-    'hiscox'
+    'hiscox',
   ]
 
   // Dividir en dos filas
@@ -54,7 +54,7 @@ export default function App() {
       </div>
 
       <div className="flex-grow p-6 max-w-7xl mx-auto">
-        {/* Encabezado con título a la izquierda y botón a la derecha */}
+        {/* Encabezado */}
         <header className="mb-12">
           <div className="flex items-center justify-between flex-wrap">
             <h1 className="text-4xl font-bold text-blue-900">
@@ -71,7 +71,7 @@ export default function App() {
           </div>
         </header>
 
-        {/* Grid de productos con iconos más grandes */}
+        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-16">
           {products.map(({ name, icon }) => (
             <Card
@@ -90,12 +90,11 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías en dos líneas, ambas moviéndose a la izquierda */}
+        {/* Carrusel de compañías en dos líneas */}
         <section className="mb-12 space-y-4">
           <h2 className="text-lg font-semibold mb-4 text-gray-700 text-center">
             Compañías aseguradoras con las que colaboramos
           </h2>
-
           {rows.map((row, index) => (
             <Marquee
               key={index}
@@ -118,7 +117,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer con contacto alineado a la izquierda */}
+      {/* Footer alineado a la izquierda */}
       <footer className="bg-blue-900 text-white py-8">
         <div className="max-w-7xl mx-auto text-left space-y-2">
           <p className="text-xl font-semibold">Elidio Ferrer</p>
@@ -143,3 +142,6 @@ export default function App() {
       >
         <FaWhatsapp size={28} />
       </a>
+    </main>
+  )
+}
