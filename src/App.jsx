@@ -52,9 +52,17 @@ export default function App() {
         {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
-            <Card key={name} className="bg-gray-100 shadow rounded-2xl p-4 hover:shadow-md transition">
+            <Card
+              key={name}
+              // Ahora la tarjeta es del mismo gris que el fondo de los iconos
+              className="bg-gray-100 shadow-none rounded-2xl p-4 transition"
+            >
               <CardContent className="flex flex-col items-center">
-                <img src={icon} alt={name} className="h-24 w-24 sm:h-32 sm:w-32 mb-3" />
+                <img
+                  src={icon}
+                  alt={name}
+                  className="h-24 w-24 sm:h-32 sm:w-32 mb-3"
+                />
                 <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
                   {name}
                 </p>
@@ -63,20 +71,20 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías sin espacio extra */}
+        {/* Carrusel de compañías */}
         <section className="mb-10 space-y-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
           </h2>
-          {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="overflow-hidden">
+          {rows.map((row, idx) => (
+            <div key={idx} className="overflow-hidden">
               <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
-                {row.map((key, idx) => (
+                {row.map((key, i) => (
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g, ' ').toUpperCase()}
-                    className={`h-10 sm:h-12 inline-block ${idx < row.length - 1 ? 'mr-4' : ''}`}
+                    alt={key.replace(/-/g,' ').toUpperCase()}
+                    className={`h-10 sm:h-12 inline-block ${i < row.length - 1 ? 'mr-4' : ''}`}
                   />
                 ))}
               </Marquee>
@@ -85,7 +93,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer con contacto y botón Legal centrado al pie */}
+      {/* Footer con contacto y botón Legal centrado */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -106,11 +114,8 @@ export default function App() {
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
-          {/* Espacio extra */}
-          <div className="mt-4"></div>
         </div>
-        {/* Botón Legal centrado */}
-        <div className="mt-2 flex justify-center">
+        <div className="mt-4 flex justify-center">
           <a
             href="/legal.html"
             className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
