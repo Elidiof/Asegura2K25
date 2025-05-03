@@ -19,8 +19,7 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Ahora solo Asisa va en PNG; DKV y Pelayo pasan a SVG
-  const pngLogos = ['asisa']
+  // Todas las compañías ahora usan SVG
   const companias = [
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
@@ -94,18 +93,14 @@ export default function App() {
               direction="left"
               loop={0}
             >
-              {row.map((key) => {
-                // DKV y Pelayo ahora usan SVG junto al resto salvo Asisa
-                const ext = pngLogos.includes(key) ? 'png' : 'svg'
-                return (
-                  <img
-                    key={key}
-                    src={`/logos/${key}.${ext}`}
-                    alt={key.replace(/-/g, ' ').toUpperCase()}
-                    className="h-12 mx-6 inline-block"
-                  />
-                )
-              })}
+              {row.map((key) => (
+                <img
+                  key={key}
+                  src={`/logos/${key}.svg`}
+                  alt={key.replace(/-/g, ' ').toUpperCase()}
+                  className="h-12 mx-6 inline-block"
+                />
+              ))}
             </Marquee>
           ))}
         </section>
