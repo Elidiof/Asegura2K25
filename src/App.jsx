@@ -48,12 +48,16 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos */}
+        {/* Grid de productos con iconos doble tamaño */}
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card key={name} className="bg-white shadow rounded-2xl p-4 hover:shadow-md transition">
               <CardContent className="flex flex-col items-center">
-                <img src={icon} alt={name} className="h-12 w-12 sm:h-16 sm:w-16 mb-3" />
+                <img 
+                  src={icon} 
+                  alt={name} 
+                  className="h-24 w-24 sm:h-32 sm:w-32 mb-3" 
+                />
                 <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
                   {name}
                 </p>
