@@ -54,8 +54,7 @@ export default function App() {
           {products.map(({ name, icon }) => (
             <Card
               key={name}
-              // Ahora la tarjeta es del mismo gris que el fondo de los iconos
-              className="bg-gray-100 shadow-none rounded-2xl p-4 transition"
+              className="bg-gray-100 shadow-none rounded-2xl p-4 hover:shadow-none transition"
             >
               <CardContent className="flex flex-col items-center">
                 <img
@@ -83,7 +82,7 @@ export default function App() {
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g,' ').toUpperCase()}
+                    alt={key.replace(/-/g, ' ').toUpperCase()}
                     className={`h-10 sm:h-12 inline-block ${i < row.length - 1 ? 'mr-4' : ''}`}
                   />
                 ))}
