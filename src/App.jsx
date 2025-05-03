@@ -34,7 +34,7 @@ export default function App() {
   ]
 
   return (
-    <main className="min-h-screen flex flex-col overflow-x-hidden">
+    <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
       {/* Banner */}
       <div className="bg-blue-900 text-white py-3 text-xl text-center">
         Asegura2K25
@@ -51,7 +51,7 @@ export default function App() {
         {/* Grid de productos con iconos doble tamaño */}
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
-            <Card key={name} className="bg-white shadow rounded-2xl p-4 hover:shadow-md transition">
+            <Card key={name} className="bg-gray-100 shadow rounded-2xl p-4 hover:shadow-md transition">
               <CardContent className="flex flex-col items-center">
                 <img 
                   src={icon} 
@@ -78,7 +78,7 @@ export default function App() {
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g, ' ').toUpperCase()}
+                    alt={key.replace(/-/g,' ').toUpperCase()}
                     className="h-10 sm:h-12 mx-4 inline-block"
                   />
                 ))}
