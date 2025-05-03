@@ -5,7 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
-  // Productos con iconos ahora en PNG
+  // Productos con iconos en PNG
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
@@ -19,14 +19,14 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Compañías todas en SVG
+  // Compañías en SVG
   const companias = [
     'mapfre','reale','generali','allianz','axa','asisa','dkv',
     'helvetia','zurich','adeslas','catalana-ocidente',
     'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
   ]
 
-  // Partir en dos filas para el carrusel
+  // Preparar filas para el carrusel
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -40,6 +40,7 @@ export default function App() {
         Asegura2K25
       </div>
 
+      {/* Contenido principal */}
       <div className="flex-grow px-4 py-6 w-full">
         {/* Título */}
         <header className="mb-8">
@@ -48,17 +49,22 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos con iconos doble tamaño */}
+        {/* Grid de productos (tarjetas transparentes para que hereden el gris) */}
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
-            <Card key={name} className="bg-gray-100 shadow rounded-2xl p-4 hover:shadow-md transition">
+            <Card
+              key={name}
+              className="bg-transparent shadow-none rounded-2xl p-0 hover:shadow-none transition"
+            >
               <CardContent className="flex flex-col items-center">
-                <img 
-                  src={icon} 
-                  alt={name} 
-                  className="h-24 w-24 sm:h-32 sm:w-32 mb-3" 
-                />
-                <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
+                <div className="bg-gray-100 rounded-full p-4">
+                  <img
+                    src={icon}
+                    alt={name}
+                    className="h-24 w-24 sm:h-32 sm:w-32"
+                  />
+                </div>
+                <p className="mt-3 text-sm sm:text-base font-medium text-gray-800 text-center">
                   {name}
                 </p>
               </CardContent>
@@ -78,7 +84,7 @@ export default function App() {
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g,' ').toUpperCase()}
+                    alt={key.replace(/-/g, ' ').toUpperCase()}
                     className="h-10 sm:h-12 mx-4 inline-block"
                   />
                 ))}
@@ -88,7 +94,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer alineado a la izquierda */}
+      {/* Footer */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -112,7 +118,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Botones fijos de WhatsApp */}
+      {/* Botones de WhatsApp */}
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         <a
           href="https://wa.me/34658945741"
