@@ -129,7 +129,7 @@ export default function App() {
           </p>
           <p>
             Dirección: <a
-              href="https://www.google.com/maps/search/?api=1&query=Calle+Pino+27+Andujar+Jaen+23740"
+              href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
               target="_blank"
               rel="noopener noreferrer"
               className="underline"
