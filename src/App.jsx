@@ -77,7 +77,13 @@ export default function App() {
           </h2>
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
+              <Marquee
+                gradient={false}
+                speed={50}
+                pauseOnHover
+                direction="left"
+                loop={0}
+              >
                 {row.map((key) => (
                   <img
                     key={key}
@@ -143,4 +149,6 @@ export default function App() {
           <FaWhatsapp size={20} />
         </a>
       </div>
-    </
+    </main>
+  )
+}
