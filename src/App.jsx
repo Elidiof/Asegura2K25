@@ -85,7 +85,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer con contacto alineado a la izquierda y botón Legal bajo la dirección */}
+      {/* Footer con contacto y botón Legal centrado al pie */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -106,12 +106,14 @@ export default function App() {
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
-          {/* Doble espacio tras dirección */}
-          <br /><br />
-          {/* Botón Legal */}
+          {/* Espacio extra */}
+          <div className="mt-4"></div>
+        </div>
+        {/* Botón Legal centrado */}
+        <div className="mt-2 flex justify-center">
           <a
             href="/legal.html"
-            className="inline-block bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
+            className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
           >
             Legal
           </a>
