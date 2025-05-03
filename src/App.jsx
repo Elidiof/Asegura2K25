@@ -25,7 +25,7 @@ export default function App() {
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
     'catalana-ocidente','mutuamadrilena','santalucia',
-    'pelayo','aegon','hiscox'
+    'pelayo','aegon','plusultra','hiscox'
   ]
 
   // Dividir en dos filas
@@ -110,18 +110,20 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white text-center py-8">
-        <p className="text-xl font-semibold">Elidio Ferrer</p>
-        <p className="mt-2">
-          Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
-        </p>
-        <p className="mt-2">
-          Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
-        </p>
-        <p className="mt-2">
-          Calle Pino, 27 · Andújar (Jaén) · CP 23740
-        </p>
+      {/* Footer con contacto alineado a la izquierda */}
+      <footer className="bg-blue-900 text-white py-8">
+        <div className="max-w-7xl mx-auto text-left space-y-2">
+          <p className="text-xl font-semibold">Elidio Ferrer</p>
+          <p>
+            Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
+          </p>
+          <p>
+            Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
+          </p>
+          <p>
+            Calle Pino, 27 · Andújar (Jaén) · CP 23740
+          </p>
+        </div>
       </footer>
 
       {/* Botón flotante WhatsApp */}
