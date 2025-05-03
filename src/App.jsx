@@ -19,13 +19,13 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Compañías y cuáles van en PNG
-  const pngLogos = ['asisa', 'dkv', 'pelayo']
+  // Ahora solo Asisa va en PNG; DKV y Pelayo pasan a SVG
+  const pngLogos = ['asisa']
   const companias = [
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
     'catalana-ocidente','mutuamadrilena','santalucia',
-    'pelayo','aegon','hiscox'
+    'pelayo','aegon','plusultra','hiscox'
   ]
 
   // Dividir en dos filas
@@ -95,6 +95,7 @@ export default function App() {
               loop={0}
             >
               {row.map((key) => {
+                // DKV y Pelayo ahora usan SVG junto al resto salvo Asisa
                 const ext = pngLogos.includes(key) ? 'png' : 'svg'
                 return (
                   <img
