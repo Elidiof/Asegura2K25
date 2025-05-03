@@ -19,8 +19,8 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Definimos cuáles son PNG y el array completo de compañías
-  const pngLogos = ['asisa','dkv','pelayo']
+  // Compañías y cuáles van en PNG
+  const pngLogos = ['asisa', 'dkv', 'pelayo']
   const compañias = [
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
@@ -28,7 +28,7 @@ export default function App() {
     'pelayo','aegon','plusultra','hiscox'
   ]
 
-  // Partimos el array en dos mitades
+  // Partimos en dos filas
   const mitad = Math.ceil(compañias.length / 2)
   const rows = [
     compañias.slice(0, mitad),
@@ -84,3 +84,15 @@ export default function App() {
         <section className="mb-12 space-y-4">
           <h2 className="text-lg font-semibold mb-4 text-gray-700 text-center">
             Compañías aseguradoras con las que colaboramos
+          </h2>
+
+          {rows.map((row, index) => (
+            <Marquee
+              key={index}
+              gradient={false}
+              speed={60}
+              pauseOnHover
+              direction={index % 2 === 0 ? 'left' : 'right'}
+              loop={0}
+            >
+              {row.map(key => {
