@@ -5,21 +5,21 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
-  // Productos con iconos desde public/logos/
+  // Productos con iconos ahora en SVG
   const products = [
-    { name: 'Hogar', icon: '/logos/hogar.png' },
-    { name: 'Vida', icon: '/logos/vida.png' },
-    { name: 'Decesos', icon: '/logos/decesos.png' },
-    { name: 'Salud', icon: '/logos/salud.png' },
-    { name: 'Coche', icon: '/logos/coche.png' },
-    { name: 'Taxi', icon: '/logos/taxi.png' },
-    { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
-    { name: 'Comunidad', icon: '/logos/comunidad.png' },
-    { name: 'Transporte de mercancías', icon: '/logos/transporte-mercancias.png' },
-    { name: 'RC', icon: '/logos/rc.png' },
+    { name: 'Hogar', icon: '/logos/hogar.svg' },
+    { name: 'Vida', icon: '/logos/vida.svg' },
+    { name: 'Decesos', icon: '/logos/decesos.svg' },
+    { name: 'Salud', icon: '/logos/salud.svg' },
+    { name: 'Coche', icon: '/logos/coche.svg' },
+    { name: 'Taxi', icon: '/logos/taxi.svg' },
+    { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.svg' },
+    { name: 'Comunidad', icon: '/logos/comunidad.svg' },
+    { name: 'Transporte de mercancías', icon: '/logos/transporte-mercancias.svg' },
+    { name: 'RC', icon: '/logos/rc.svg' },
   ]
 
-  // Compañías (todas en SVG, plusultra eliminado)
+  // Compañías todas en SVG
   const companias = [
     'mapfre',
     'reale',
@@ -39,7 +39,7 @@ export default function App() {
     'hiscox',
   ]
 
-  // Partir en dos filas
+  // Dividir en dos filas para el carrusel
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -47,7 +47,7 @@ export default function App() {
   ]
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col overflow-x-hidden">
       {/* Banner superior */}
       <div className="bg-blue-900 text-white py-3 sm:py-4 text-xl sm:text-2xl font-bold text-center">
         Asegura2K25
@@ -82,7 +82,7 @@ export default function App() {
                 <img
                   src={icon}
                   alt={name}
-                  className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 mb-3 sm:mb-4"
+                  className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 mb-3 sm:mb-4 max-w-full"
                 />
                 <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
                   {name}
@@ -93,28 +93,23 @@ export default function App() {
         </section>
 
         {/* Carrusel de compañías en dos líneas */}
-        <section className="mb-10 space-y-4">
+        <section className="mb-10 space-y-4 overflow-hidden">
           <h2 className="text-lg sm:text-xl font-semibold mb-4 text-gray-700 text-center">
             Compañías aseguradoras con las que colaboramos
           </h2>
           {rows.map((row, index) => (
-            <Marquee
-              key={index}
-              gradient={false}
-              speed={50}
-              pauseOnHover
-              direction="left"
-              loop={0}
-            >
-              {row.map(key => (
-                <img
-                  key={key}
-                  src={`/logos/${key}.svg`}
-                  alt={key.replace(/-/g, ' ').toUpperCase()}
-                  className="h-10 sm:h-12 mx-4 sm:mx-6 inline-block"
-                />
-              ))}
-            </Marquee>
+            <div key={index} className="overflow-hidden">
+              <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
+                {row.map(key => (
+                  <img
+                    key={key}
+                    src={`/logos/${key}.svg`}
+                    alt={key.replace(/-/g, ' ').toUpperCase()}
+                    className="h-10 sm:h-12 mx-4 sm:mx-6 inline-block"
+                  />
+                ))}
+              </Marquee>
+            </div>
           ))}
         </section>
       </div>
@@ -130,7 +125,8 @@ export default function App() {
             Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
           </p>
           <p className="text-sm sm:text-base">
-            Dirección: <a
+            Dirección:{' '}
+            <a
               href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
               target="_blank"
               rel="noopener noreferrer"
@@ -149,7 +145,7 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <FaWhatsapp size={24} className="sm:!text-white" />
+        <FaWhatsapp size={24} />
       </a>
     </main>
   )
