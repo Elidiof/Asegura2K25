@@ -29,10 +29,10 @@ const products = [
   { name: 'RC', icon: rcIcon },
 ];
 
-// Lista de aseguradoras
+// Lista de aseguradoras (nombres de archivo en /src/assets/cias)
 const aseguradoras = [
-  'mapfre', 'reale', 'generali', 'allianz', 'axa', 'asisa', 'dkv', 'helvetia', 'zurich', 'adeslas',
-  'catalanaoccidente', 'mutuamadrilena', 'santalucia', 'pelayo', 'aegon', 'plusultra', 'hiscox'
+  'mapfre', 'reale', 'generali', 'allianz', 'axa', 'asisa', 'dkv', 'helvetia', 'race', 'fiatc',
+  'zurich', 'adeslas', 'gco', 'mm', 'santalucia', 'pelayo', 'aegon', 'hiscox', 'adeslas', 'aegon', 'ocaso', 
 ];
 
 export default function App() {
@@ -77,13 +77,13 @@ export default function App() {
         {/* Carrusel horizontal de logos */}
         <section>
           <h2 className="text-lg font-semibold mb-4 text-gray-700">
-            Compañias aseguradoras con las que colaboramos.
+            Compañías aseguradoras con las que colaboramos
           </h2>
           <Marquee gradient={false} speed={50} pauseOnHover loop>
             {aseguradoras.map((key) => (
               <img
                 key={key}
-                src={`/logos/${key}.png`}
+                src={require(`./assets/cias/${key}.png`)}
                 alt={key.toUpperCase()}
                 className="h-12 mx-6 inline-block"
               />
