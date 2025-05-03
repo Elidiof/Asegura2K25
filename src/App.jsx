@@ -5,6 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
+  // Productos con iconos desde public/logos/
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
@@ -18,6 +19,7 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
+  // Compañías y cuáles van en PNG
   const pngLogos = ['asisa', 'dkv', 'pelayo']
   const companias = [
     'mapfre','reale','generali','allianz','axa',
@@ -26,6 +28,7 @@ export default function App() {
     'pelayo','aegon','plusultra','hiscox'
   ]
 
+  // Dividir en dos filas
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -34,7 +37,7 @@ export default function App() {
 
   return (
     <main className="min-h-screen flex flex-col">
-      {/* Banner */}
+      {/* Banner superior */}
       <div className="bg-blue-900 text-white py-4 text-2xl font-bold text-center">
         ASEGURA2K25
       </div>
@@ -58,7 +61,7 @@ export default function App() {
           </a>
         </header>
 
-        {/* Grid de productos */}
+        {/* Grid de productos con iconos más grandes */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mb-16">
           {products.map(({ name, icon }) => (
             <Card
@@ -77,7 +80,7 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías en dos líneas */}
+        {/* Carrusel de compañías en dos líneas, ambas moviéndose a la izquierda */}
         <section className="mb-12 space-y-4">
           <h2 className="text-lg font-semibold mb-4 text-gray-700 text-center">
             Compañías aseguradoras con las que colaboramos
@@ -89,7 +92,7 @@ export default function App() {
               gradient={false}
               speed={60}
               pauseOnHover
-              direction={index % 2 === 0 ? 'left' : 'right'}
+              direction="left"
               loop={0}
             >
               {row.map((key) => {
