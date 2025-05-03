@@ -5,7 +5,6 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
-  // Productos apuntando a public/logos/
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
@@ -19,25 +18,23 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Compañías y cuáles van en PNG
   const pngLogos = ['asisa', 'dkv', 'pelayo']
-  const compañias = [
+  const companias = [
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
     'catalana-ocidente','mutuamadrilena','santalucia',
     'pelayo','aegon','plusultra','hiscox'
   ]
 
-  // Partimos en dos filas
-  const mitad = Math.ceil(compañias.length / 2)
+  const mitad = Math.ceil(companias.length / 2)
   const rows = [
-    compañias.slice(0, mitad),
-    compañias.slice(mitad),
+    companias.slice(0, mitad),
+    companias.slice(mitad),
   ]
 
   return (
     <main className="min-h-screen flex flex-col">
-      {/* Banner superior */}
+      {/* Banner */}
       <div className="bg-blue-900 text-white py-4 text-2xl font-bold text-center">
         ASEGURA2K25
       </div>
@@ -95,4 +92,45 @@ export default function App() {
               direction={index % 2 === 0 ? 'left' : 'right'}
               loop={0}
             >
-              {row.map(key => {
+              {row.map((key) => {
+                const ext = pngLogos.includes(key) ? 'png' : 'svg'
+                return (
+                  <img
+                    key={key}
+                    src={`/logos/${key}.${ext}`}
+                    alt={key.replace(/-/g, ' ').toUpperCase()}
+                    className="h-12 mx-6 inline-block"
+                  />
+                )
+              })}
+            </Marquee>
+          ))}
+        </section>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-blue-900 text-white text-center py-8">
+        <p className="text-xl font-semibold">Elidio Ferrer</p>
+        <p className="mt-2">
+          Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
+        </p>
+        <p className="mt-2">
+          Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
+        </p>
+        <p className="mt-2">
+          Calle Pino, 27 · Andújar (Jaén) · CP 23740
+        </p>
+      </footer>
+
+      {/* Botón flotante WhatsApp */}
+      <a
+        href="https://wa.me/34658945741"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaWhatsapp size={28} />
+      </a>
+    </main>
+  )
+}
