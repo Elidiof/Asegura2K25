@@ -5,6 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
+  // Productos con iconos en PNG
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
@@ -18,12 +19,14 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
+  // Compañías en SVG
   const companias = [
     'mapfre','reale','generali','allianz','axa','asisa','dkv',
     'helvetia','zurich','adeslas','catalana-ocidente',
     'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
   ]
 
+  // Dividir en dos filas para el carrusel
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -37,7 +40,7 @@ export default function App() {
         Asegura2K25
       </div>
 
-      {/* Contenido */}
+      {/* Contenido principal */}
       <div className="flex-grow px-4 py-6 max-w-7xl mx-auto">
         {/* Título */}
         <header className="mb-8">
@@ -46,7 +49,7 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Productos: tarjeta y fondo iguales al gris claro */}
+        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
@@ -54,7 +57,6 @@ export default function App() {
               className="bg-gray-100 shadow-none rounded-2xl p-4 transition"
             >
               <CardContent className="flex flex-col items-center">
-                {/* el propio fondo de logo ya es gris claro */}
                 <img
                   src={icon}
                   alt={name}
@@ -68,7 +70,7 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías */}
+        {/* Carrusel de compañías con 0.5cm de separación */}
         <section className="mb-10 space-y-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
@@ -76,12 +78,12 @@ export default function App() {
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
               <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
-                {row.map((key, i) => (
+                {row.map((key) => (
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
                     alt={key.replace(/-/g, ' ').toUpperCase()}
-                    className={`h-10 sm:h-12 inline-block ${i < row.length - 1 ? 'mr-4' : ''}`}
+                    className="h-10 sm:h-12 inline-block mx-[0.5cm]"
                   />
                 ))}
               </Marquee>
@@ -141,6 +143,4 @@ export default function App() {
           <FaWhatsapp size={20} />
         </a>
       </div>
-    </main>
-  )
-}
+    </
