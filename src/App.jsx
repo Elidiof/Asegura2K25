@@ -1,7 +1,3 @@
-Pensó durante un segundo
-
-
-```jsx
 // src/App.jsx
 import React from 'react'
 import { Card, CardContent } from './components/ui/Card'
@@ -23,7 +19,7 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Compañías (todas en SVG) - “plusultra” eliminado
+  // Todas las compañías en SVG (plusultra eliminado)
   const companias = [
     'mapfre',
     'reale',
@@ -147,7 +143,3 @@ export default function App() {
       >
         <FaWhatsapp size={28} />
       </a>
-    </main>
-  )
-}
-```
