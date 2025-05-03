@@ -5,6 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
+  // Productos con iconos desde public/logos/
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
@@ -18,6 +19,7 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
+  // Compañías y cuáles van en PNG
   const pngLogos = ['asisa', 'dkv', 'pelayo']
   const companias = [
     'mapfre','reale','generali','allianz','axa',
@@ -26,6 +28,7 @@ export default function App() {
     'pelayo','aegon','plusultra','hiscox'
   ]
 
+  // Dividir en dos filas
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -55,9 +58,6 @@ export default function App() {
               Contáctanos vía WhatsApp
             </a>
           </div>
-          <p className="text-gray-600 mt-6 text-center">
-            Trabajamos con las mejores aseguradoras en España
-          </p>
         </header>
 
         {/* Grid de productos con iconos más grandes */}
