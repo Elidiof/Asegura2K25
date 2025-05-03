@@ -5,7 +5,6 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
-  // Productos con iconos desde public/logos/
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
@@ -19,16 +18,14 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Compañías y cuáles van en PNG
   const pngLogos = ['asisa', 'dkv', 'pelayo']
   const companias = [
     'mapfre','reale','generali','allianz','axa',
     'asisa','dkv','helvetia','zurich','adeslas',
     'catalana-ocidente','mutuamadrilena','santalucia',
-    'pelayo','aegon','hiscox'
+    'pelayo','aegon','plusultra','hiscox'
   ]
 
-  // Dividir en dos filas
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -39,26 +36,28 @@ export default function App() {
     <main className="min-h-screen flex flex-col">
       {/* Banner superior */}
       <div className="bg-blue-900 text-white py-4 text-2xl font-bold text-center">
-        ASEGURA2K25
+        Asegura2K25
       </div>
 
       <div className="flex-grow p-6 max-w-7xl mx-auto">
-        {/* Encabezado */}
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-blue-900">
-            Encuentra el seguro que necesitas
-          </h1>
-          <p className="text-gray-600 mt-2">
+        {/* Encabezado con título a la izquierda y botón a la derecha */}
+        <header className="mb-12">
+          <div className="flex items-center justify-between flex-wrap">
+            <h1 className="text-4xl font-bold text-blue-900">
+              Encuentra el seguro que necesitas
+            </h1>
+            <a
+              href="https://wa.me/34658945741"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 sm:mt-0 bg-green-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-green-600 transition"
+            >
+              Contáctanos vía WhatsApp
+            </a>
+          </div>
+          <p className="text-gray-600 mt-6 text-center">
             Trabajamos con las mejores aseguradoras en España
           </p>
-          <a
-            href="https://wa.me/34658945741"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-6 bg-green-500 text-white px-6 py-3 rounded-full shadow-md hover:bg-green-600 transition"
-          >
-            Contáctanos vía WhatsApp
-          </a>
         </header>
 
         {/* Grid de productos con iconos más grandes */}
