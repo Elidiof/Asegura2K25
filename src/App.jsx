@@ -26,7 +26,7 @@ export default function App() {
     'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
   ]
 
-  // Preparar filas para el carrusel
+  // Dividir en dos filas para el carrusel
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -49,22 +49,13 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos (tarjetas transparentes para que hereden el gris) */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+        {/* Grid de productos: 2 columnas en móvil para reducir scroll vertical */}
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
-            <Card
-              key={name}
-              className="bg-transparent shadow-none rounded-2xl p-0 hover:shadow-none transition"
-            >
+            <Card key={name} className="bg-gray-100 shadow rounded-2xl p-4 hover:shadow-md transition">
               <CardContent className="flex flex-col items-center">
-                <div className="bg-gray-100 rounded-full p-4">
-                  <img
-                    src={icon}
-                    alt={name}
-                    className="h-24 w-24 sm:h-32 sm:w-32"
-                  />
-                </div>
-                <p className="mt-3 text-sm sm:text-base font-medium text-gray-800 text-center">
+                <img src={icon} alt={name} className="h-24 w-24 sm:h-32 sm:w-32 mb-3" />
+                <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
                   {name}
                 </p>
               </CardContent>
@@ -72,20 +63,20 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías */}
+        {/* Carrusel de compañías sin espacio extra */}
         <section className="mb-10 space-y-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
           </h2>
-          {rows.map((row, i) => (
-            <div key={i} className="overflow-hidden">
+          {rows.map((row, idx) => (
+            <div key={idx} className="overflow-hidden">
               <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
-                {row.map(key => (
+                {row.map((key, i) => (
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g, ' ').toUpperCase()}
-                    className="h-10 sm:h-12 mx-4 inline-block"
+                    alt={key.replace(/-/g,' ').toUpperCase()}
+                    className={`h-10 sm:h-12 inline-block ${i < row.length - 1 ? 'mr-4' : ''}`}
                   />
                 ))}
               </Marquee>
@@ -94,7 +85,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer */}
+      {/* Footer alineado a la izquierda con doble espacio tras dirección */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -115,10 +106,11 @@ export default function App() {
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
+          <br /><br />
         </div>
       </footer>
 
-      {/* Botones de WhatsApp */}
+      {/* Botones de WhatsApp fijos */}
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         <a
           href="https://wa.me/34658945741"
