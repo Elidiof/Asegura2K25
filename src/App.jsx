@@ -1,56 +1,9 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Card, CardContent } from './components/ui/Card'
 import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
-
-// Componente CookieBanner
-function CookieBanner() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    // Comprueba si ya existe consentimiento guardado
-    const consent = localStorage.getItem('cookies-consent');
-    if (!consent) setVisible(true);
-  }, []);
-
-  const acceptCookies = () => {
-    localStorage.setItem('cookies-consent', 'true');
-    setVisible(false);
-  };
-
-  if (!visible) return null;
-
-  return (
-    <div
-      id="cookie-banner"
-      style={{
-        position: 'fixed',
-        bottom: 0,
-        width: '100%',
-        background: '#f5f5f5',
-        padding: '1em',
-        boxShadow: '0 -2px 5px rgba(0,0,0,0.1)',
-        zIndex: 1000
-      }}
-    >
-      <p className="text-center text-sm">
-        Utilizamos <strong>cookies propias</strong> para el correcto funcionamiento de la web y <strong>cookies de terceros</strong> (Google Analytics, redes sociales…) para analizar tu navegación y ofrecerte contenidos personalizados. Puedes aceptar todas o gestionar tus preferencias en nuestra{' '}
-        <a href="/politica-cookies" target="_blank" rel="noopener noreferrer" className="underline">
-          política de cookies
-        </a>.
-      </p>
-      <div className="flex justify-center space-x-2 mt-2">
-        <button onClick={acceptCookies} className="px-4 py-2 bg-blue-600 text-white rounded">
-          Aceptar todas
-        </button>
-        <button onClick={() => window.location.href = '/politica-cookies'} className="px-4 py-2 bg-gray-300 text-black rounded">
-          Configurar
-        </button>
-      </div>
-    </div>
-  );
-}
+import { CookieBanner } from './components/CookieBanner'
 
 export default function App() {
   const products = [
