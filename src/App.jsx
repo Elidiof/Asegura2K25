@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Card, CardContent } from './components/ui/Card'
 import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
@@ -7,6 +7,16 @@ import Contacto from './components/Contacto'
 
 export default function App() {
   const [showContacto, setShowContacto] = useState(false)
+
+  // Cuando se active showContacto, hacemos scroll a la sección
+  useEffect(() => {
+    if (showContacto) {
+      const el = document.getElementById('contacto')
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }, [showContacto])
 
   const products = [
     { name: 'Coche', icon: '/logos/coche.png' },
