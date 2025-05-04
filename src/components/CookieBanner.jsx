@@ -22,8 +22,8 @@ export function CookieBanner() {
 
   return (
     <div className="fixed inset-x-0 bottom-24 flex justify-center z-50">
-      <div className="bg-white shadow-lg rounded-2xl max-w-3xl w-full mx-4 p-6 flex flex-col md:flex-row items-center md:justify-between space-y-4 md:space-y-0">
-        <p className="text-gray-700 text-sm leading-relaxed md:w-2/3">
+      <div className="bg-white shadow-lg rounded-2xl max-w-3xl w-full mx-4 p-6 flex flex-col md:flex-row items-center md:justify-center space-y-4 md:space-y-0">
+        <p className="text-gray-700 text-sm leading-relaxed md:w-2/3 md:mr-6">
           Utilizamos <strong>cookies propias</strong> para el correcto funcionamiento de la web y <strong>cookies de terceros</strong> (Google Analytics, redes sociales…) para analizar tu navegación y ofrecerte contenidos personalizados. Puedes aceptar todas o gestionar tus preferencias en nuestra{' '}
           <a href="/politica-cookies" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
             política de cookies
