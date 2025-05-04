@@ -23,7 +23,7 @@ export function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-4 flex justify-center z-50">
+    <div className="fixed inset-x-0 bottom-24 flex justify-center z-50">
       <div className="bg-white shadow-lg rounded-2xl max-w-3xl w-full mx-4 p-6 flex flex-col md:flex-row items-center md:justify-between space-y-4 md:space-y-0">
         <p className="text-gray-700 text-sm leading-relaxed md:w-2/3">
           Utilizamos <strong>cookies propias</strong> para el correcto funcionamiento de la web y <strong>cookies de terceros</strong> (Google Analytics, redes sociales…) para analizar tu navegación y ofrecerte contenidos personalizados. Puedes aceptar todas o gestionar tus preferencias en nuestra{' '}
