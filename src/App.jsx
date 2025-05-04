@@ -5,7 +5,6 @@ import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
-  // Productos con iconos en PNG
   const products = [
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
@@ -19,14 +18,12 @@ export default function App() {
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
-  // Compañías en SVG
   const companias = [
     'mapfre','reale','generali','allianz','axa','asisa','dkv',
     'helvetia','zurich','adeslas','catalana-ocidente',
     'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
   ]
 
-  // Dividir en dos filas para el carrusel
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -49,7 +46,7 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos (opción 1: solo altura fija, ancho automático) */}
+        {/* Grid de productos con ajuste responsive para evitar scroll horizontal */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
@@ -60,7 +57,12 @@ export default function App() {
                 <img
                   src={icon}
                   alt={name}
-                  className="h-24 w-auto sm:h-32 sm:w-auto mb-3"
+                  className="
+                    w-4/5 h-auto
+                    sm:w-auto sm:h-24
+                    md:h-32
+                    mb-3
+                  "
                 />
                 <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
                   {name}
@@ -77,14 +79,8 @@ export default function App() {
           </h2>
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
-              <Marquee
-                gradient={false}
-                speed={50}
-                pauseOnHover
-                direction="left"
-                loop={0}
-              >
-                {row.map((key) => (
+              <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
+                {row.map((key, i) => (
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
