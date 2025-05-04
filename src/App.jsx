@@ -11,10 +11,10 @@ export default function App() {
     { name: 'Decesos', icon: '/logos/decesos.png' },
     { name: 'Salud', icon: '/logos/salud.png' },
     { name: 'Coche', icon: '/logos/coche.png' },
+    { name: 'Moto', icon: '/logos/moto.png' },                     // Nuevo producto
     { name: 'Taxi', icon: '/logos/taxi.png' },
     { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
     { name: 'Comunidad', icon: '/logos/comunidad.png' },
-    // Icono actualizado: transporte-mercancias.png → mercancias.png
     { name: 'Transporte de mercancías', icon: '/logos/mercancias.png' },
     { name: 'RC', icon: '/logos/rc.png' },
   ]
