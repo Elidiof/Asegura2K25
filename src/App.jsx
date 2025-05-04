@@ -35,12 +35,12 @@ export default function App() {
 
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
-      {/* Banner con logo (300% tamaño) */}
-      <div className="bg-blue-900 flex items-center justify-center py-4">
+      {/* Banner con logo (espacio reducido) */}
+      <div className="bg-blue-900 flex items-center justify-center py-2">
         <img
           src="/logos/asegura2k25.png"
           alt="Asegura2K25"
-          className="h-36 sm:h-48 w-auto"  // h-12→h-36 y sm:h-16→sm:h-48 (x3)
+          className="h-36 sm:h-48 w-auto"
         />
       </div>
 
@@ -115,7 +115,10 @@ export default function App() {
           </p>
         </div>
         <div className="mt-4 flex justify-center">
-          <a href="/legal.html" className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm">
+          <a
+            href="/legal.html"
+            className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
+          >
             Legal
           </a>
         </div>
