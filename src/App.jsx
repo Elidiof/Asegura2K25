@@ -35,18 +35,18 @@ export default function App() {
 
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
-      {/* Banner con logo */}
+      {/* Banner con logo (300% tamaño) */}
       <div className="bg-blue-900 flex items-center justify-center py-4">
         <img
           src="/logos/asegura2k25.png"
           alt="Asegura2K25"
-          className="h-12 sm:h-16"
+          className="h-36 sm:h-48 w-auto"  // h-12→h-36 y sm:h-16→sm:h-48 (x3)
         />
       </div>
 
       {/* Contenido principal */}
       <div className="flex-grow px-4 py-6 max-w-7xl mx-auto">
-        {/* Título (centrado bajo el logo) */}
+        {/* Título */}
         <header className="mb-8">
           <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center">
             Encuentra el seguro que necesitas
@@ -104,7 +104,12 @@ export default function App() {
           </p>
           <p className="text-sm">
             Dirección:{' '}
-            <a href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7" className="underline" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
