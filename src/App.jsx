@@ -13,7 +13,7 @@ export default function App() {
     { name: 'Decesos', icon: '/logos/decesos.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
     { name: 'Salud', icon: '/logos/salud.png' },
-    { name: 'Accidentes', icon: '/logos/accidentes.png' },    // Movido aquí
+    { name: 'Accidentes', icon: '/logos/accidentes.png' },
     { name: 'Taxi', icon: '/logos/taxi.png' },
     { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
     { name: 'Transporte de mercancías', icon: '/logos/mercancias.png' },
@@ -37,20 +37,17 @@ export default function App() {
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
       {/* Banner */}
-      <div className="bg-blue-900 text-white py-3 text-xl text-center">
-        Asegura2K25
-      </div>
+      <div className="bg-blue-900 text-white py-3 text-xl text-center">Asegura2K25</div>
 
       {/* Contenido principal */}
       <div className="flex-grow px-4 py-6 max-w-7xl mx-auto">
-        {/* Título */}
         <header className="mb-8">
           <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center">
             Encuentra el seguro que necesitas
           </h1>
         </header>
 
-        {/* Grid de productos sin etiquetas */}
+        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
@@ -75,13 +72,7 @@ export default function App() {
           </h2>
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
-              <Marquee
-                gradient={false}
-                speed={50}
-                pauseOnHover
-                direction="left"
-                loop={0}
-              >
+              <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
                 {row.map((key) => (
                   <img
                     key={key}
@@ -96,7 +87,7 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer con contacto y botón Legal centrado */}
+      {/* Footer con contacto y Legal */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -108,43 +99,45 @@ export default function App() {
           </p>
           <p className="text-sm">
             Dirección:{' '}
-            <a
-              href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7" target="_blank" rel="noopener noreferrer" className="underline">
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
         </div>
         <div className="mt-4 flex justify-center">
-          <a
-            href="/legal.html"
-            className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
-          >
+          <a href="/legal.html" className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm">
             Legal
           </a>
         </div>
       </footer>
 
       {/* Botones fijos de WhatsApp */}
-      <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
+      <div className="fixed bottom-4 right-4 flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 z-50">
+        {/* Texto */}
         <a
           href="https://wa.me/34658945741"
-          className="bg-green-500 text-white px-3 py-2 rounded-full shadow-lg hover:bg-green-600 transition text-xs sm:text-sm"
+          className="
+            bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition
+            px-3 py-2 text-xs sm:text-sm
+            md:px-6 md:py-4 md:text-base
+          "
           target="_blank"
           rel="noopener noreferrer"
         >
           Contáctanos vía WhatsApp
         </a>
+        {/* Icono */}
         <a
           href="https://wa.me/34658945741"
-          className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition"
+          className="
+            bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition
+            p-3
+            md:p-6
+          "
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaWhatsapp size={20} />
+          <FaWhatsapp className="h-5 w-5 md:h-10 md:w-10" />
         </a>
       </div>
     </main>
