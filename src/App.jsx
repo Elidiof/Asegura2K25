@@ -34,10 +34,12 @@ export default function App() {
     companias.slice(mitad),
   ]
 
+  const bgColor = '#F9F4F0'
+
   return (
-    <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
+    <main className="min-h-screen flex flex-col overflow-x-hidden" style={{ backgroundColor: bgColor }}>
       {/* Banner */}
-      <div className="bg-blue-900 text-white py-3 text-xl text-center">
+      <div className="text-white py-3 text-xl text-center" style={{ backgroundColor: '#1E3A8A' }}>
         Asegura2K25
       </div>
 
@@ -55,7 +57,8 @@ export default function App() {
           {products.map(({ name, icon }) => (
             <Card
               key={name}
-              className="bg-gray-100 shadow-none rounded-2xl p-3 sm:p-4 transition"
+              className="shadow-none rounded-2xl p-3 sm:p-4 transition"
+              style={{ backgroundColor: bgColor }}
             >
               <CardContent className="flex justify-center">
                 <img
@@ -97,7 +100,7 @@ export default function App() {
       </div>
 
       {/* Footer con contacto y botón Legal centrado */}
-      <footer className="bg-blue-900 text-white py-6">
+      <footer className="text-white py-6" style={{ backgroundColor: '#1E3A8A' }}>
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
           <p className="text-sm">
@@ -130,7 +133,6 @@ export default function App() {
 
       {/* Botones fijos de WhatsApp */}
       <div className="fixed bottom-4 right-4 flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 z-50">
-        {/* Botón de texto */}
         <a
           href="https://wa.me/34658945741"
           className="
@@ -144,7 +146,6 @@ export default function App() {
         >
           Contáctanos vía WhatsApp
         </a>
-        {/* Botón de icono */}
         <a
           href="https://wa.me/34658945741"
           className="
