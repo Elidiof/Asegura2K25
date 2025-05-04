@@ -1,10 +1,12 @@
 // src/App.jsx
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, CardContent } from './components/ui/Card'
 import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
+  const [showContacto, setShowContacto] = useState(false)
+
   const products = [
     { name: 'Coche', icon: '/logos/coche.png' },
     { name: 'Moto', icon: '/logos/moto.png' },
@@ -55,7 +57,8 @@ export default function App() {
           {products.map(({ name, icon }) => (
             <Card
               key={name}
-              className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black"
+              className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black cursor-pointer"
+              onClick={() => setShowContacto(true)}
             >
               <CardContent className="flex justify-center">
                 <img
@@ -94,6 +97,34 @@ export default function App() {
             </div>
           ))}
         </section>
+
+        {/* Sección Contacto (se muestra al pinchar un producto) */}
+        {showContacto && (
+          <section id="contacto" className="bg-white rounded-2xl shadow p-6 space-y-4 mb-12">
+            <h2 className="text-2xl font-semibold text-gray-800">Contacto</h2>
+            <p>Por favor, envíanos tus datos y te responderemos lo antes posible:</p>
+            <form className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Nombre</label>
+                <input type="text" className="mt-1 block w-full rounded border-gray-300" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" className="mt-1 block w-full rounded border-gray-300" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Teléfono</label>
+                <input type="tel" className="mt-1 block w-full rounded border-gray-300" />
+              </div>
+              <button
+                type="submit"
+                className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
+              >
+                Enviar
+              </button>
+            </form>
+          </section>
+        )}
       </div>
 
       {/* Footer con contacto y botón Legal centrado */}
@@ -127,6 +158,8 @@ export default function App() {
           </a>
         </div>
         {/* Espacio extra debajo de "Legal" */}
+        <div className="h-8"></div>
+        {/* Otro espacio adicional */}
         <div className="h-8"></div>
       </footer>
 
