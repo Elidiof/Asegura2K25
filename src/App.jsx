@@ -34,12 +34,10 @@ export default function App() {
     companias.slice(mitad),
   ]
 
-  const bgColor = '#F9F4F0'
-
   return (
-    <main className="min-h-screen flex flex-col overflow-x-hidden" style={{ backgroundColor: bgColor }}>
+    <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
       {/* Banner */}
-      <div className="text-white py-3 text-xl text-center" style={{ backgroundColor: '#1E3A8A' }}>
+      <div className="bg-blue-900 text-white py-3 text-xl text-center">
         Asegura2K25
       </div>
 
@@ -52,13 +50,12 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos sin etiquetas */}
+        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
               key={name}
-              className="shadow-none rounded-2xl p-3 sm:p-4 transition"
-              style={{ backgroundColor: bgColor }}
+              className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black"
             >
               <CardContent className="flex justify-center">
                 <img
@@ -100,7 +97,7 @@ export default function App() {
       </div>
 
       {/* Footer con contacto y botón Legal centrado */}
-      <footer className="text-white py-6" style={{ backgroundColor: '#1E3A8A' }}>
+      <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
           <p className="text-sm">
@@ -120,6 +117,8 @@ export default function App() {
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
+          {/* Espacio extra debajo de la dirección */}
+          <div className="h-8"></div>
         </div>
         <div className="mt-4 flex justify-center">
           <a
@@ -133,6 +132,7 @@ export default function App() {
 
       {/* Botones fijos de WhatsApp */}
       <div className="fixed bottom-4 right-4 flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 z-50">
+        {/* Botón de texto */}
         <a
           href="https://wa.me/34658945741"
           className="
@@ -146,6 +146,7 @@ export default function App() {
         >
           Contáctanos vía WhatsApp
         </a>
+        {/* Botón con icono */}
         <a
           href="https://wa.me/34658945741"
           className="
