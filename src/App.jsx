@@ -35,8 +35,8 @@ export default function App() {
 
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
-      {/* Banner con logo (espacio reducido) */}
-      <div className="bg-blue-900 flex items-center justify-center py-2">
+      {/* Banner con logo (altura reducida un 33%) */}
+      <div className="bg-blue-900 flex items-center justify-center py-1">
         <img
           src="/logos/asegura2k25.png"
           alt="Asegura2K25"
