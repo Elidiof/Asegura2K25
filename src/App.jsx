@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Card, CardContent } from './components/ui/Card'
 import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
+import Contacto from './components/Contacto'
 
 export default function App() {
   const [showContacto, setShowContacto] = useState(false)
@@ -29,7 +30,6 @@ export default function App() {
     'helvetia','zurich','adeslas','catalana-ocidente',
     'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
   ]
-
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
     companias.slice(0, mitad),
@@ -78,13 +78,7 @@ export default function App() {
           </h2>
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
-              <Marquee
-                gradient={false}
-                speed={50}
-                pauseOnHover
-                direction="left"
-                loop={0}
-              >
+              <Marquee gradient={false} speed={50} pauseOnHover>
                 {row.map((key) => (
                   <img
                     key={key}
@@ -98,36 +92,11 @@ export default function App() {
           ))}
         </section>
 
-        {/* Sección Contacto (se muestra al pinchar un producto) */}
-        {showContacto && (
-          <section id="contacto" className="bg-white rounded-2xl shadow p-6 space-y-4 mb-12">
-            <h2 className="text-2xl font-semibold text-gray-800">Contacto</h2>
-            <p>Por favor, envíanos tus datos y te responderemos lo antes posible:</p>
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Nombre</label>
-                <input type="text" className="mt-1 block w-full rounded border-gray-300" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" className="mt-1 block w-full rounded border-gray-300" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">Teléfono</label>
-                <input type="tel" className="mt-1 block w-full rounded border-gray-300" />
-              </div>
-              <button
-                type="submit"
-                className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800 transition"
-              >
-                Enviar
-              </button>
-            </form>
-          </section>
-        )}
+        {/* Sección Contacto */}
+        {showContacto && <Contacto />}
       </div>
 
-      {/* Footer con contacto y botón Legal centrado */}
+      {/* Footer */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -135,7 +104,10 @@ export default function App() {
             Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
           </p>
           <p className="text-sm">
-            Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
+            Email:{' '}
+            <a href="mailto:contacto@asegura2k25.com" className="underline">
+              contacto@asegura2k25.com
+            </a>
           </p>
           <p className="text-sm">
             Dirección:{' '}
@@ -157,35 +129,24 @@ export default function App() {
             Legal
           </a>
         </div>
-        {/* Espacio extra debajo de "Legal" */}
+        {/* Espacios extras debajo de "Legal" */}
         <div className="h-8"></div>
-        {/* Otro espacio adicional */}
         <div className="h-8"></div>
       </footer>
 
-      {/* Botones fijos de WhatsApp siempre en fila */}
+      {/* Botones fijos de WhatsApp */}
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
-        {/* Botón de texto */}
         <a
           href="https://wa.me/34658945741"
-          className="
-            flex items-center justify-center
-            bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition
-            px-3 py-2 text-xs sm:text-sm md:px-6 md:py-4 md:text-base
-          "
+          className="flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition px-3 py-2 text-xs sm:text-sm md:px-6 md:py-4 md:text-base"
           target="_blank"
           rel="noopener noreferrer"
         >
           Contáctanos vía WhatsApp
         </a>
-        {/* Botón con icono */}
         <a
           href="https://wa.me/34658945741"
-          className="
-            flex items-center justify-center
-            bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition
-            p-3 md:p-6
-          "
+          className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition p-3 md:p-6"
           target="_blank"
           rel="noopener noreferrer"
         >
