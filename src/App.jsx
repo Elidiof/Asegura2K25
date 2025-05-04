@@ -46,25 +46,20 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos con ajuste responsive para evitar scroll horizontal */}
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-12">
+        {/* Grid de productos: gap reducido en móvil */}
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
               key={name}
-              className="bg-gray-100 shadow-none rounded-2xl p-4 transition"
+              className="bg-gray-100 shadow-none rounded-2xl p-3 sm:p-4 transition"
             >
               <CardContent className="flex flex-col items-center">
                 <img
                   src={icon}
                   alt={name}
-                  className="
-                    w-4/5 h-auto
-                    sm:w-auto sm:h-24
-                    md:h-32
-                    mb-3
-                  "
+                  className="h-20 w-auto sm:h-24 sm:w-auto mb-2 sm:mb-3"
                 />
-                <p className="text-sm sm:text-base font-medium text-gray-800 text-center">
+                <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800 text-center">
                   {name}
                 </p>
               </CardContent>
@@ -72,20 +67,26 @@ export default function App() {
           ))}
         </section>
 
-        {/* Carrusel de compañías */}
+        {/* Carrusel de compañías con márgenes adaptados */}
         <section className="mb-10 space-y-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
           </h2>
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={50} pauseOnHover direction="left" loop={0}>
-                {row.map((key, i) => (
+              <Marquee
+                gradient={false}
+                speed={50}
+                pauseOnHover
+                direction="left"
+                loop={0}
+              >
+                {row.map((key) => (
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
                     alt={key.replace(/-/g, ' ').toUpperCase()}
-                    className="h-10 sm:h-12 inline-block mx-[0.5cm]"
+                    className="h-10 sm:h-12 inline-block mx-2 sm:mx-[0.5cm]"
                   />
                 ))}
               </Marquee>
@@ -130,7 +131,7 @@ export default function App() {
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         <a
           href="https://wa.me/34658945741"
-          className="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-green-600 transition text-sm"
+          className="bg-green-500 text-white px-3 py-2 rounded-full shadow-lg hover:bg-green-600 transition text-xs sm:text-sm"
           target="_blank"
           rel="noopener noreferrer"
         >
