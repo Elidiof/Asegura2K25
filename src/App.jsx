@@ -1,23 +1,10 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Card, CardContent } from './components/ui/Card'
 import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
-import Contacto from './components/Contacto'
 
 export default function App() {
-  const [showContacto, setShowContacto] = useState(false)
-
-  // Cuando se active showContacto, hacemos scroll a la sección
-  useEffect(() => {
-    if (showContacto) {
-      const el = document.getElementById('contacto')
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }
-  }, [showContacto])
-
   const products = [
     { name: 'Coche', icon: '/logos/coche.png' },
     { name: 'Moto', icon: '/logos/moto.png' },
@@ -62,22 +49,20 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos */}
+        {/* Grid de productos: cada Card envuelta en un enlace a /contacto.html */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
           {products.map(({ name, icon }) => (
-            <Card
-              key={name}
-              className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black cursor-pointer"
-              onClick={() => setShowContacto(true)}
-            >
-              <CardContent className="flex justify-center">
-                <img
-                  src={icon}
-                  alt={name}
-                  className="h-20 w-auto sm:h-24 mb-2 sm:mb-3"
-                />
-              </CardContent>
-            </Card>
+            <a key={name} href="/contacto.html" className="block">
+              <Card className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black hover:shadow-lg">
+                <CardContent className="flex justify-center">
+                  <img
+                    src={icon}
+                    alt={name}
+                    className="h-20 w-auto sm:h-24 mb-2 sm:mb-3"
+                  />
+                </CardContent>
+              </Card>
+            </a>
           ))}
         </section>
 
@@ -101,9 +86,6 @@ export default function App() {
             </div>
           ))}
         </section>
-
-        {/* Sección Contacto */}
-        {showContacto && <Contacto />}
       </div>
 
       {/* Footer */}
