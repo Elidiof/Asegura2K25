@@ -46,28 +46,25 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos: gap reducido en móvil */}
+        {/* Grid de productos sin etiquetas */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
               key={name}
               className="bg-gray-100 shadow-none rounded-2xl p-3 sm:p-4 transition"
             >
-              <CardContent className="flex flex-col items-center">
+              <CardContent className="flex justify-center">
                 <img
                   src={icon}
                   alt={name}
-                  className="h-20 w-auto sm:h-24 sm:w-auto mb-2 sm:mb-3"
+                  className="h-20 w-auto sm:h-24 mb-2 sm:mb-3"
                 />
-                <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800 text-center">
-                  {name}
-                </p>
               </CardContent>
             </Card>
           ))}
         </section>
 
-        {/* Carrusel de compañías con márgenes adaptados */}
+        {/* Carrusel de compañías */}
         <section className="mb-10 space-y-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
