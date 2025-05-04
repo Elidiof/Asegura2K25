@@ -117,8 +117,6 @@ export default function App() {
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
-          {/* Espacio extra debajo de la dirección */}
-          <div className="h-8"></div>
         </div>
         <div className="mt-4 flex justify-center">
           <a
@@ -128,6 +126,8 @@ export default function App() {
             Legal
           </a>
         </div>
+        {/* Espacio extra debajo de "Legal" */}
+        <div className="h-8"></div>
       </footer>
 
       {/* Botones fijos de WhatsApp siempre en fila */}
