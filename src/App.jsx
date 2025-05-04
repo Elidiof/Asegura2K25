@@ -1,155 +1,80 @@
-// src/App.jsx
-import React from 'react'
-import { Card, CardContent } from './components/ui/Card'
-import { FaWhatsapp } from 'react-icons/fa'
-import Marquee from 'react-fast-marquee'
-import { CookieBanner } from './components/CookieBanner'
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto – Asegura2K25</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased bg-gray-100 flex flex-col min-h-screen">
 
-export default function App() {
-  const products = [
-    { name: 'Coche', icon: '/logos/coche.png' },
-    { name: 'Moto', icon: '/logos/moto.png' },
-    { name: 'Hogar', icon: '/logos/hogar.png' },
-    { name: 'Comunidad', icon: '/logos/comunidad.png' },
-    { name: 'Decesos', icon: '/logos/decesos.png' },
-    { name: 'Vida', icon: '/logos/vida.png' },
-    { name: 'Salud', icon: '/logos/salud.png' },
-    { name: 'Accidentes', icon: '/logos/accidentes.png' },
-    { name: 'Taxi', icon: '/logos/taxi.png' },
-    { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
-    { name: 'Transporte de mercancías', icon: '/logos/mercancias.png' },
-    { name: 'Empresas', icon: '/logos/empresas.png' },
-    { name: 'RC', icon: '/logos/rc.png' },
-    { name: 'Agroseguro', icon: '/logos/agroseguro.png' },
-  ]
+  <!-- Banner superior -->
+  <div class="bg-blue-900 text-white py-4 text-2xl font-bold text-center">
+    Asegura2K25
+  </div>
 
-  const companias = [
-    'mapfre','reale','generali','allianz','axa','asisa','dkv',
-    'helvetia','zurich','adeslas','catalana-ocidente',
-    'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
-  ]
-  const mitad = Math.ceil(companias.length / 2)
-  const rows = [
-    companias.slice(0, mitad),
-    companias.slice(mitad),
-  ]
+  <!-- Contenido principal -->
+  <main class="flex-grow max-w-7xl mx-auto p-6 space-y-8">
+    <!-- Encabezado -->
+    <header class="text-center">
+      <h1 class="text-4xl font-bold text-blue-900">Contáctenos</h1>
+      <nav class="mt-2">
+        <a href="/" class="underline text-gray-600 hover:text-gray-800">← Volver al inicio</a>
+      </nav>
+    </header>
 
-  return (
-    <>
-      {/* Banner de cookies */}
-      <CookieBanner />
+    <!-- Sección de contacto -->
+    <section class="bg-white rounded-2xl shadow p-6 space-y-6">
+      <!-- Texto dividido en dos líneas -->
+      <p class="text-gray-700 text-center text-lg">
+        Contáctenos por WhatsApp
+      </p>
+      <p class="text-gray-700 text-center text-lg">
+        o por email y le responderemos lo antes posible
+      </p>
 
-      <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
-        {/* Banner principal */}
-        <div className="bg-blue-900 text-white py-3 text-xl text-center">
-          Asegura2K25
-        </div>
+      <!-- Botón grande de WhatsApp -->
+      <div class="flex justify-center">
+        <a
+          href="https://wa.me/34658945741"
+          class="bg-green-500 hover:bg-green-600 text-white font-medium text-lg px-8 py-4 rounded-xl transition inline-flex items-center"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <!-- Icono WhatsApp -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.52 3.48A11.953 11.953 0 0012 0C5.373 0 0 5.373 0 12a11.892 11.892 0 001.64 6.02L0 24l6.08-1.64A11.892 11.892 0 0012 24c6.627 0 12-5.373 12-12a11.953 11.953 0 00-3.48-8.52zm-8.52 19.02c-2.06 0-4.08-.56-5.84-1.62l-.42-.26-3.61.98.98-3.54-.27-.44A9.934 9.934 0 012.04 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.49-7.09c-.3-.15-1.78-.88-2.05-.98-.27-.11-.47-.15-.67.15s-.77.98-.95 1.18c-.18.2-.37.22-.68.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.67-2.09-.17-.31-.02-.48.13-.63.14-.14.3-.37.45-.55.15-.18.2-.3.3-.5.1-.2 0-.37-.01-.52-.01-.15-.67-1.62-.92-2.23-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37s-1.04 1.01-1.04 2.47 1.07 2.86 1.22 3.05c.15.18 2.1 3.2 5.09 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.78-.72 2.03-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.57-.35z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
 
-        {/* Contenido principal */}
-        <div className="flex-grow px-4 py-6 max-w-7xl mx-auto">
-          {/* Título */}
-          <header className="mb-8">
-            <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center">
-              Encuentra el seguro que necesitas
-            </h1>
-          </header>
+      <!-- Email destacado -->
+      <p class="text-center text-gray-900 font-semibold text-lg">
+        O envíenos un email a
+        <a href="mailto:contacto@asegura2k25.com" class="underline ml-1">
+          contacto@asegura2k25.com
+        </a>
+      </p>
+    </section>
+  </main>
 
-          {/* Grid de productos */}
-          <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
-            {products.map(({ name, icon }) => (
-              <a key={name} href="/contacto.html" className="block">
-                <Card className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black hover:shadow-lg">
-                  <CardContent className="flex justify-center">
-                    <img
-                      src={icon}
-                      alt={name}
-                      className="h-20 w-auto sm:h-24 mb-2 sm:mb-3"
-                    />
-                  </CardContent>
-                </Card>
-              </a>
-            ))}
-          </section>
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-8">
+    <div class="max-w-7xl mx-auto text-left space-y-2 px-6">
+      <p class="text-xl font-semibold">Elidio Ferrer</p>
+      <p>Tel: <a href="tel:+34658945741" class="underline">658 945 741</a></p>
+      <p>Email: <a href="mailto:contacto@asegura2k25.com" class="underline">contacto@asegura2k25.com</a></p>
+      <p>Dirección: <a href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7" class="underline" target="_blank" rel="noopener">Calle Pino, 27 · Andújar (Jaén) · CP 23740</a></p>
+    </div>
+    <div class="mt-4 flex justify-center">
+      <a href="/legal.html" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm">
+        Legal
+      </a>
+    </div>
+    <!-- Espacio extra bajo Legal -->
+    <div class="h-8"></div>
+  </footer>
 
-          {/* Carrusel de compañías */}
-          <section className="mb-10 space-y-4">
-            <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
-              Compañías aseguradoras con las que colaboramos
-            </h2>
-            {rows.map((row, idx) => (
-              <div key={idx} className="overflow-hidden">
-                <Marquee gradient={false} speed={50} pauseOnHover>
-                  {row.map((key) => (
-                    <img
-                      key={key}
-                      src={`/logos/${key}.svg`}
-                      alt={key.replace(/-/g, ' ').toUpperCase()}
-                      className="h-10 sm:h-12 inline-block mx-2 sm:mx-[0.5cm]"
-                    />
-                  ))}
-                </Marquee>
-              </div>
-            ))}
-          </section>
-        </div>
-
-        {/* Footer */}
-        <footer className="bg-blue-900 text-white py-6">
-          <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
-            <p className="text-lg font-semibold">Elidio Ferrer</p>
-            <p className="text-sm">
-              Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
-            </p>
-            <p className="text-sm">
-              Email:{' '}
-              <a href="mailto:contacto@asegura2k25.com" className="underline">
-                contacto@asegura2k25.com
-              </a>
-            </p>
-            <p className="text-sm">
-              Dirección:{' '}
-              <a
-                href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
-                className="underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Calle Pino, 27 · Andújar (Jaén) · CP 23740
-              </a>
-            </p>
-          </div>
-          <div className="mt-4 flex justify-center">
-            <a
-              href="/legal.html"
-              className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
-            >
-              Legal
-            </a>
-          </div>
-          <div className="h-8"></div>
-          <div className="h-8"></div>
-        </footer>
-
-        {/* Botones fijos de WhatsApp */}
-        <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
-          <a
-            href="https://wa.me/34658945741"
-            className="flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition px-3 py-2 text-xs sm:text-sm md:px-6 md:py-4 md:text-base"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Contáctanos vía WhatsApp
-          </a>
-          <a
-            href="https://wa.me/34658945741"
-            className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition p-3 md:p-6"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaWhatsapp className="h-5 w-5 md:h-10 md:w-10" />
-          </a>
-        </div>
-      </main>
-    </>
-  )
-}
+</body>
+</html>
