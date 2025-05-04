@@ -29,16 +29,16 @@ export function CookieBanner() {
             política de cookies
           </a>.
         </p>
-        <div className="flex-shrink-0 flex w-full space-x-3 md:flex-col md:space-x-0 md:space-y-3">
+        <div className="flex-shrink-0 flex flex-row items-center space-x-3 md:flex-col md:space-y-3 md:w-max">
           <button
             onClick={acceptAll}
-            className="w-1/2 md:w-full text-center px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow"
+            className="w-auto md:w-full text-center px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow"
           >
             Aceptar todas
           </button>
           <button
             onClick={openSettings}
-            className="w-1/2 md:w-full text-center px-5 py-2 border border-gray-300 hover:border-gray-400 text-gray-800 rounded-lg font-medium"
+            className="w-auto md:w-full text-center px-5 py-2 border border-gray-300 hover:border-gray-400 text-gray-800 rounded-lg font-medium"
           >
             Configurar
           </button>
