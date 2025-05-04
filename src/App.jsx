@@ -14,7 +14,8 @@ export default function App() {
     { name: 'Taxi', icon: '/logos/taxi.png' },
     { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
     { name: 'Comunidad', icon: '/logos/comunidad.png' },
-    { name: 'Transporte de mercancías', icon: '/logos/transporte-mercancias.png' },
+    // Icono actualizado: transporte-mercancias.png → mercancias.png
+    { name: 'Transporte de mercancías', icon: '/logos/mercancias.png' },
     { name: 'RC', icon: '/logos/rc.png' },
   ]
 
