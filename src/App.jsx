@@ -6,17 +6,20 @@ import Marquee from 'react-fast-marquee'
 
 export default function App() {
   const products = [
-    { name: 'Hogar', icon: '/logos/hogar.png' },
-    { name: 'Vida', icon: '/logos/vida.png' },
-    { name: 'Decesos', icon: '/logos/decesos.png' },
-    { name: 'Salud', icon: '/logos/salud.png' },
     { name: 'Coche', icon: '/logos/coche.png' },
-    { name: 'Moto', icon: '/logos/moto.png' },                     // Nuevo producto
+    { name: 'Moto', icon: '/logos/moto.png' },
+    { name: 'Hogar', icon: '/logos/hogar.png' },
+    { name: 'Comunidad', icon: '/logos/comunidad.png' },
+    { name: 'Decesos', icon: '/logos/decesos.png' },
+    { name: 'Vida', icon: '/logos/vida.png' },
+    { name: 'Salud', icon: '/logos/salud.png' },
+    { name: 'Accidentes', icon: '/logos/accidentes.png' },    // Movido aquí
     { name: 'Taxi', icon: '/logos/taxi.png' },
     { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
-    { name: 'Comunidad', icon: '/logos/comunidad.png' },
     { name: 'Transporte de mercancías', icon: '/logos/mercancias.png' },
+    { name: 'Empresas', icon: '/logos/empresas.png' },
     { name: 'RC', icon: '/logos/rc.png' },
+    { name: 'Agroseguro', icon: '/logos/agroseguro.png' },
   ]
 
   const companias = [
@@ -48,7 +51,7 @@ export default function App() {
         </header>
 
         {/* Grid de productos sin etiquetas */}
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4 mb-12">
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
           {products.map(({ name, icon }) => (
             <Card
               key={name}
