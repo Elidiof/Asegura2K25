@@ -130,16 +130,15 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Botones fijos de WhatsApp */}
-      <div className="fixed bottom-4 right-4 flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 z-50">
+      {/* Botones fijos de WhatsApp siempre en fila */}
+      <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         {/* Botón de texto */}
         <a
           href="https://wa.me/34658945741"
           className="
             flex items-center justify-center
             bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition
-            px-3 py-2 text-xs sm:text-sm
-            md:px-6 md:py-4 md:text-base
+            px-3 py-2 text-xs sm:text-sm md:px-6 md:py-4 md:text-base
           "
           target="_blank"
           rel="noopener noreferrer"
@@ -152,8 +151,7 @@ export default function App() {
           className="
             flex items-center justify-center
             bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition
-            p-3
-            md:p-6
+            p-3 md:p-6
           "
           target="_blank"
           rel="noopener noreferrer"
