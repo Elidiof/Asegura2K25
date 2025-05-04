@@ -31,7 +31,7 @@ export function CookieBanner() {
             política de cookies
           </a>.
         </p>
-        <div className="flex-shrink-0 flex space-x-3">
+        <div className="flex-shrink-0 flex flex-col items-center space-y-3 md:flex-row md:space-y-0 md:space-x-3">
           <button
             onClick={acceptAll}
             className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow"
@@ -40,7 +40,7 @@ export function CookieBanner() {
           </button>
           <button
             onClick={openSettings}
-            className="px-5 py-2 border border-gray-300 hover:border-gray-400 text-gray-800 rounded-lg font-medium"
+            className="px-5 py-2 border border-gray-300 hover:border-gray-400 text-gray-800 rounded-lg font-medium mb-4 md:mb-0"
           >
             Configurar
           </button>
