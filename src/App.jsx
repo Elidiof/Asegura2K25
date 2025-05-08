@@ -38,7 +38,7 @@ export default function App() {
       {/* Banner con logo */}
       <div className="bg-blue-900 flex items-center justify-center py-4">
         <img
-          src="/logos/asegura2k25.svg"
+          src="/logos/logo.png"
           alt="Asegura2K25"
           className="h-12 sm:h-16"
         />
