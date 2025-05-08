@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react'
 import { Card, CardContent } from './components/ui/Card'
+import { CookieBanner } from './components/CookieBanner'
 import { FaWhatsapp } from 'react-icons/fa'
 import Marquee from 'react-fast-marquee'
 
@@ -35,18 +36,18 @@ export default function App() {
 
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
-      {/* Banner con logo */}
+      {/* Banner con logo ampliado */}
       <div className="bg-blue-900 flex items-center justify-center py-4">
         <img
           src="/logos/logo.png"
           alt="Asegura2K25"
-          className="h-12 sm:h-16"
+          className="h-24 sm:h-32"
         />
       </div>
 
       {/* Contenido principal */}
       <div className="flex-grow px-4 py-6 max-w-7xl mx-auto">
-        {/* Título (centrado bajo el logo) */}
+        {/* Título */}
         <header className="mb-8">
           <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center">
             Encuentra el seguro que necesitas
@@ -82,7 +83,7 @@ export default function App() {
                   <img
                     key={key}
                     src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g, ' ').toUpperCase()}
+                    alt={`Logo de ${key.replace(/-/g, ' ')}`}
                     className="h-10 sm:h-12 inline-block mx-2 sm:mx-[0.5cm]"
                   />
                 ))}
@@ -100,17 +101,28 @@ export default function App() {
             Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
           </p>
           <p className="text-sm">
-            Email: <a href="mailto:contacto@asegura2k25.com" className="underline">contacto@asegura2k25.com</a>
+            Email:{' '}
+            <a href="mailto:contacto@asegura2k25.com" className="underline">
+              contacto@asegura2k25.com
+            </a>
           </p>
           <p className="text-sm">
             Dirección:{' '}
-            <a href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7" className="underline" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
+              className="underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Calle Pino, 27 · Andújar (Jaén) · CP 23740
             </a>
           </p>
         </div>
         <div className="mt-4 flex justify-center">
-          <a href="/legal.html" className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm">
+          <a
+            href="/legal.html"
+            className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
+          >
             Legal
           </a>
         </div>
@@ -118,7 +130,7 @@ export default function App() {
         <div className="h-8"></div>
       </footer>
 
-      {/* Botones fijos de WhatsApp */}
+      {/* Botones flotantes de WhatsApp */}
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         <a
           href="https://wa.me/34658945741"
@@ -137,6 +149,9 @@ export default function App() {
           <FaWhatsapp className="h-5 w-5 md:h-10 md:w-10" />
         </a>
       </div>
+
+      {/* Banner de cookies */}
+      <CookieBanner />
     </main>
   )
 }
