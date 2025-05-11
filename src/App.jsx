@@ -10,7 +10,7 @@ export default function App() {
     { name: 'Coche', icon: '/logos/coche.png' },
     { name: 'Moto', icon: '/logos/moto.png' },
     { name: 'Hogar', icon: '/logos/hogar.png' },
-    { name: 'Comunidad', icon: '/logos/comunidad.png' },
+    { name: 'Comunidad', icon: '/logos/comunidades.png' },
     { name: 'Decesos', icon: '/logos/decesos.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
     { name: 'Salud', icon: '/logos/salud.png' },
@@ -21,7 +21,7 @@ export default function App() {
     { name: 'Empresas', icon: '/logos/empresas.png' },
     { name: 'RC', icon: '/logos/rc.png' },
     { name: 'Agroseguro', icon: '/logos/agroseguro.png' },
-    { name: 'Mascotas', icon: '/logos/mascotas.png' }, // nuevo producto
+    { name: 'Mascotas', icon: '/logos/mascotas.png' },
   ]
 
   const companias = [
@@ -82,7 +82,7 @@ export default function App() {
                 {row.map((key) => (
                   <img
                     key={key}
-                    src={`/logos/${key}.png`}
+                    src={`/logos/${key}.svg`}
                     alt={`Logo de ${key.replace(/-/g, ' ')}`}
                     className="h-10 sm:h-12 inline-block mx-2 sm:mx-[0.5cm]"
                   />
