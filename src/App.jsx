@@ -21,12 +21,13 @@ export default function App() {
     { name: 'Empresas', icon: '/logos/empresas.png' },
     { name: 'RC', icon: '/logos/rc.png' },
     { name: 'Agroseguro', icon: '/logos/agroseguro.png' },
+    { name: 'Mascotas', icon: '/logos/mascotas.png' }, // nuevo producto
   ]
 
   const companias = [
-    'mapfre','reale','generali','allianz','axa','asisa','dkv',
-    'helvetia','zurich','adeslas','catalana-ocidente',
-    'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
+    'mapfre', 'reale', 'generali', 'allianz', 'axa', 'asisa', 'dkv',
+    'helvetia', 'zurich', 'adeslas', 'catalana-ocidente',
+    'mutuamadrilena', 'santalucia', 'pelayo', 'aegon', 'hiscox'
   ]
   const mitad = Math.ceil(companias.length / 2)
   const rows = [
@@ -36,7 +37,7 @@ export default function App() {
 
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
-      {/* Banner con logo ampliado */}
+      {/* Banner con logo grande */}
       <div className="bg-blue-900 flex items-center justify-center py-4">
         <img
           src="/logos/logo.png"
@@ -47,7 +48,6 @@ export default function App() {
 
       {/* Contenido principal */}
       <div className="flex-grow px-4 py-6 max-w-7xl mx-auto">
-        {/* Título */}
         <header className="mb-8">
           <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center">
             Encuentra el seguro que necesitas
@@ -82,7 +82,7 @@ export default function App() {
                 {row.map((key) => (
                   <img
                     key={key}
-                    src={`/logos/${key}.svg`}
+                    src={`/logos/${key}.png`}
                     alt={`Logo de ${key.replace(/-/g, ' ')}`}
                     className="h-10 sm:h-12 inline-block mx-2 sm:mx-[0.5cm]"
                   />
