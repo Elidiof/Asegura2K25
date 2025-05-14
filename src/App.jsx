@@ -37,16 +37,10 @@ export default function App() {
 
   return (
     <main className="min-h-screen flex flex-col overflow-x-hidden bg-gray-100">
-      {/* Banner con logo grande */}
       <div className="bg-blue-900 flex items-center justify-center py-4">
-        <img
-          src="/logos/logo.png"
-          alt="Asegura2K25"
-          className="h-24 sm:h-32"
-        />
+        <img src="/logos/logo.png" alt="Asegura2K25" className="h-24 sm:h-32" />
       </div>
 
-      {/* Contenido principal */}
       <div className="flex-grow px-4 py-6 max-w-7xl mx-auto">
         <header className="mb-8">
           <h1 className="text-2xl sm:text-4xl font-bold text-blue-900 text-center">
@@ -54,24 +48,30 @@ export default function App() {
           </h1>
         </header>
 
-        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
-          {products.map(({ name, icon }) => (
-            <a key={name} href="/contacto.html" className="block">
-              <Card className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black hover:shadow-lg">
-                <CardContent className="flex justify-center">
-                  <img
-                    src={icon}
-                    alt={name}
-                    className="h-20 w-auto sm:h-24 mb-2 sm:mb-3"
-                  />
-                </CardContent>
-              </Card>
-            </a>
-          ))}
+          {products.map(({ name, icon }) => {
+            const href = `/seguro-${name
+              .toLowerCase()
+              .replace(/ /g, '-')
+              .normalize('NFD')
+              .replace(/[^a-z0-9-]/g, '')}.html`
+
+            return (
+              <a key={name} href={href} className="block">
+                <Card className="bg-gray-100 rounded-2xl p-3 sm:p-4 transition border border-black hover:shadow-lg">
+                  <CardContent className="flex justify-center">
+                    <img
+                      src={icon}
+                      alt={name}
+                      className="h-20 w-auto sm:h-24 mb-2 sm:mb-3"
+                    />
+                  </CardContent>
+                </Card>
+              </a>
+            )
+          })}
         </section>
 
-        {/* Carrusel de compañías */}
         <section className="mb-10 space-y-4">
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
@@ -93,7 +93,6 @@ export default function App() {
         </section>
       </div>
 
-      {/* Footer */}
       <footer className="bg-blue-900 text-white py-6">
         <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
           <p className="text-lg font-semibold">Elidio Ferrer</p>
@@ -130,7 +129,6 @@ export default function App() {
         <div className="h-8"></div>
       </footer>
 
-      {/* Botones flotantes de WhatsApp */}
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         <a
           href="https://wa.me/34658945741"
@@ -150,7 +148,6 @@ export default function App() {
         </a>
       </div>
 
-      {/* Banner de cookies */}
       <CookieBanner />
     </main>
   )
