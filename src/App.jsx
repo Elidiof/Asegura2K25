@@ -8,20 +8,23 @@ import Marquee from 'react-fast-marquee'
 export default function App() {
   const products = [
     { name: 'Coche', icon: '/logos/coche.png' },
-    { name: 'Moto', icon: '/logos/moto.png' },
     { name: 'Hogar', icon: '/logos/hogar.png' },
-    { name: 'Comunidad', icon: '/logos/comunidades.png' },
-    { name: 'Decesos', icon: '/logos/decesos.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
     { name: 'Salud', icon: '/logos/salud.png' },
-    { name: 'Accidentes', icon: '/logos/accidentes.png' },
-    { name: 'Taxi', icon: '/logos/taxi.png' },
-    { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
-    { name: 'Transporte de mercancías', icon: '/logos/mercancias.png' },
+    { name: 'Alquiler', icon: '/logos/alquiler.png' },
     { name: 'Empresas', icon: '/logos/empresas.png' },
     { name: 'RC', icon: '/logos/rc.png' },
-    { name: 'Agroseguro', icon: '/logos/agroseguro.png' },
+    { name: 'Accidentes', icon: '/logos/accidentes.png' },
     { name: 'Mascotas', icon: '/logos/mascotas.png' },
+    { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
+    { name: 'Transporte de mercancías', icon: '/logos/mercancias.png' },
+    { name: 'Agroseguro', icon: '/logos/agroseguro.png' },
+    { name: 'Comunidad', icon: '/logos/comunidades.png' },
+    { name: 'Decesos', icon: '/logos/decesos.png' },
+    { name: 'Taxi', icon: '/logos/taxi.png' },
+    { name: 'Moto', icon: '/logos/moto.png' },
+    { name: 'Patinete', icon: '/logos/patinete.png' },
+    { name: 'Instrumentos', icon: '/logos/instrumentos.png' }
   ]
 
   const companias = [
