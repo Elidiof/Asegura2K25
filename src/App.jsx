@@ -1,8 +1,10 @@
+
 // src/App.jsx
 import React from 'react'
 import { Card, CardContent } from './components/ui/Card'
 import { CookieBanner } from './components/CookieBanner'
 import { FaWhatsapp } from 'react-icons/fa'
+import Footer from './components/Footer'
 import Marquee from 'react-fast-marquee'
 
 export default function App() {
@@ -96,41 +98,7 @@ export default function App() {
         </section>
       </div>
 
-      <footer className="bg-blue-900 text-white py-6">
-        <div className="max-w-7xl mx-auto text-left space-y-1 px-4">
-          <p className="text-lg font-semibold">Elidio Ferrer</p>
-          <p className="text-sm">
-            Tel: <a href="tel:+34658945741" className="underline">658 945 741</a>
-          </p>
-          <p className="text-sm">
-            Email:{' '}
-            <a href="mailto:contacto@asegura2k25.com" className="underline">
-              contacto@asegura2k25.com
-            </a>
-          </p>
-          <p className="text-sm">
-            Dirección:{' '}
-            <a
-              href="https://maps.app.goo.gl/BDtpFwcmUxzDDbeK7"
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Calle Pino, 27 · Andújar (Jaén) · CP 23740
-            </a>
-          </p>
-        </div>
-        <div className="mt-4 flex justify-center">
-          <a
-            href="/legal.html"
-            className="bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
-          >
-            Legal
-          </a>
-        </div>
-        <div className="h-8"></div>
-        <div className="h-8"></div>
-      </footer>
+      <Footer />
 
       <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
         <a
