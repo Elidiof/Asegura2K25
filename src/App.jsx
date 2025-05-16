@@ -98,28 +98,37 @@ export default function App() {
         </section>
       </div>
 
-      <Footer />
-
-      <div className="fixed bottom-4 right-4 flex space-x-2 z-50">
-        <a
-          href="https://wa.me/34658945741"
-          className="flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition px-3 py-2 text-xs sm:text-sm md:px-6 md:py-4 md:text-base"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Contáctanos vía WhatsApp
+  <footer class="bg-blue-900 text-white py-8 text-sm px-6">
+    <div class="max-w-4xl mx-auto space-y-3">
+      <div class="flex items-center gap-2">
+        <span class="font-bold">📍</span>
+        <a href="https://maps.app.goo.gl/z9Gq6t1j3RNKVJyG6" target="_blank" rel="noopener" class="underline">
+          Calle Pino 27, Andújar (Jaén) 23740
         </a>
-        <a
-          href="https://wa.me/34658945741"
-          className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition p-3 md:p-6"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaWhatsapp className="h-5 w-5 md:h-10 md:w-10" />
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="font-bold">📞</span>
+        <a href="https://wa.me/34658945741" target="_blank" rel="noopener" class="underline">
+          Teléfono / WhatsApp: 658 945 741
+        </a>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="font-bold">✉️</span>
+        <a href="mailto:contacto@asegura2k25.com" class="underline">
+          contacto@asegura2k25.com
         </a>
       </div>
 
-      <CookieBanner />
-    </main>
-  )
-}
+      <div class="mt-4">
+        <a href="/legal.html" class="inline-block bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm">
+          Legal
+        </a>
+      </div>
+
+      <div class="mt-4 text-xs text-center text-gray-300">
+        © 2025 ASEGURA2K25. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
