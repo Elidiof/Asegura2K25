@@ -3,17 +3,17 @@ import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa'
 
 const contactData = [
   {
-    icon: <FaMapMarkerAlt />,
+    icon: <FaMapMarkerAlt />, 
     text: 'Calle Pino 27, Andújar (Jaén) 23740',
-    link: 'https://maps.app.goo.gl/o9G7gN52jwDHH8x7A'
+    link: 'https://maps.app.goo.gl/z9Gq6t1j3RNKVJyG6'
   },
   {
-    icon: <FaPhone />,
+    icon: <FaPhone />, 
     text: 'Teléfono / WhatsApp: 658 945 741',
     link: 'https://wa.me/34658945741'
   },
   {
-    icon: <FaEnvelope />,
+    icon: <FaEnvelope />, 
     text: 'contacto@asegura2k25.com',
     link: 'mailto:contacto@asegura2k25.com'
   }
@@ -31,6 +31,15 @@ export default function Footer() {
             </a>
           </div>
         ))}
+
+        <div className="mt-4">
+          <a
+            href="/legal.html"
+            className="inline-block bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
+          >
+            Legal
+          </a>
+        </div>
 
         <div className="mt-4 text-xs text-center text-gray-300">
           © 2025 ASEGURA2K25. Todos los derechos reservados.
