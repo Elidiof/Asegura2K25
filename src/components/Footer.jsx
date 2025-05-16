@@ -1,36 +1,37 @@
 // src/components/Footer.jsx
-import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa'
-
-const contactData = [
-  {
-    icon: <FaMapMarkerAlt />, 
-    text: 'Calle Pino 27, Andújar (Jaén) 23740',
-    link: 'https://maps.app.goo.gl/z9Gq6t1j3RNKVJyG6'
-  },
-  {
-    icon: <FaPhone />, 
-    text: 'Teléfono / WhatsApp: 658 945 741',
-    link: 'https://wa.me/34658945741'
-  },
-  {
-    icon: <FaEnvelope />, 
-    text: 'contacto@asegura2k25.com',
-    link: 'mailto:contacto@asegura2k25.com'
-  }
-]
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 text-white py-6 px-4 text-sm">
-      <div className="max-w-5xl mx-auto flex flex-col gap-3">
-        {contactData.map((item, index) => (
-          <div key={index} className="flex items-center gap-2">
-            {item.icon}
-            <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
-              {item.text}
-            </a>
-          </div>
-        ))}
+    <footer className="bg-blue-900 text-white py-8 text-sm px-6">
+      <div className="max-w-4xl mx-auto space-y-3">
+        <div className="flex items-center gap-2">
+          <span className="font-bold">📍</span>
+          <a
+            href="https://maps.app.goo.gl/z9Gq6t1j3RNKVJyG6"
+            target="_blank"
+            rel="noopener"
+            className="underline"
+          >
+            Calle Pino 27, Andújar (Jaén) 23740
+          </a>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="font-bold">📞</span>
+          <a
+            href="https://wa.me/34658945741"
+            target="_blank"
+            rel="noopener"
+            className="underline"
+          >
+            Teléfono / WhatsApp: 658 945 741
+          </a>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="font-bold">✉️</span>
+          <a href="mailto:contacto@asegura2k25.com" className="underline">
+            contacto@asegura2k25.com
+          </a>
+        </div>
 
         <div className="mt-4">
           <a
