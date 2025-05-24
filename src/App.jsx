@@ -1,5 +1,6 @@
+// src/App.jsx
 import React, { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Footer from './components/Footer'
 import { CookieBanner } from './components/CookieBanner'
 
@@ -14,6 +15,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/seguro-:name" element={<Seguro />} />
+            {/* Cualquier otra ruta */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
         <Footer />
