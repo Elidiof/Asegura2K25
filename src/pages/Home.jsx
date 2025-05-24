@@ -31,70 +31,61 @@ export default function Home() {
     'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
   ]
   const mitad = Math.ceil(companias.length / 2)
-  const rows = [companias.slice(0, mitad), companias.slice(mitad)]
+  const rows = [ companias.slice(0, mitad), companias.slice(mitad) ]
 
   return (
-    <>
-      {/* Cabecera con logo y título */}
-      <div className="bg-blue-900 flex items-center justify-center py-4">
-        <img
-          src="/logos/logo.png"
-          alt="Asegura2K25"
-          className="h-24 sm:h-32"
-        />
-      </div>
-      <div className="flex-grow max-w-7xl mx-auto px-4 py-6">
-        <header className="mb-8">
-          <h1 className="text-blue-900 text-center font-bold text-2xl sm:text-4xl">
-            Encuentra el seguro que necesitas
-          </h1>
-        </header>
+    <main className="flex-grow max-w-7xl mx-auto px-4 py-6">
+      {/* Cabecera */}
+      <header className="mb-8">
+        <h1 className="text-blue-900 text-center font-bold text-2xl sm:text-4xl">
+          Encuentra el seguro que necesitas
+        </h1>
+      </header>
 
-        {/* Grid de productos */}
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
-          {products.map(({ name, icon }) => {
-            const href = `/seguro-${name
-              .toLowerCase()
-              .replace(/ /g, '-')
-              .normalize('NFD')
-              .replace(/[^a-z0-9-]/g, '')}`
-            return (
-              <a key={name} href={href} className="block">
-                <Card className="bg-gray-100 border border-black rounded-2xl p-3 sm:p-4 transition hover:shadow-lg">
-                  <CardContent className="flex justify-center">
-                    <img
-                      src={icon}
-                      alt={name}
-                      className="mb-2 sm:mb-3 h-20 sm:h-24 w-auto"
-                    />
-                  </CardContent>
-                </Card>
-              </a>
-            )
-          })}
-        </section>
-
-        {/* Carrusel de compañías */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
-            Compañías aseguradoras con las que colaboramos
-          </h2>
-          {rows.map((row, idx) => (
-            <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={50} pauseOnHover>
-                {row.map((key) => (
+      {/* Grid de productos */}
+      <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-4 mb-12">
+        {products.map(({ name, icon }) => {
+          const slug = name
+            .toLowerCase()
+            .replace(/ /g, '-')
+            .normalize('NFD')
+            .replace(/[^a-z0-9-]/g, '')
+          return (
+            <a key={name} href={`/seguro-${slug}`} className="block">
+              <Card className="bg-gray-100 border border-black rounded-2xl p-3 sm:p-4 transition hover:shadow-lg">
+                <CardContent className="flex justify-center">
                   <img
-                    key={key}
-                    src={`/logos/${key}.svg`}
-                    alt={`Logo de ${key.replace(/-/g, ' ')}`}
-                    className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
+                    src={icon}
+                    alt={name}
+                    className="mb-2 sm:mb-3 h-20 sm:h-24 w-auto"
                   />
-                ))}
-              </Marquee>
-            </div>
-          ))}
-        </section>
-      </div>
-    </>
+                </CardContent>
+              </Card>
+            </a>
+          )
+        })}
+      </section>
+
+      {/* Marquee de compañías */}
+      <section className="mb-10 space-y-4">
+        <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
+          Compañías aseguradoras con las que colaboramos
+        </h2>
+        {rows.map((row, idx) => (
+          <div key={idx} className="overflow-hidden">
+            <Marquee gradient={false} speed={50} pauseOnHover>
+              {row.map((key) => (
+                <img
+                  key={key}
+                  src={`/logos/${key}.svg`}
+                  alt={`Logo de ${key.replace(/-/g, ' ')}`}
+                  className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
+                />
+              ))}
+            </Marquee>
+          </div>
+        ))}
+      </section>
+    </main>
   )
 }
