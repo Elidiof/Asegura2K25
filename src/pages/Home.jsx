@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { Card } from '../components/ui/Card'
+import Marquee from 'react-fast-marquee'
 
 export default function Home() {
   const products = [
@@ -64,22 +65,27 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Carousel de compañías */}
-        <div className="mt-12">
-          <h2 className="text-center text-xl font-semibold mb-4">
+        {/* Carrusel animado de compañías */}
+        <section className="mb-10 space-y-4">
+          <h2 className="text-lg sm:text-xl font-semibold text-gray-700 text-center mb-4">
             Compañías aseguradoras con las que colaboramos
           </h2>
-          <div className="flex overflow-x-auto items-center space-x-6 py-4">
+          <Marquee
+            pauseOnHover={true}
+            speed={50}
+            className="overflow-hidden"
+            gradient={false}
+          >
             {companies.map((file) => (
               <img
                 key={file}
                 src={`/logos/${file}`}
-                alt={file.replace('.svg','')}
-                className="h-12 flex-shrink-0"
+                alt={file.replace('.svg', '')}
+                className="h-12 mx-6 flex-shrink-0"
               />
             ))}
-          </div>
-        </div>
+          </Marquee>
+        </section>
       </main>
     </>
   )
