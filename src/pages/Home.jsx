@@ -21,7 +21,7 @@ export default function Home() {
     'santalucia.svg','ocaso.svg','race.svg'
   ]
 
-  // Duplicamos la lista para crear el loop continuo
+  // Duplicamos para scroll continuo
   const logosLoop = [...companies, ...companies]
 
   return (
@@ -63,37 +63,31 @@ export default function Home() {
           </h2>
 
           {/* Fila 1 */}
-          <Marquee
-            pauseOnHover
-            speed={50}
-            gradient={false}
-            className="overflow-hidden"
-          >
-            {logosLoop.map((file, idx) => (
-              <img
-                key={`row1-${idx}-${file}`}
-                src={`/logos/${file}`}
-                alt={file.replace('.svg','')}
-                className="h-12 mx-3 flex-shrink-0"
-              />
-            ))}
+          <Marquee pauseOnHover speed={50} gradient={false} className="overflow-hidden">
+            <div className="flex items-center space-x-3">
+              {logosLoop.map((file, idx) => (
+                <img
+                  key={`row1-${idx}-${file}`}
+                  src={`/logos/${file}`}
+                  alt={file.replace('.svg','')}
+                  className="h-12 flex-shrink-0"
+                />
+              ))}
+            </div>
           </Marquee>
 
           {/* Fila 2 */}
-          <Marquee
-            pauseOnHover
-            speed={50}
-            gradient={false}
-            className="overflow-hidden"
-          >
-            {logosLoop.map((file, idx) => (
-              <img
-                key={`row2-${idx}-${file}`}
-                src={`/logos/${file}`}
-                alt={file.replace('.svg','')}
-                className="h-12 mx-3 flex-shrink-0"
-              />
-            ))}
+          <Marquee pauseOnHover speed={50} gradient={false} className="overflow-hidden">
+            <div className="flex items-center space-x-3">
+              {logosLoop.map((file, idx) => (
+                <img
+                  key={`row2-${idx}-${file}`}
+                  src={`/logos/${file}`}
+                  alt={file.replace('.svg','')}
+                  className="h-12 flex-shrink-0"
+                />
+              ))}
+            </div>
           </Marquee>
         </section>
       </main>
