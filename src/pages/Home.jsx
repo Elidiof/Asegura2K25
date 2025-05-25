@@ -13,6 +13,7 @@ export default function Home() {
     'instrumentos-musicales'
   ]
 
+  // Lista original de compañías
   const companies = [
     'mapfre','reale','generali','allianz',
     'axa','asisa','dkv','helvetia',
@@ -21,12 +22,12 @@ export default function Home() {
     'santalucia','ocaso','race'
   ]
 
-  // Dividimos en dos filas
-  const mitad = Math.ceil(companies.length / 2)
-  const rows = [
-    companies.slice(0, mitad),
-    companies.slice(mitad)
-  ]
+  // Duplicamos *completo* para scroll infinito
+  const looped = [...companies, ...companies]
+
+  // Dividimos en dos filas (cada una idéntica)
+  const firstRow = looped
+  const secondRow = looped
 
   return (
     <>
@@ -67,26 +68,43 @@ export default function Home() {
             Compañías aseguradoras con las que colaboramos
           </h2>
 
-          {rows.map((row, idx) => (
-            <Marquee
-              key={idx}
-              gradient={false}
-              speed={50}
-              pauseOnHover
-              className="overflow-hidden"
-            >
-              <div className="flex items-center whitespace-nowrap space-x-3">
-                {row.map((key) => (
-                  <img
-                    key={key}
-                    src={`/logos/${key}.svg`}
-                    alt={`Logo de ${key.replace(/-/g, ' ')}`}
-                    className="h-12 flex-shrink-0"
-                  />
-                ))}
-              </div>
-            </Marquee>
-          ))}
+          {/* Fila 1 */}
+          <Marquee
+            gradient={false}
+            speed={50}
+            pauseOnHover
+            className="overflow-hidden"
+          >
+            <div className="flex items-center whitespace-nowrap space-x-3">
+              {firstRow.map((key, idx) => (
+                <img
+                  key={`row1-${idx}-${key}`}
+                  src={`/logos/${key}.svg`}
+                  alt={key.replace(/-/g, ' ')}
+                  className="h-12 flex-shrink-0"
+                />
+              ))}
+            </div>
+          </Marquee>
+
+          {/* Fila 2 */}
+          <Marquee
+            gradient={false}
+            speed={50}
+            pauseOnHover
+            className="overflow-hidden"
+          >
+            <div className="flex items-center whitespace-nowrap space-x-3">
+              {secondRow.map((key, idx) => (
+                <img
+                  key={`row2-${idx}-${key}`}
+                  src={`/logos/${key}.svg`}
+                  alt={key.replace(/-/g, ' ')}
+                  className="h-12 flex-shrink-0"
+                />
+              ))}
+            </div>
+          </Marquee>
         </section>
       </main>
     </>
