@@ -1,8 +1,7 @@
-// src/pages/Home.jsx
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { Card, CardContent } from '../components/ui/Card'
+import { Card } from '../components/ui/Card'
 
 export default function Home() {
   const products = [
@@ -38,15 +37,14 @@ export default function Home() {
 
       <main className="container mx-auto p-4">
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {products.map(({ name, slug, icon }) => (
+          {products.map(({ slug, icon }) => (
             <Link
               key={slug}
               to={`/seguro/${slug}`}
-              className="block text-center p-4 bg-white rounded-lg shadow hover:bg-gray-50 transition"
+              className="block text-center p-4 bg-white rounded-lg shadow hover:bg-gray-50 transition h-32 flex items-center justify-center"
             >
-              <Card className="flex flex-col items-center">
-                <img src={icon} alt={name} className="h-12 mb-2" />
-                <CardContent className="font-medium">{name}</CardContent>
+              <Card className="flex items-center justify-center">
+                <img src={icon} alt={slug} className="h-16 w-auto" />
               </Card>
             </Link>
           ))}
