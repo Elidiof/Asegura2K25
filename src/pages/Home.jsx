@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
@@ -16,12 +15,11 @@ export default function Home() {
   const companies = [
     'mapfre.svg','reale.svg','generali.svg','allianz.svg',
     'axa.svg','asisa.svg','dkv.svg','helvetia.svg',
-    'pelayo.svg','aegon.svg','hiscox.svg','zurich.svg',
+    'pelayo.svg','aegon.svg','fiatc.svg','hiscox.svg','zurich.svg',
     'adeslas.svg','catalana-occidente.svg','mutuamadrilena.svg',
     'santalucia.svg','ocaso.svg','race.svg'
   ]
 
-  // Partir el array de compañías en dos filas
   const mitad = Math.ceil(companies.length / 2)
   const primeraFila = companies.slice(0, mitad)
   const segundaFila = companies.slice(mitad)
