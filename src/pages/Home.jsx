@@ -21,17 +21,13 @@ export default function Home() {
     'santalucia.svg','ocaso.svg','race.svg'
   ]
 
-  const mitad = Math.ceil(companies.length / 2)
-  const primeraFila = companies.slice(0, mitad)
-  const segundaFila = companies.slice(mitad)
-
   return (
     <>
       <Helmet>
         <title>Asegura2K25 - Seguros a tu medida</title>
         <meta
           name="description"
-          content="Encuentra el seguro que necesitas en Asegura2K25: coche, hogar, salud, mascotas, empresas y más."
+          content="Encuentra el seguro que necesitas..."
         />
       </Helmet>
 
@@ -40,6 +36,7 @@ export default function Home() {
           Encuentra el seguro que necesitas
         </h2>
 
+        {/* Grid de productos */}
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
           {products.map((slug) => (
             <Link
@@ -56,40 +53,50 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Carrusel animado en 2 filas */}
+        {/* Carrusel animado en 2 filas idénticas */}
         <section className="space-y-4">
           <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-700">
             Compañías aseguradoras con las que colaboramos
           </h2>
 
-          <Marquee
-            pauseOnHover
-            speed={50}
-            gradient={false}
-            className="overflow-hidden"
-          >
-            {[...primeraFila, ...primeraFila].map((file, idx) => (
+          {/* Fila 1 */}
+          <Marquee pauseOnHover speed={50} gradient={false} className="overflow-hidden">
+            {companies.map((file, idx) => (
               <img
-                key={`${file}-${idx}`}
+                key={`row1-${idx}-${file}`}
                 src={`/logos/${file}`}
                 alt={file.replace('.svg','')}
-                className="h-12 mx-1 flex-shrink-0"
+                className="h-12 mx-2 flex-shrink-0"
+              />
+            ))}
+            {/** Duplicamos al final para evitar hueco */}
+            {companies.map((file, idx) => (
+              <img
+                key={`row1b-${idx}-${file}`}
+                src={`/logos/${file}`}
+                alt={file.replace('.svg','')}
+                className="h-12 mx-2 flex-shrink-0"
               />
             ))}
           </Marquee>
 
-          <Marquee
-            pauseOnHover
-            speed={50}
-            gradient={false}
-            className="overflow-hidden"
-          >
-            {[...segundaFila, ...segundaFila].map((file, idx) => (
+          {/* Fila 2 */}
+          <Marquee pauseOnHover speed={50} gradient={false} className="overflow-hidden">
+            {companies.map((file, idx) => (
               <img
-                key={`${file}-${idx}`}
+                key={`row2-${idx}-${file}`}
                 src={`/logos/${file}`}
                 alt={file.replace('.svg','')}
-                className="h-12 mx-1 flex-shrink-0"
+                className="h-12 mx-2 flex-shrink-0"
+              />
+            ))}
+            {/** Duplicamos al final para evitar hueco */}
+            {companies.map((file, idx) => (
+              <img
+                key={`row2b-${idx}-${file}`}
+                src={`/logos/${file}`}
+                alt={file.replace('.svg','')}
+                className="h-12 mx-2 flex-shrink-0"
               />
             ))}
           </Marquee>
