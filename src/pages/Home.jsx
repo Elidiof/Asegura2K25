@@ -1,6 +1,7 @@
 // src/pages/Home.jsx
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'                   // ← Añadido para navegación SPA
 import { Card, CardContent } from '../components/ui/Card'
 import Marquee from 'react-fast-marquee'
 
@@ -79,7 +80,7 @@ export default function Home() {
               .normalize('NFD')
               .replace(/[^a-z0-9-]/g, '')
             return (
-              <a key={name} href={`/seguro-${slug}`} className="block">
+              <Link key={name} to={`/seguro-${slug}`} className="block">
                 <Card className="bg-gray-100 border border-black rounded-2xl p-3 sm:p-4 transition hover:shadow-lg">
                   <CardContent className="flex justify-center">
                     <img
@@ -89,7 +90,7 @@ export default function Home() {
                     />
                   </CardContent>
                 </Card>
-              </a>
+              </Link>
             )
           })}
         </section>
