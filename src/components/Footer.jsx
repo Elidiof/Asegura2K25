@@ -37,12 +37,25 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="mt-4">
+        {/* Enlaces legales */}
+        <div className="mt-4 space-x-2 text-center">
           <a
             href="/legal.html"
             className="inline-block bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
           >
-            Legal
+            Legal / Cookies
+          </a>
+          <a
+            href="/aviso-legal.html"
+            className="inline-block bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
+          >
+            Aviso Legal
+          </a>
+          <a
+            href="/privacidad.html"
+            className="inline-block bg-gray-800 text-white px-4 py-2 rounded-full shadow hover:bg-gray-900 transition text-sm"
+          >
+            Privacidad
           </a>
         </div>
 
