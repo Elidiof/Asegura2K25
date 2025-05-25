@@ -26,7 +26,7 @@ export default function Home() {
           Encuentra el seguro que necesitas
         </h2>
 
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {products.map((slug) => (
             <Link
               key={slug}
@@ -36,7 +36,7 @@ export default function Home() {
               <img
                 src={`/logos/${slug}.png`}
                 alt={slug}
-                className="h-16 w-auto"
+                className="h-24 w-auto"
               />
             </Link>
           ))}
