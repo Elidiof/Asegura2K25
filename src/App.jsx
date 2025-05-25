@@ -1,7 +1,6 @@
-// src/App.jsx
 import React, { lazy, Suspense } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { HelmetProvider } from 'react-helmet-async'       // ← Import añadido
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom' // ← Cambiado a HashRouter
+import { HelmetProvider } from 'react-helmet-async'
 import Footer from './components/Footer'
 import { CookieBanner } from './components/CookieBanner'
 import { FaWhatsapp } from 'react-icons/fa'
@@ -11,8 +10,8 @@ const Seguro = lazy(() => import('./pages/Seguro'))
 
 export default function App() {
   return (
-    <HelmetProvider>                                    {/* ← Envoltorio añadido */}
-      <BrowserRouter>
+    <HelmetProvider>
+      <HashRouter> {/* ← Usamos HashRouter para que las rutas sin HTMLs individuales funcionen en Netlify */}
         {/* ——— Banner azul con logo ——— */}
         <div className="bg-blue-900 flex items-center justify-center py-4">
           <img
@@ -57,7 +56,7 @@ export default function App() {
             <FaWhatsapp className="h-5 w-5 md:h-10 md:w-10" />
           </a>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </HelmetProvider>
   )
 }
