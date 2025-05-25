@@ -2,7 +2,6 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 
-// Definición de datos de cada seguro
 const productData = {
   coche: {
     title: 'Seguro de Coche',
