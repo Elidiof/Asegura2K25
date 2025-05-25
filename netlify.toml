@@ -1,0 +1,10 @@
+[build]
+  command   = "npm run build"
+  publish   = "dist"
+
+# Redirige todas las rutas (spa) al index.html para que HashRouter o BrowserRouter funcionen
+[[redirects]]
+  from    = "/*"
+  to      = "/index.html"
+  status  = 200
+  force   = true
