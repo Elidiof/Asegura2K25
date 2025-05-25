@@ -1,4 +1,3 @@
-```jsx
 // src/pages/Home.jsx
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
@@ -7,35 +6,21 @@ import Marquee from 'react-fast-marquee'
 
 export default function Home() {
   const products = [
-    'coche', 'hogar', 'vida', 'salud', 'alquiler',
-    'empresas', 'rc', 'accidentes', 'mascotas',
-    'cabeza-tractora', 'transporte-mercancias', 'agroseguro',
-    'comunidades', 'decesos', 'taxi', 'moto', 'patinete',
+    'coche','hogar','vida','salud','alquiler',
+    'empresas','rc','accidentes','mascotas',
+    'cabeza-tractora','transporte-mercancias','agroseguro',
+    'comunidades','decesos','taxi','moto','patinete',
     'instrumentos-musicales'
   ]
 
   const companies = [
-    'mapfre.svg',
-    'reale.svg',
-    'generali.svg',
-    'allianz.svg',
-    'axa.svg',
-    'asisa.svg',
-    'dkv.svg',
-    'helvetia.svg',
-    'pelayo.svg',
-    'aegon.svg',
-    'hiscox.svg',
-    'zurich.svg',
-    'adeslas.svg',
-    'catalana-occidente.svg',
-    'mutuamadrilena.svg',
-    'santalucia.svg',
-    'ocaso.svg',
-    'race.svg'
+    'mapfre.svg','reale.svg','generali.svg','allianz.svg',
+    'axa.svg','asisa.svg','dkv.svg','helvetia.svg',
+    'pelayo.svg','aegon.svg','hiscox.svg','zurich.svg',
+    'adeslas.svg','catalana-occidente.svg','mutuamadrilena.svg',
+    'santalucia.svg','ocaso.svg','race.svg'
   ]
 
-  // Partir el array de compañías en dos filas
   const mitad = Math.ceil(companies.length / 2)
   const primeraFila = companies.slice(0, mitad)
   const segundaFila = companies.slice(mitad)
@@ -71,13 +56,12 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Carrusel animado en 2 filas, ambas de derecha a izquierda */}
+        {/* Carrusel animado en 2 filas */}
         <section className="space-y-4">
           <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-700">
             Compañías aseguradoras con las que colaboramos
           </h2>
 
-          {/* Primera fila */}
           <Marquee
             pauseOnHover
             speed={50}
@@ -88,13 +72,12 @@ export default function Home() {
               <img
                 key={`${file}-${idx}`}
                 src={`/logos/${file}`}
-                alt={file.replace('.svg', '')}
+                alt={file.replace('.svg','')}
                 className="h-12 mx-2 flex-shrink-0"
               />
             ))}
           </Marquee>
 
-          {/* Segunda fila */}
           <Marquee
             pauseOnHover
             speed={50}
@@ -105,7 +88,7 @@ export default function Home() {
               <img
                 key={`${file}-${idx}`}
                 src={`/logos/${file}`}
-                alt={file.replace('.svg', '')}
+                alt={file.replace('.svg','')}
                 className="h-12 mx-2 flex-shrink-0"
               />
             ))}
@@ -115,4 +98,3 @@ export default function Home() {
     </>
   )
 }
-```
