@@ -20,10 +20,6 @@ export default function Home() {
     'santalucia.svg','ocaso.svg','race.svg'
   ]
 
-  const mitad = Math.ceil(companies.length / 2)
-  const primeraFila = companies.slice(0, mitad)
-  const segundaFila = companies.slice(mitad)
-
   return (
     <>
       <Helmet>
@@ -55,45 +51,36 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Carrusel animado en 2 filas */}
-        <section className="space-y-4">
-          <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-700">
-            Compañías aseguradoras con las que colaboramos
-          </h2>
-
-          {/* Primera fila */}
-          <Marquee
-            pauseOnHover
-            speed={50}
-            gradient={false}
-            className="overflow-hidden"
-          >
-            {[...primeraFila, ...primeraFila].map((file, idx) => (
-              <img
-                key={`${file}-${idx}`}
-                src={`/logos/${file}`}
-                alt={file.replace('.svg','')}
-                className="h-12 mx-3 flex-shrink-0"
-              />
-            ))}
-          </Marquee>
-
-          {/* Segunda fila */}
-          <Marquee
-            pauseOnHover
-            speed={50}
-            gradient={false}
-            className="overflow-hidden"
-          >
-            {[...segundaFila, ...segundaFila].map((file, idx) => (
-              <img
-                key={`${file}-${idx}`}
-                src={`/logos/${file}`}
-                alt={file.replace('.svg','')}
-                className="h-12 mx-3 flex-shrink-0"
-              />
-            ))}
-          </Marquee>
+        {/* Carrusel estático extraído de asegura2k25.com */}
+        <section className="bg-white py-8">
+          <div className="container mx-auto">
+            <h2 className="text-center text-xl font-semibold mb-6">
+              Compañías aseguradoras con las que colaboramos
+            </h2>
+            <Marquee pauseOnHover speed={50} gradient={false} className="no-scrollbar">
+              <div className="flex items-center space-x-4">
+                <img src="/logos/mapfre.svg" alt="Mapfre" className="h-12" />
+                <img src="/logos/reale.svg" alt="Reale" className="h-12" />
+                <img src="/logos/generali.svg" alt="Generali" className="h-12" />
+                <img src="/logos/allianz.svg" alt="Allianz" className="h-12" />
+                <img src="/logos/axa.svg" alt="AXA" className="h-12" />
+                <img src="/logos/asisa.svg" alt="Asisa" className="h-12" />
+                <img src="/logos/dkv.svg" alt="DKV" className="h-12" />
+                <img src="/logos/helvetia.svg" alt="Helvetia" className="h-12" />
+                <img src="/logos/pelayo.svg" alt="Pelayo" className="h-12" />
+                <img src="/logos/aegon.svg" alt="Aegon" className="h-12" />
+                <img src="/logos/fiatc.svg" alt="Fiatc" className="h-12" />
+                <img src="/logos/hiscox.svg" alt="Hiscox" className="h-12" />
+                <img src="/logos/zurich.svg" alt="Zurich" className="h-12" />
+                <img src="/logos/adeslas.svg" alt="Adeslas" className="h-12" />
+                <img src="/logos/catalana-occidente.svg" alt="Catalana Occidente" className="h-12" />
+                <img src="/logos/mutuamadrilena.svg" alt="Mutua Madrileña" className="h-12" />
+                <img src="/logos/santalucia.svg" alt="Santalucía" className="h-12" />
+                <img src="/logos/ocaso.svg" alt="Ocaso" className="h-12" />
+                <img src="/logos/race.svg" alt="RACE" className="h-12" />
+              </div>
+            </Marquee>
+          </div>
         </section>
       </main>
     </>
