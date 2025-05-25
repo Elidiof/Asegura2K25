@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import CookieBanner from './components/CookieBanner';
+import { CookieBanner } from './components/CookieBanner';
 import Footer from './components/Footer';
 
 // Componentes cargados perezosamente para optimizar la carga
