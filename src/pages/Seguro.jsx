@@ -26,7 +26,7 @@ function App() {
           </Suspense>
         </main>
 
-        {/* Banners and footer */}
+        {/* Cookie banner and footer */}
         <CookieBanner />
         <Footer />
       </HashRouter>
