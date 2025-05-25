@@ -1,5 +1,6 @@
+// src/App.jsx
 import React, { lazy, Suspense } from 'react'
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom' // ← Cambiado a HashRouter
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import Footer from './components/Footer'
 import { CookieBanner } from './components/CookieBanner'
@@ -11,7 +12,7 @@ const Seguro = lazy(() => import('./pages/Seguro'))
 export default function App() {
   return (
     <HelmetProvider>
-      <HashRouter> {/* ← Usamos HashRouter para que las rutas sin HTMLs individuales funcionen en Netlify */}
+      <HashRouter>
         {/* ——— Banner azul con logo ——— */}
         <div className="bg-blue-900 flex items-center justify-center py-4">
           <img
@@ -26,8 +27,8 @@ export default function App() {
           <Suspense fallback={<div className="p-6 text-center">Cargando...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/seguro-:name" element={<Seguro />} />
-              {/* Ruta comodín: si no existe la URL, redirige al Home */}
+              <Route path="seguro-:name" element={<Seguro />} />
+              {/* Cualquier cosa redirige a Home */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
