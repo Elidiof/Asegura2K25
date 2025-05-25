@@ -8,7 +8,6 @@ export default function Header() {
         <Link to="/">
           <img src="/logo.png" alt="Asegura2K25" className="h-12 md:h-16 mx-auto" />
         </Link>
-        <h2 className="mt-2 text-xl">Encuentra el seguro que necesitas</h2>
       </div>
     </header>
   )
