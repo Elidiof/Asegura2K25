@@ -7,7 +7,7 @@ import Marquee from 'react-fast-marquee'
 
 export default function Home() {
   const products = [
-    { name: 'Coche', icon: '/logos/coche.png' },
+    { name: 'coche', icon: '/logos/coche.png' },
     { name: 'Hogar', icon: '/logos/hogar.png' },
     { name: 'Vida', icon: '/logos/vida.png' },
     { name: 'Salud', icon: '/logos/salud.png' },
