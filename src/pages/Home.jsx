@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
@@ -5,24 +6,24 @@ import { Card } from '../components/ui/Card'
 
 export default function Home() {
   const products = [
-    { name: 'Coche', slug: 'coche', icon: '/logos/coche.png' },
-    { name: 'Hogar', slug: 'hogar', icon: '/logos/hogar.png' },
-    { name: 'Vida', slug: 'vida', icon: '/logos/vida.png' },
-    { name: 'Salud', slug: 'salud', icon: '/logos/salud.png' },
-    { name: 'Alquiler', slug: 'alquiler', icon: '/logos/alquiler.png' },
-    { name: 'Empresa', slug: 'empresas', icon: '/logos/empresas.png' },
-    { name: 'RC', slug: 'rc', icon: '/logos/rc.png' },
-    { name: 'Accidentes', slug: 'accidentes', icon: '/logos/accidentes.png' },
-    { name: 'Mascotas', slug: 'mascotas', icon: '/logos/mascotas.png' },
-    { name: 'Cabeza Tractora', slug: 'cabeza-tractora', icon: '/logos/cabeza-tractora.png' },
-    { name: 'Transporte Mercancías', slug: 'transporte-mercancias', icon: '/logos/transporte-mercancias.png' },
-    { name: 'Agroseguro', slug: 'agroseguro', icon: '/logos/agroseguro.png' },
-    { name: 'Comunidades', slug: 'comunidades', icon: '/logos/comunidades.png' },
-    { name: 'Decesos', slug: 'decesos', icon: '/logos/decesos.png' },
-    { name: 'Taxi', slug: 'taxi', icon: '/logos/taxi.png' },
-    { name: 'Moto', slug: 'moto', icon: '/logos/moto.png' },
-    { name: 'Patinete', slug: 'patinete', icon: '/logos/patinete.png' },
-    { name: 'Instrumentos Musicales', slug: 'instrumentos-musicales', icon: '/logos/instrumentos-musicales.png' }
+    { slug: 'coche', icon: '/logos/coche-icon.png' },
+    { slug: 'hogar', icon: '/logos/hogar-icon.png' },
+    { slug: 'vida', icon: '/logos/vida-icon.png' },
+    { slug: 'salud', icon: '/logos/salud-icon.png' },
+    { slug: 'alquiler', icon: '/logos/alquiler-icon.png' },
+    { slug: 'empresas', icon: '/logos/empresas-icon.png' },
+    { slug: 'rc', icon: '/logos/rc-icon.png' },
+    { slug: 'accidentes', icon: '/logos/accidentes-icon.png' },
+    { slug: 'mascotas', icon: '/logos/mascotas-icon.png' },
+    { slug: 'cabeza-tractora', icon: '/logos/cabeza-tractora-icon.png' },
+    { slug: 'transporte-mercancias', icon: '/logos/transporte-mercancias-icon.png' },
+    { slug: 'agroseguro', icon: '/logos/agroseguro-icon.png' },
+    { slug: 'comunidades', icon: '/logos/comunidades-icon.png' },
+    { slug: 'decesos', icon: '/logos/decesos-icon.png' },
+    { slug: 'taxi', icon: '/logos/taxi-icon.png' },
+    { slug: 'moto', icon: '/logos/moto-icon.png' },
+    { slug: 'patinete', icon: '/logos/patinete-icon.png' },
+    { slug: 'instrumentos-musicales', icon: '/logos/instrumentos-musicales-icon.png' }
   ]
 
   return (
@@ -35,15 +36,17 @@ export default function Home() {
         />
       </Helmet>
 
+      {/* NO deje ningún texto extra aquí */}
+
       <main className="container mx-auto p-4">
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
           {products.map(({ slug, icon }) => (
             <Link
               key={slug}
               to={`/seguro/${slug}`}
-              className="block text-center p-4 bg-white rounded-lg shadow hover:bg-gray-50 transition h-32 flex items-center justify-center"
+              className="h-32 flex items-center justify-center bg-white rounded-lg shadow hover:bg-gray-50 transition"
             >
-              <Card className="flex items-center justify-center">
+              <Card className="p-0 bg-transparent shadow-none">
                 <img src={icon} alt={slug} className="h-16 w-auto" />
               </Card>
             </Link>
