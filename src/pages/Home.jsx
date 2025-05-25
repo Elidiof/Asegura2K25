@@ -73,7 +73,7 @@ export default function Home() {
                 key={`${file}-${idx}`}
                 src={`/logos/${file}`}
                 alt={file.replace('.svg','')}
-                className="h-12 mx-2 flex-shrink-0"
+                className="h-12 mx-1 flex-shrink-0"
               />
             ))}
           </Marquee>
@@ -89,7 +89,7 @@ export default function Home() {
                 key={`${file}-${idx}`}
                 src={`/logos/${file}`}
                 alt={file.replace('.svg','')}
-                className="h-12 mx-2 flex-shrink-0"
+                className="h-12 mx-1 flex-shrink-0"
               />
             ))}
           </Marquee>
