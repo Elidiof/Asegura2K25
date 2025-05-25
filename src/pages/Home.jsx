@@ -18,7 +18,10 @@ export default function Home() {
     <>
       <Helmet>
         <title>Asegura2K25 - Seguros a tu medida</title>
-        <meta name="description" content="Encuentra el seguro que necesitas en Asegura2K25: coche, hogar, salud y más." />
+        <meta
+          name="description"
+          content="Encuentra el seguro que necesitas en Asegura2K25: coche, hogar, salud y más."
+        />
       </Helmet>
 
       <main className="container mx-auto p-4">
