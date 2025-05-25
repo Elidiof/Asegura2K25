@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-//import { CookieBanner } from './components/CookieBanner';  // Deshabilitado para depuración
-import Footer from './components/Footer';
+// import { CookieBanner } from './components/CookieBanner'; // Temporarily disabled
+// import Footer from './components/Footer';
 
 // Componentes cargados perezosamente para optimizar la carga
 const Home = React.lazy(() => import('./pages/Home'));
@@ -17,16 +17,12 @@ function App() {
           <Suspense fallback={<div className="p-4 text-center">Cargando…</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
-              {/* Ruta para cada seguro, con parámetro name */}
               <Route path="/seguro/:name" element={<Seguro />} />
-              {/* Redirige cualquier ruta desconocida a la página principal */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
         </main>
-        {/* Deshabilitados temporalmente para depuración */}
-        { /* <CookieBanner /> */ }
-        <Footer />
+        {/* CookieBanner and Footer disabled for debugging */}
       </HashRouter>
     </HelmetProvider>
   );
