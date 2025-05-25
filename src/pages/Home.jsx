@@ -6,7 +6,11 @@ import Marquee from 'react-fast-marquee'
 
 export default function Home() {
   const products = [
-    /* … tus productos … */
+    'coche', 'hogar', 'vida', 'salud', 'alquiler',
+    'empresas', 'rc', 'accidentes', 'mascotas',
+    'cabeza-tractora', 'transporte-mercancias', 'agroseguro',
+    'comunidades', 'decesos', 'taxi', 'moto', 'patinete',
+    'instrumentos-musicales'
   ]
 
   const companies = [
@@ -30,7 +34,7 @@ export default function Home() {
     'race.svg'
   ]
 
-  // split en dos mitades
+  // Partir el array de compañías en dos filas
   const mitad = Math.ceil(companies.length / 2)
   const primeraFila = companies.slice(0, mitad)
   const segundaFila = companies.slice(mitad)
@@ -41,20 +45,38 @@ export default function Home() {
         <title>Asegura2K25 - Seguros a tu medida</title>
         <meta
           name="description"
-          content="Encuentra el seguro que necesitas en Asegura2K25..."
+          content="Encuentra el seguro que necesitas en Asegura2K25: coche, hogar, salud, mascotas, empresas y más."
         />
       </Helmet>
 
       <main className="container mx-auto p-4">
-        {/* … grid de productos … */}
+        <h2 className="text-center text-3xl font-bold mb-8 text-blue-800">
+          Encuentra el seguro que necesitas
+        </h2>
 
-        {/* Carrusel animado en 2 filas */}
-        <section className="mb-10 space-y-4">
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
+          {products.map((slug) => (
+            <Link
+              key={slug}
+              to={`/seguro/${slug}`}
+              className="block bg-white border border-gray-300 rounded-xl p-6 flex items-center justify-center hover:shadow-lg transition"
+            >
+              <img
+                src={`/logos/${slug}.png`}
+                alt={slug}
+                className="h-24 w-auto"
+              />
+            </Link>
+          ))}
+        </section>
+
+        {/* Carrusel animado en 2 filas, ambas de derecha a izquierda */}
+        <section className="space-y-4">
           <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-700">
             Compañías aseguradoras con las que colaboramos
           </h2>
 
-          {/* Fila 1 */}
+          {/* Primera fila */}
           <Marquee
             pauseOnHover
             speed={50}
@@ -71,13 +93,12 @@ export default function Home() {
             ))}
           </Marquee>
 
-          {/* Fila 2, invertida para variedad */}
+          {/* Segunda fila */}
           <Marquee
             pauseOnHover
             speed={50}
             gradient={false}
             className="overflow-hidden"
-            direction="right"
           >
             {segundaFila.map((file) => (
               <img
