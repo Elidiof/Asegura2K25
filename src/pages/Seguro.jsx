@@ -2,49 +2,25 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 
-// Diccionario de productos (usa claves EXACTAS igual que las rutas)
+// Diccionario de productos (todas las claves en minúsculas, igual que el slug)
 const productos = {
-  'coche': {
-    titulo: "Coche",
-    descripcion: "Tu seguro de coche al mejor precio en Andújar (Jaén). RC obligatoria, lunas, robo, incendio, asistencia 24h y más. Trabajamos con Mapfre, Reale, Allianz y las mejores.",
+  'coche': { /* ... */ },
+  'hogar': { /* ... */ },
+  'salud': { /* ... */ },
+  'agroseguro': {
+    titulo: "Agroseguro",
+    descripcion: "Asegura tus cultivos, plantaciones y ganado frente a los principales riesgos. Cobertura integral para explotaciones agrarias en Andújar, Jaén y toda España.",
     coberturas: [
-      "Responsabilidad civil obligatoria y voluntaria",
-      "Defensa jurídica y reclamación de daños",
-      "Robo, incendio y lunas",
-      "Asistencia en viaje desde km 0",
-      "Coche de sustitución (opcional)",
-      "Daños propios y más"
+      "Daños en cultivos por pedrisco, lluvia o sequía",
+      "Cobertura por pérdida de producción o rendimiento",
+      "Reposición de plantas o árboles dañados (según líneas)",
+      "Seguro para ganado: accidentes, enfermedades y robo"
     ],
-    imagen: "/logos/coche.png"
+    imagen: "/logos/agroseguro.png"
   },
-  'hogar': {
-    titulo: "Hogar",
-    descripcion: "Protege tu vivienda ante cualquier imprevisto: incendio, robo, daños por agua y mucho más. Seguro de hogar personalizado para propietarios o inquilinos.",
-    coberturas: [
-      "Incendio, explosión y caída de rayo",
-      "Robo y hurto en vivienda",
-      "Daños por agua y fenómenos meteorológicos",
-      "Responsabilidad civil familiar",
-      "Asistencia 24h en el hogar"
-    ],
-    imagen: "/logos/hogar.png"
-  },
-  'salud': {
-    titulo: "Salud",
-    descripcion: "Acceso rápido a especialistas, pruebas y hospitalización. Seguro de salud para particulares y autónomos. Asisa, Adeslas, DKV, AXA y más.",
-    coberturas: [
-      "Consultas y especialistas sin listas de espera",
-      "Pruebas diagnósticas",
-      "Hospitalización y cirugía",
-      "Medicina general y pediatría",
-      "Cobertura dental básica"
-    ],
-    imagen: "/logos/salud.png"
-  },
-  // ... añade aquí cada producto con su clave EXACTA ...
+  // ...añade todos los productos igual que en Home.jsx...
 }
 
-// Fallback genérico si el producto no está personalizado
 const productoGenerico = name => ({
   titulo: name
     .split(' ')
@@ -61,30 +37,30 @@ const productoGenerico = name => ({
 
 export default function Seguro() {
   const { name } = useParams()
-  // name ya es tal cual la URL: "coche", "hogar", "cabeza-tractora"...
-  const slug = name.replace(/-/g, ' ')
-  // Busca el producto con la clave tal cual
-  const producto = productos[name] || productoGenerico(slug)
+  if (!name) {
+    // Evita fallo si la ruta viene sin parámetro
+    return <div className="text-center text-red-500 p-10">Producto no encontrado.</div>
+  }
+
+  // Siempre minúsculas y sin espacios extra
+  const clave = name.trim().toLowerCase()
+  const slug = clave.replace(/-/g, ' ')
+  const producto = productos[clave] || productoGenerico(slug)
   const titulo = producto.titulo
-  const url = `https://asegura2k25.netlify.app/seguro-${name}`
+  const url = `https://asegura2k25.netlify.app/seguro-${clave}`
   const ogImage = 'https://asegura2k25.netlify.app/og-image.jpg'
 
   return (
     <>
       <Helmet>
         <title>Seguro de {titulo} en Andújar | Asegura2K25</title>
-        <meta
-          name="description"
-          content={producto.descripcion}
-        />
+        <meta name="description" content={producto.descripcion} />
         <link rel="canonical" href={url} />
-        {/* Open Graph */}
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`Seguro de ${titulo} en Andújar | Asegura2K25`} />
         <meta property="og:description" content={producto.descripcion} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:url" content={url} />
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`Seguro de ${titulo} en Andújar | Asegura2K25`} />
         <meta name="twitter:description" content={producto.descripcion} />
@@ -92,7 +68,6 @@ export default function Seguro() {
       </Helmet>
 
       <div className="px-4 py-8 max-w-4xl mx-auto">
-        {/* Cabecera visual */}
         <div className="flex items-center gap-4 mb-6">
           <img
             src={producto.imagen}
