@@ -6,9 +6,12 @@ import { useParams } from 'react-router-dom'
 export default function Seguro() {
   const { name } = useParams()
   const nombre = name.replace(/-/g, ' ')
-  const titulo = nombre.charAt(0).toUpperCase() + nombre.slice(1)
+  const titulo = nombre
+    .split(' ')
+    .map(x => x.charAt(0).toUpperCase() + x.slice(1))
+    .join(' ')
   const url = `https://asegura2k25.netlify.app/seguro-${name}`
-  const ogImage = 'https://asegura2k25.netlify.app/og-image.jpg'
+  const ogImage = 'https://asegura2k25.netlify.app/og-image.png' // Cambia a .jpg si lo prefieres
 
   return (
     <>
@@ -36,10 +39,10 @@ export default function Seguro() {
 
       <div className="px-4 py-8 max-w-4xl mx-auto">
         <h1 className="text-2xl font-semibold text-blue-900 mb-4">
-          Detalles del seguro: <span className="capitalize">{nombre}</span>
+          Detalles del seguro: <span className="capitalize">{titulo}</span>
         </h1>
         <p className="text-gray-700">
-          Aquí iría la descripción y opciones de contratación para el seguro de <strong>{nombre}</strong>.
+          Aquí iría la descripción y opciones de contratación para el seguro de <strong>{titulo}</strong>.
         </p>
       </div>
     </>
