@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
+import { Card } from '../components/ui/Card'
 
 export default function Home() {
   const products = [
@@ -9,6 +10,27 @@ export default function Home() {
     'cabeza-tractora', 'transporte-mercancias', 'agroseguro',
     'comunidades', 'decesos', 'taxi', 'moto', 'patinete',
     'instrumentos-musicales'
+  ]
+
+  const companies = [
+    'mapfre.svg',
+    'reale.svg',
+    'generali.svg',
+    'allianz.svg',
+    'axa.svg',
+    'asisa.svg',
+    'dkv.svg',
+    'helvetia.svg',
+    'pelayo.svg',
+    'aegon.svg',
+    'hiscox.svg',
+    'zurich.svg',
+    'adeslas.svg',
+    'catalana-occidente.svg',
+    'mutuamadrilena.svg',
+    'santalucia.svg',
+    'ocaso.svg',
+    'race.svg'
   ]
 
   return (
@@ -41,6 +63,23 @@ export default function Home() {
             </Link>
           ))}
         </section>
+
+        {/* Carousel de compañías */}
+        <div className="mt-12">
+          <h2 className="text-center text-xl font-semibold mb-4">
+            Compañías aseguradoras con las que colaboramos
+          </h2>
+          <div className="flex overflow-x-auto items-center space-x-6 py-4">
+            {companies.map((file) => (
+              <img
+                key={file}
+                src={`/logos/${file}`}
+                alt={file.replace('.svg','')}
+                className="h-12 flex-shrink-0"
+              />
+            ))}
+          </div>
+        </div>
       </main>
     </>
   )
