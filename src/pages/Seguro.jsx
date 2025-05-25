@@ -2,9 +2,9 @@ import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 
-// Diccionario de productos
+// Diccionario de productos (usa claves EXACTAS igual que las rutas)
 const productos = {
-  coche: {
+  'coche': {
     titulo: "Coche",
     descripcion: "Tu seguro de coche al mejor precio en Andújar (Jaén). RC obligatoria, lunas, robo, incendio, asistencia 24h y más. Trabajamos con Mapfre, Reale, Allianz y las mejores.",
     coberturas: [
@@ -17,7 +17,7 @@ const productos = {
     ],
     imagen: "/logos/coche.png"
   },
-  hogar: {
+  'hogar': {
     titulo: "Hogar",
     descripcion: "Protege tu vivienda ante cualquier imprevisto: incendio, robo, daños por agua y mucho más. Seguro de hogar personalizado para propietarios o inquilinos.",
     coberturas: [
@@ -29,7 +29,7 @@ const productos = {
     ],
     imagen: "/logos/hogar.png"
   },
-  salud: {
+  'salud': {
     titulo: "Salud",
     descripcion: "Acceso rápido a especialistas, pruebas y hospitalización. Seguro de salud para particulares y autónomos. Asisa, Adeslas, DKV, AXA y más.",
     coberturas: [
@@ -41,7 +41,7 @@ const productos = {
     ],
     imagen: "/logos/salud.png"
   },
-  // ...añade más productos personalizados aquí...
+  // ... añade aquí cada producto con su clave EXACTA ...
 }
 
 // Fallback genérico si el producto no está personalizado
@@ -61,10 +61,10 @@ const productoGenerico = name => ({
 
 export default function Seguro() {
   const { name } = useParams()
+  // name ya es tal cual la URL: "coche", "hogar", "cabeza-tractora"...
   const slug = name.replace(/-/g, ' ')
-  const clave = name.replace(/-/g, '').toLowerCase()
-  // Busca el producto, si no existe usa genérico
-  const producto = productos[name.replace(/-/g, '').toLowerCase()] || productoGenerico(slug)
+  // Busca el producto con la clave tal cual
+  const producto = productos[name] || productoGenerico(slug)
   const titulo = producto.titulo
   const url = `https://asegura2k25.netlify.app/seguro-${name}`
   const ogImage = 'https://asegura2k25.netlify.app/og-image.jpg'
