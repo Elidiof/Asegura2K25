@@ -16,10 +16,10 @@ export default function Home() {
   // Lista original de compañías
   const companies = [
     'mapfre','reale','generali','allianz',
-    'axa','asisa','dkv','helvetia',
+    'axa','race','asisa','dkv','helvetia',
     'pelayo','aegon','fiatc','hiscox','zurich',
     'adeslas','catalana-occidente','mutuamadrilena',
-    'santalucia','ocaso','race'
+    'santalucia','ocaso'
   ]
 
   // Partimos en dos filas
