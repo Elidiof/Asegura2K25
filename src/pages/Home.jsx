@@ -22,12 +22,12 @@ export default function Home() {
     'santalucia','ocaso','race'
   ]
 
-  // Duplicamos *completo* para scroll infinito
-  const looped = [...companies, ...companies]
-
-  // Dividimos en dos filas (cada una idéntica)
-  const firstRow = looped
-  const secondRow = looped
+  // Partimos en dos filas
+  const mitad = Math.ceil(companies.length / 2)
+  const rows = [
+    companies.slice(0, mitad),
+    companies.slice(mitad)
+  ]
 
   return (
     <>
@@ -63,32 +63,26 @@ export default function Home() {
         </section>
 
         {/* Carrusel de compañías */}
-<section className="mb-10 space-y-4">
-  <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
-    Compañías aseguradoras con las que colaboramos
-  </h2>
+        <section className="mb-10 space-y-4">
+          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
+            Compañías aseguradoras con las que colaboramos
+          </h2>
 
-  {rows.map((row, idx) => (
-    <div key={idx} className="overflow-hidden">
-      <Marquee gradient={false} speed={50} pauseOnHover>
-        {/*
-          Aquí duplicamos la fila para que, nada más
-          terminar la primera tanda, empiece la segunda
-          sin hueco alguno.
-        */}
-        {[...row, ...row].map((key, i) => (
-          <img
-            key={`${key}-${i}`}
-            src={`/logos/${key}.svg`}
-            alt={`Logo de ${key.replace(/-/g, ' ')}`}
-            className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
-          />
-        ))}
-      </Marquee>
-    </div>
-  ))}
-</section>
-
+          {rows.map((row, idx) => (
+            <div key={idx} className="overflow-hidden">
+              <Marquee gradient={false} speed={50} pauseOnHover>
+                {row.concat(row).map((key, i) => (
+                  <img
+                    key={`${key}-${i}`}
+                    src={`/logos/${key}.svg`}
+                    alt={`Logo de ${key.replace(/-/g, ' ')}`}
+                    className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
+                  />
+                ))}
+              </Marquee>
+            </div>
+          ))}
+        </section>
       </main>
     </>
   )
