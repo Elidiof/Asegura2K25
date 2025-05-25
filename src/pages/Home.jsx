@@ -1,6 +1,7 @@
+// src/pages/Home.jsx
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'      // Navegación SPA
 import { Card, CardContent } from '../components/ui/Card'
 import Marquee from 'react-fast-marquee'
 
@@ -32,7 +33,10 @@ export default function Home() {
     'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
   ]
   const mitad = Math.ceil(companias.length / 2)
-  const rows = [ companias.slice(0, mitad), companias.slice(mitad) ]
+  const rows = [
+    companias.slice(0, mitad),
+    companias.slice(mitad)
+  ]
 
   return (
     <>
@@ -60,11 +64,7 @@ export default function Home() {
               .normalize('NFD')
               .replace(/[^a-z0-9-]/g, '')
             return (
-              <Link
-                key={name}
-                to={`/seguro-${slug}`}
-                className="block"
-              >
+              <Link key={slug} to={`/seguro-${slug}`} className="block">
                 <Card className="bg-gray-100 border border-gray-300 rounded-2xl p-4 hover:shadow-lg transition">
                   <CardContent className="flex justify-center">
                     <img
@@ -73,9 +73,7 @@ export default function Home() {
                       className="h-20 sm:h-24 w-auto"
                     />
                   </CardContent>
-                  <p className="text-center font-medium text-blue-900 mt-2">
-                    {name}
-                  </p>
+                  {/* <-- Aquí ya NO mostramos el texto debajo */}
                 </Card>
               </Link>
             )
@@ -87,7 +85,13 @@ export default function Home() {
             Compañías aseguradoras con las que colaboramos
           </h2>
           {rows.map((row, idx) => (
-            <Marquee key={idx} gradient={false} speed={50} pauseOnHover className="overflow-hidden">
+            <Marquee
+              key={idx}
+              gradient={false}
+              speed={50}
+              pauseOnHover
+              className="overflow-hidden"
+            >
               {row.map((key) => (
                 <img
                   key={key}
