@@ -1,3 +1,4 @@
+```jsx
 // src/pages/Home.jsx
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
@@ -83,12 +84,12 @@ export default function Home() {
             gradient={false}
             className="overflow-hidden"
           >
-            {primeraFila.map((file) => (
+            {[...primeraFila, ...primeraFila].map((file, idx) => (
               <img
-                key={file}
+                key={`${file}-${idx}`}
                 src={`/logos/${file}`}
                 alt={file.replace('.svg', '')}
-                className="h-12 mx-3 flex-shrink-0"
+                className="h-12 mx-2 flex-shrink-0"
               />
             ))}
           </Marquee>
@@ -100,12 +101,12 @@ export default function Home() {
             gradient={false}
             className="overflow-hidden"
           >
-            {segundaFila.map((file) => (
+            {[...segundaFila, ...segundaFila].map((file, idx) => (
               <img
-                key={file}
+                key={`${file}-${idx}`}
                 src={`/logos/${file}`}
                 alt={file.replace('.svg', '')}
-                className="h-12 mx-3 flex-shrink-0"
+                className="h-12 mx-2 flex-shrink-0"
               />
             ))}
           </Marquee>
@@ -114,3 +115,4 @@ export default function Home() {
     </>
   )
 }
+```
