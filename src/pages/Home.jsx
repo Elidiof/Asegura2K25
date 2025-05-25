@@ -19,7 +19,7 @@ export default function Home() {
     'axa','race','asisa','dkv','helvetia',
     'pelayo','aegon','fiatc','hiscox','zurich',
     'adeslas','catalana-occidente','mutuamadrilena',
-    'mapfre','santalucia','ocaso'
+    'mapfre','mapfre','santalucia','ocaso'
   ]
 
   // Partimos en dos filas
