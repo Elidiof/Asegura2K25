@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 import React from 'react'
-import { Helmet } from 'react-helmet-async'             // ← Import añadido
+import { Helmet } from 'react-helmet-async'
 import { Card, CardContent } from '../components/ui/Card'
 import Marquee from 'react-fast-marquee'
 
@@ -27,23 +27,39 @@ export default function Home() {
   ]
 
   const companias = [
-    'mapfre','reale','generali','allianz','axa','asisa','dkv',
-    'helvetia','zurich','adeslas','catalana-ocidente',
-    'mutuamadrilena','santalucia','pelayo','aegon','hiscox'
+    'mapfre', 'reale', 'generali', 'allianz', 'axa', 'asisa', 'dkv',
+    'helvetia', 'zurich', 'adeslas', 'catalana-ocidente',
+    'mutuamadrilena', 'santalucia', 'pelayo', 'aegon', 'hiscox'
   ]
   const mitad = Math.ceil(companias.length / 2)
-  const rows = [ companias.slice(0, mitad), companias.slice(mitad) ]
+  const rows = [companias.slice(0, mitad), companias.slice(mitad)]
+
+  // Datos OG / Twitter
+  const ogTitle = "Asegura2K25 – Seguros de coche, hogar, salud y más | Andújar"
+  const ogDescription = "Cotiza tu seguro de coche, hogar, salud, vida y más en Andújar (Jaén). Asesoramiento personalizado al mejor precio. Contacta con Elidio Ferrer."
+  const ogImage = "https://asegura2k25.netlify.app/og-image.jpg"
+  const canonical = "https://asegura2k25.netlify.app/"
 
   return (
     <>
-      {/* ——— Meta-etiquetas SEO ——— */}
+      {/* ——— Meta-etiquetas SEO, OG y Twitter ——— */}
       <Helmet>
-        <title>Encuentra seguros de coche, hogar, salud y más | Asegura2K25</title>
-        <meta
-          name="description"
-          content="Cotiza tu seguro de coche, hogar, salud, vida y más en Andújar (Jaén). Te asesoramos al mejor precio."
-        />
-        <link rel="canonical" href="https://asegura2k25.netlify.app/" />
+        <title>{ogTitle}</title>
+        <meta name="description" content={ogDescription} />
+        <link rel="canonical" href={canonical} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={canonical} />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={ogTitle} />
+        <meta name="twitter:description" content={ogDescription} />
+        <meta name="twitter:image" content={ogImage} />
       </Helmet>
 
       <main className="flex-grow max-w-7xl mx-auto px-4 py-6">
