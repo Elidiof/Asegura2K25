@@ -11,6 +11,7 @@ export default function Header() {
           <img src={logo} alt="Asegura2K25" className="h-12 md:h-16" />
         </Link>
         {/* Aquí podrías añadir navitems u otro contenido si lo necesitas */}
+        <h2 className="mt-2 text-xl">Encuentra el seguro que necesitas</h2>
       </div>
     </header>
   )
