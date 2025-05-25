@@ -63,49 +63,32 @@ export default function Home() {
         </section>
 
         {/* Carrusel de compañías */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
-            Compañías aseguradoras con las que colaboramos
-          </h2>
+<section className="mb-10 space-y-4">
+  <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
+    Compañías aseguradoras con las que colaboramos
+  </h2>
 
-          {/* Fila 1 */}
-          <Marquee
-            gradient={false}
-            speed={50}
-            pauseOnHover
-            className="overflow-hidden"
-          >
-            <div className="flex items-center whitespace-nowrap space-x-3">
-              {firstRow.map((key, idx) => (
-                <img
-                  key={`row1-${idx}-${key}`}
-                  src={`/logos/${key}.svg`}
-                  alt={key.replace(/-/g, ' ')}
-                  className="h-12 flex-shrink-0"
-                />
-              ))}
-            </div>
-          </Marquee>
+  {rows.map((row, idx) => (
+    <div key={idx} className="overflow-hidden">
+      <Marquee gradient={false} speed={50} pauseOnHover>
+        {/*
+          Aquí duplicamos la fila para que, nada más
+          terminar la primera tanda, empiece la segunda
+          sin hueco alguno.
+        */}
+        {[...row, ...row].map((key, i) => (
+          <img
+            key={`${key}-${i}`}
+            src={`/logos/${key}.svg`}
+            alt={`Logo de ${key.replace(/-/g, ' ')}`}
+            className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
+          />
+        ))}
+      </Marquee>
+    </div>
+  ))}
+</section>
 
-          {/* Fila 2 */}
-          <Marquee
-            gradient={false}
-            speed={50}
-            pauseOnHover
-            className="overflow-hidden"
-          >
-            <div className="flex items-center whitespace-nowrap space-x-3">
-              {secondRow.map((key, idx) => (
-                <img
-                  key={`row2-${idx}-${key}`}
-                  src={`/logos/${key}.svg`}
-                  alt={key.replace(/-/g, ' ')}
-                  className="h-12 flex-shrink-0"
-                />
-              ))}
-            </div>
-          </Marquee>
-        </section>
       </main>
     </>
   )
