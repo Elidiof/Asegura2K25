@@ -1,1 +1,3 @@
-feat: añade robots.txt con enlace al sitemap
+User-agent: *
+Allow: /
+Sitemap: https://asegura2k25.netlify.app/sitemap.xml
