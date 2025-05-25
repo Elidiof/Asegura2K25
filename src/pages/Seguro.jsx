@@ -11,7 +11,7 @@ export default function Seguro() {
     .map(x => x.charAt(0).toUpperCase() + x.slice(1))
     .join(' ')
   const url = `https://asegura2k25.netlify.app/seguro-${name}`
-  const ogImage = 'https://asegura2k25.netlify.app/og-image.png' // Cambia a .jpg si lo prefieres
+  const ogImage = 'https://asegura2k25.netlify.app/og-image.jpg' // Cambiado a .jpg si
 
   return (
     <>
