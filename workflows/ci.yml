@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # ✏️ (Opcional) si quieres saltarte lint/format mientras lo arreglas,
+      # ✏️ (Opcional) si quieres saltarte lint/format mientras lo arreglas
       # comenta estas dos líneas:
       # - name: Lint code
       #   run: npm run lint
