@@ -14,15 +14,19 @@ export default function Home() {
   ]
 
   const companies = [
-    'mapfre.svg','reale.svg','generali.svg','allianz.svg',
-    'axa.svg','asisa.svg','dkv.svg','helvetia.svg',
-    'pelayo.svg','aegon.svg','fiatc.svg','hiscox.svg','zurich.svg',
-    'adeslas.svg','catalana-occidente.svg','mutuamadrilena.svg',
-    'santalucia.svg','ocaso.svg','race.svg'
+    'mapfre','reale','generali','allianz',
+    'axa','asisa','dkv','helvetia',
+    'pelayo','aegon','fiatc','hiscox','zurich',
+    'adeslas','catalana-occidente','mutuamadrilena',
+    'santalucia','ocaso','race'
   ]
 
-  // Duplicamos para scroll continuo
-  const logosLoop = [...companies, ...companies]
+  // Partimos en dos filas
+  const mitad = Math.ceil(companies.length / 2)
+  const rows = [
+    companies.slice(0, mitad),
+    companies.slice(mitad)
+  ]
 
   return (
     <>
@@ -35,6 +39,7 @@ export default function Home() {
       </Helmet>
 
       <main className="container mx-auto p-4">
+        {/* Título */}
         <h2 className="text-center text-3xl font-bold mb-8 text-blue-800">
           Encuentra el seguro que necesitas
         </h2>
@@ -56,39 +61,35 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Carrusel en dos filas idénticas */}
-        <section className="space-y-4 bg-white py-8">
-          <h2 className="text-center text-xl font-semibold mb-6 text-gray-700">
+        {/* Carrusel de compañías */}
+        <section className="mb-10 space-y-4">
+          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
             Compañías aseguradoras con las que colaboramos
           </h2>
 
-          {/* Fila 1 */}
-          <Marquee pauseOnHover speed={50} gradient={false} className="overflow-hidden">
-            <div className="flex items-center space-x-3">
-              {logosLoop.map((file, idx) => (
-                <img
-                  key={`row1-${idx}-${file}`}
-                  src={`/logos/${file}`}
-                  alt={file.replace('.svg','')}
-                  className="h-12 flex-shrink-0"
-                />
-              ))}
+          {rows.map((row, idx) => (
+            <div key={idx} className="overflow-hidden">
+              <Marquee gradient={false} speed={50} pauseOnHover>
+                {row.map((key) => (
+                  <img
+                    key={key}
+                    src={`/logos/${key}.svg`}
+                    alt={`Logo de ${key.replace(/-/g, ' ')}`}
+                    className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
+                  />
+                ))}
+                {/* Para loop continuo, volvemos a renderizar la misma fila */}
+                {row.map((key) => (
+                  <img
+                    key={`${key}-dup-${idx}`}
+                    src={`/logos/${key}.svg`}
+                    alt={`Logo de ${key.replace(/-/g, ' ')}`}
+                    className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
+                  />
+                ))}
+              </Marquee>
             </div>
-          </Marquee>
-
-          {/* Fila 2 */}
-          <Marquee pauseOnHover speed={50} gradient={false} className="overflow-hidden">
-            <div className="flex items-center space-x-3">
-              {logosLoop.map((file, idx) => (
-                <img
-                  key={`row2-${idx}-${file}`}
-                  src={`/logos/${file}`}
-                  alt={file.replace('.svg','')}
-                  className="h-12 flex-shrink-0"
-                />
-              ))}
-            </div>
-          </Marquee>
+          ))}
         </section>
       </main>
     </>
