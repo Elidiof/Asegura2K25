@@ -8,14 +8,6 @@
 - Tailwind CSS
 - FormSubmit para formularios de contacto
 
-## ⚙️ Instalación local
-```bash
-git clone https://github.com/Elidiof/Asegura2k25.git
-cd Asegura2k25
-npm install
-npm run dev
-```
-
 ## 📦 Despliegue en Vercel
 Este proyecto está preparado para desplegarse automáticamente con Vercel.
 
