@@ -1,22 +1,21 @@
-import React, { Suspense } from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import Header from './components/Header';
-import { CookieBanner } from './components/CookieBanner';
-import Footer from './components/Footer';
+import React, { Suspense } from 'react'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
+import Header from './components/Header'
+import { CookieBanner } from './components/CookieBanner'
+import Footer from './components/Footer'
 
-// Lazy-loaded pages
-const Home = React.lazy(() => import('./pages/Home'));
-const Seguro = React.lazy(() => import('./pages/Seguro'));
+const Home = React.lazy(() => import('./pages/Home'))
+const Seguro = React.lazy(() => import('./pages/Seguro'))
 
 function App() {
   return (
     <HelmetProvider>
       <HashRouter>
-        {/* Hero / Banner */}
+        {/* Cabecera común */}
         <Header />
 
-        {/* Main content */}
+        {/* Contenido principal */}
         <main className="container mx-auto p-4">
           <Suspense fallback={<div className="p-4 text-center">Cargando…</div>}>
             <Routes>
@@ -27,12 +26,11 @@ function App() {
           </Suspense>
         </main>
 
-        {/* Cookie banner and footer */}
         <CookieBanner />
         <Footer />
       </HashRouter>
     </HelmetProvider>
-  );
+  )
 }
 
-export default App;
+export default App
