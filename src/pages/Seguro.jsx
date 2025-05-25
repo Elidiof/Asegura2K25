@@ -1,37 +1,15 @@
-import React, { Suspense } from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
-import Header from './components/Header';
-import { CookieBanner } from './components/CookieBanner';
-import Footer from './components/Footer';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Home = React.lazy(() => import('./pages/Home'));
-const Seguro = React.lazy(() => import('./pages/Seguro'));
-
-function App() {
+export default function Header() {
   return (
-    <HelmetProvider>
-      <HashRouter>
-        {/* Hero / Banner */}
-        <Header />
-
-        {/* Main content area */}
-        <main className="container mx-auto p-4">
-          <Suspense fallback={<div className="p-4 text-center">Cargando…</div>}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/seguro/:name" element={<Seguro />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </Suspense>
-        </main>
-
-        {/* Cookie banner and footer */}
-        <CookieBanner />
-        <Footer />
-      </HashRouter>
-    </HelmetProvider>
-  );
+    <header className="bg-blue-900 text-white py-6">
+      <div className="container mx-auto flex items-center justify-center px-4">
+        <Link to="/">
+          {/* La imagen está en public/logo.png */}
+          <img src="/logo.png" alt="Asegura2K25" className="h-12 md:h-16 mx-auto" />
+        </Link>
+      </div>
+    </header>
+  )
 }
-
-export default App;
