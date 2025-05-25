@@ -18,5 +18,5 @@ function copyRedirects() {
 
 export default defineConfig({
   plugins: [react(), copyRedirects()],
-  base: './'
+  base: '/'
 })
