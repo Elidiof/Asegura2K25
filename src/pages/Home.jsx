@@ -25,7 +25,7 @@ export default function Home() {
     'axa', 'asisa', 'dkv', 'helvetia',
     'pelayo', 'aegon', 'fiatc', 'hiscox', 'zurich',
     'adeslas', 'catalana-occidente', 'mutuamadrilena',
-    'santalucia', 'ocaso', 'race'
+    'santalucia', 'qualitas', 'race'
   ]
 
   /* ─────────────────────────────────────────
