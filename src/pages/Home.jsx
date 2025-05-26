@@ -5,26 +5,53 @@ import { Link } from 'react-router-dom'
 import Marquee from 'react-fast-marquee'
 
 export default function Home() {
+  // Slugs de todos los productos (deben coincidir con los nombres de los .png en /public/logos)
   const products = [
-    'coche','hogar','vida','salud','alquiler',
-    'empresas','rc','accidentes','mascotas',
-    'cabeza-tractora','transporte-mercancias','agroseguro',
-    'comunidades','decesos','taxi','moto','patinete',
+    'coche',
+    'hogar',
+    'vida',
+    'salud',
+    'alquiler',
+    'empresa',
+    'rc',
+    'accidentes',
+    'mascotas',
+    'cabeza-tractora',
+    'transporte-mercancias',
+    'agroseguro',
+    'comunidades',
+    'decesos',
+    'taxi',
+    'moto',
+    'patinete',
     'instrumentos-musicales'
   ]
 
-  // Lista original de compañías
-  const companies = ['reale','generali','allianz','axa',
-                     'race','asisa','dkv','helvetia','pelayo',
-                     'aegon','fiatc','hiscox','zurich',
-                     'adeslas','catalana-occidente',
-                     'mutuamadrilena','mapfre','santalucia']
-  // Partimos en dos filas
-  const mitad = Math.ceil(companies.length / 2)
-  const rows = [
-    companies.slice(0, mitad),
-    companies.slice(mitad)
+  // Lista de compañías (sin extensión); deben existir en /public/logos/*.svg
+  const companies = [
+    'mapfre',
+    'reale',
+    'generali',
+    'allianz',
+    'axa',
+    'asisa',
+    'dkv',
+    'helvetia',
+    'pelayo',
+    'aegon',
+    'fiatc',
+    'hiscox',
+    'zurich',
+    'adeslas',
+    'catalana-occidente',
+    'mutuamadrilena',
+    'santalucia',
+    'ocaso',
+    'race'
   ]
+
+  // Duplicamos la lista para garantizar un flujo continuo
+  const looped = [...companies, ...companies]
 
   return (
     <>
@@ -37,7 +64,7 @@ export default function Home() {
       </Helmet>
 
       <main className="container mx-auto p-4">
-        {/* Título */}
+        {/* Título principal */}
         <h2 className="text-center text-3xl font-bold mb-8 text-blue-800">
           Encuentra el seguro que necesitas
         </h2>
@@ -59,26 +86,39 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Carrusel de compañías */}
+        {/* Carrusel de compañías en dos filas */}
         <section className="mb-10 space-y-4">
           <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
             Compañías aseguradoras con las que colaboramos
           </h2>
 
-          {rows.map((row, idx) => (
-            <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={50} pauseOnHover>
-                {row.concat(row).map((key, i) => (
-                  <img
-                    key={`${key}-${i}`}
-                    src={`/logos/${key}.svg`}
-                    alt={`Logo de ${key.replace(/-/g, ' ')}`}
-                    className="inline-block h-10 sm:h-12 mx-2 sm:mx-[0.5cm]"
-                  />
-                ))}
-              </Marquee>
-            </div>
-          ))}
+          {/* Primera fila: scroll izquierda */}
+          <div className="overflow-hidden">
+            <Marquee gradient={false} speed={50} pauseOnHover>
+              {looped.map((key, i) => (
+                <img
+                  key={`row1-${key}-${i}`}
+                  src={`/logos/${key}.svg`}
+                  alt={key.replace(/-/g, ' ')}
+                  className="inline-block h-12 mx-3 flex-shrink-0"
+                />
+              ))}
+            </Marquee>
+          </div>
+
+          {/* Segunda fila: scroll derecha (sentido inverso) */}
+          <div className="overflow-hidden">
+            <Marquee gradient={false} speed={50} pauseOnHover direction="right">
+              {looped.map((key, i) => (
+                <img
+                  key={`row2-${key}-${i}`}
+                  src={`/logos/${key}.svg`}
+                  alt={key.replace(/-/g, ' ')}
+                  className="inline-block h-12 mx-3 flex-shrink-0"
+                />
+              ))}
+            </Marquee>
+          </div>
         </section>
       </main>
     </>
