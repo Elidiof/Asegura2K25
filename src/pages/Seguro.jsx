@@ -1,16 +1,107 @@
 // src/pages/Seguro.jsx
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 
 const productData = {
-  coche: { /* … */ },
-  hogar: { /* … */ },
-  vida: { /* … */ },
-  salud: { /* … */ },
-  alquiler: { /* … */ },
+  coche: {
+    title: 'Seguro de Coche',
+    icon: '/logos/coche.png',
+    description: 'Solicita tu seguro de coche. Trabajamos con las mejores compañías y te asesoramos.',
+    coverages: [
+      'Responsabilidad civil obligatoria y voluntaria',
+      'Defensa jurídica y reclamación de daños',
+      'Asistencia en viaje desde el km 0',
+      'Robo, incendio y lunas',
+      'Colisión con animal, daños atmosféricos',
+      'Daños propios con o sin franquicia'
+    ],
+    requirements: [
+      'Fotografía del permiso de circulación',
+      'Fotografía de la ficha técnica',
+      'Fotografía del carnet de conducir por ambas caras',
+      'Foto de la póliza actual o número de póliza y nombre de la compañía'
+    ]
+  },
+  hogar: {
+    title: 'Seguro de Hogar',
+    icon: '/logos/hogar.png',
+    description: 'Protege tu hogar con coberturas a medida: incendio, robo y responsabilidad civil.',
+    coverages: [
+      'Responsabilidad civil',
+      'Daños por agua y rotura de tuberías',
+      'Incendio, explosión y caída de rayo',
+      'Rotura de cristales',
+      'Robo y daños por intento de robo',
+      'Daños estéticos',
+      'Asistencia urgente 24 h (electricistas, fontaneros, cerrajeros…)',
+      'Responsabilidad civil de mascotas (ley para perros)'
+    ],
+    requirements: [
+      'Dirección completa del inmueble',
+      'Año de reforma (si la hubiese)',
+      'Valor aproximado del contenido',
+      'Vivienda habitual, segunda residencia, inquilino o propietario'
+    ]
+  },
+  vida: {
+    title: 'Seguro de Vida',
+    icon: '/logos/vida.png',
+    description: 'Tranquilidad para ti y tu familia con nuestra gama de seguros de vida.',
+    coverages: [
+      'Capital asegurado en caso de fallecimiento',
+      'Adelanto de capital por enfermedad grave terminal',
+      'Invalidez absoluta y permanente (opcional)',
+      'Asistencia familiar y testamento online',
+      'Repatriación en caso de fallecimiento',
+      'Servicios de orientación médica y psicológica'
+    ],
+    requirements: [
+      'Nombre completo y fecha de nacimiento',
+      'Capital que deseas asegurar',
+      'Indicar si deseas incluir invalidez u otras coberturas',
+      'Compañía aseguradora actual (si la hay)'
+    ]
+  },
+  salud: {
+    title: 'Seguro de Salud',
+    icon: '/logos/salud.png',
+    description: 'Accede a la mejor asistencia médica y hospitalaria sin listas de espera.',
+    coverages: [
+      'Consultas médicas generales y especialistas',
+      'Pruebas diagnósticas y análisis clínicos',
+      'Hospitalización, intervenciones quirúrgicas y urgencias',
+      'Acceso a cuadro médico privado sin listas de espera',
+      'Asistencia médica telefónica 24/7',
+      'Opcional: reembolso de gastos médicos y cobertura dental'
+    ],
+    requirements: [
+      'Nombre completo y fecha de nacimiento',
+      'Código postal de residencia',
+      'Compañía actual (si la hay)',
+      'Si deseas incluir coberturas opcionales (dental, reembolso…)'
+    ]
+  },
+  alquiler: {
+    title: 'Seguro de Alquiler',
+    icon: '/logos/alquiler.png',
+    description: 'Protege tu vivienda de alquiler ante impagos y daños.',
+    coverages: [
+      'Impago de alquiler mensual hasta 12 meses',
+      'Defensa jurídica y asistencia legal ilimitada',
+      'Actos vandálicos al continente y mobiliario',
+      'Gastos de cerrajero y cambio de cerradura',
+      'Monitorio y desahucio por vía judicial'
+    ],
+    requirements: [
+      'Dirección exacta del inmueble en alquiler',
+      'Importe mensual del alquiler',
+      'Tipo de contrato (habitual, vacacional, etc.)',
+      'Antigüedad y estado del inquilino'
+    ]
+  },
   empresa: {
-    // antes lo tenías como 'empresas', ahora singular como slug
+    title: 'Seguro para Empresas',
     icon: '/logos/empresa.png',
     description: 'Coberturas integrales para proteger tu actividad empresarial.',
     coverages: [
@@ -28,59 +119,28 @@ const productData = {
       'Facturación anual aproximada'
     ]
   },
-  rc:       { /* … */ },
+  rc: { /* … igual que antes … */ },
   accidentes: { /* … */ },
   mascotas: { /* … */ },
   'cabeza-tractora': { /* … */ },
-  'transporte-mercancias': {
-    // sin acento
-    icon: '/logos/transporte-mercancias.png',
-    description: 'Cobertura para transporte de mercancías.',
-    coverages: [
-      'Cobertura opcional a todo riesgo (ICC-A – cláusulas inglesas)',
-      'Daños a la mercancía por accidente, robo, hurto o incendio',
-      'Responsabilidad del transportista según LCTTM / CMR',
-      'Daños por mojadura, rotura o mala estiba (según condiciones)',
-      'Cobertura en transporte nacional e internacional',
-      'Gastos derivados por paralización o pérdida de portes'
-    ],
-    requirements: [
-      'Tipo de mercancía transportada',
-      'CIF y nombre de la empresa, o bien DNI si eres autónomo',
-      'Alcance del transporte (nacional, internacional o ambos)',
-      'Número de vehículos o matrículas',
-      'Facturación anual aproximada'
-    ]
-  },
+  'transporte-mercancias': { /* … */ },
   agroseguro: { /* … */ },
   comunidades: { /* … */ },
-  decesos:    { /* … */ },
-  taxi:       { /* … */ },
-  moto:       { /* … */ },
-  patinete:   { /* … */ },
-  'instrumentos-musicales': {
-    icon: '/logos/instrumentos-musicales.png',
-    description: 'Cobertura para tus instrumentos.',
-    coverages: [
-      'Robo o hurto del instrumento en cualquier parte del mundo',
-      'Daños por accidente, incendio, agua o caída',
-      'Daños durante transporte (avión, tren, coche…)',
-      'Actos vandálicos en ensayos o actuaciones',
-      'Responsabilidad civil por daños a terceros con el instrumento'
-    ],
-    requirements: [
-      'Nombre completo y DNI',
-      'Tipo y marca del instrumento',
-      'Valor aproximado en euros',
-      'Forma habitual de transporte y uso (particular, profesional…)',
-      'Fotos del instrumento (frontal y lateral)'
-    ]
-  }
+  decesos: { /* … */ },
+  taxi: { /* … */ },
+  moto: { /* … */ },
+  patinete: { /* … */ },
+  'instrumentos-musicales': { /* … */ }
 }
 
 export default function Seguro() {
   const { name } = useParams()
   const data = productData[name]
+
+  // LOG para depurar slug
+  useEffect(() => {
+    console.log('slug recibido:', name)
+  }, [name])
 
   if (!data) {
     return (
@@ -99,7 +159,7 @@ export default function Seguro() {
   return (
     <>
       <Helmet>
-        <title>Asegura2K25 – Seguro</title>
+        <title>{data.title} – Asegura2K25</title>
         <meta name="description" content={data.description} />
       </Helmet>
 
