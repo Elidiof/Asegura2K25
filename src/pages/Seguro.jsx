@@ -17,10 +17,9 @@ const productData = {
       'Daños propios con o sin franquicia'
     ],
     requirements: [
-      'Fotografía del permiso de circulación',
-      'Fotografía de la ficha técnica',
+      'Fotografía del permiso de circulación y de la ficha técnica',
       'Fotografía del carnet de conducir por ambas caras',
-      'Foto de la póliza actual o número de póliza y nombre de la compañía'
+      'Fotografía o PDF de la póliza actual o número de póliza y nombre de la compañía'
     ]
   },
   hogar: {
