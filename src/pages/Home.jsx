@@ -14,7 +14,11 @@ export default function Home() {
   ]
 
   // Lista original de compañías
-  const companies = ['reale','generali','allianz','axa','race','asisa','dkv','helvetia','pelayo','aegon','fiatc','hiscox','zurich','adeslas','catalana-occidente','mutuamadrilena','mapfre','santalucia','ocaso',]
+  const companies = ['reale','generali','allianz','axa',
+                     'race','asisa','dkv','helvetia','pelayo',
+                     'aegon','fiatc','hiscox','zurich',
+                     'adeslas','catalana-occidente',
+                     'mutuamadrilena','mapfre','santalucia','ocaso']
   // Partimos en dos filas
   const mitad = Math.ceil(companies.length / 2)
   const rows = [
