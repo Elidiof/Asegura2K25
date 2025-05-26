@@ -18,7 +18,7 @@ export default function Home() {
                      'race','asisa','dkv','helvetia','pelayo',
                      'aegon','fiatc','hiscox','zurich',
                      'adeslas','catalana-occidente',
-                     'mutuamadrilena','mapfre','santalucia','ocaso']
+                     'mutuamadrilena','mapfre','santalucia']
   // Partimos en dos filas
   const mitad = Math.ceil(companies.length / 2)
   const rows = [
