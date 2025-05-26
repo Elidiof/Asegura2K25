@@ -42,7 +42,60 @@ const productData = {
       'Indícanos si se trata de tu vivienda habitual, segunda residencia, inquilino o propietario'
     ]
   },
-  // ... resto de productos ...
+  vida: {
+    icon: '/logos/vida.png',
+    description: 'Tranquilidad para ti y tu familia con nuestra gama de seguros de vida.',
+    coverages: [
+      'Capital asegurado en caso de fallecimiento',
+      'Adelanto de capital por enfermedad grave terminal',
+      'Invalidez absoluta y permanente (opcional)',
+      'Asistencia familiar y testamento online',
+      'Repatriación en caso de fallecimiento',
+      'Servicios de orientación médica y psicológica'
+    ],
+    requirements: [
+      'Nombre completo y fecha de nacimiento',
+      'Capital que deseas asegurar',
+      'Indicar si deseas incluir invalidez u otras coberturas',
+      'Compañía aseguradora actual (si la hay)'
+    ]
+  },
+  salud: {
+    icon: '/logos/salud.png',
+    description: 'Accede a la mejor asistencia médica y hospitalaria sin listas de espera.',
+    coverages: [
+      'Consultas médicas generales y especialistas',
+      'Pruebas diagnósticas y análisis clínicos',
+      'Hospitalización, intervenciones quirúrgicas y urgencias',
+      'Acceso a cuadro médico privado sin listas de espera',
+      'Asistencia médica telefónica 24/7',
+      'Opcional: reembolso de gastos médicos y cobertura dental'
+    ],
+    requirements: [
+      'Nombre completo y fecha de nacimiento',
+      'Código postal de residencia',
+      'Compañía aseguradora actual (si la hay)',
+      'Si deseas incluir coberturas opcionales (dental, reembolso, etc.)'
+    ]
+  },
+  alquiler: {
+    icon: '/logos/alquiler.png',
+    description: 'Protege tu vivienda de alquiler ante impagos y daños.',
+    coverages: [
+      'Impago de alquiler mensual hasta 12 meses',
+      'Defensa jurídica y asistencia legal ilimitada',
+      'Actos vandálicos al continente y mobiliario',
+      'Gastos de cerrajero y cambio de cerradura',
+      'Monitorio y desahucio por vía judicial'
+    ],
+    requirements: [
+      'Dirección exacta del inmueble en alquiler',
+      'Importe mensual del alquiler',
+      'Tipo de contrato (habitual, vacacional, etc.)',
+      'Antigüedad y estado del inquilino'
+    ]
+  },
+  // ... resto de productos exactamente igual ...
 }
 
 export default function Seguro() {
@@ -53,7 +106,7 @@ export default function Seguro() {
     return (
       <main className="container mx-auto p-4 mt-8 text-center">
         <Helmet>
-          <title>Seguro no encontrado</title>
+          <title>Seguro no encontrado | Asegura2K25</title>
         </Helmet>
         <p className="text-xl mb-6">El seguro que buscas no existe.</p>
         <Link to="/" className="text-blue-600 hover:underline">
@@ -66,12 +119,12 @@ export default function Seguro() {
   return (
     <>
       <Helmet>
-        <title>Seguro – Asegura2K25</title>
+        <title>Asegura2K25 – Seguro</title>
         <meta name="description" content={data.description} />
       </Helmet>
 
       <main className="container mx-auto p-4 mt-8 space-y-8">
-        {/* Icono y volver atrás */}
+        {/* Icono + volver atrás */}
         <div className="flex flex-col items-center">
           <img src={data.icon} alt="" className="h-20 mb-2" />
           <Link to="/" className="text-blue-600 hover:underline">
@@ -79,10 +132,10 @@ export default function Seguro() {
           </Link>
         </div>
 
-        {/* descripción */}
+        {/* Descripción */}
         <p className="text-center text-gray-700">{data.description}</p>
 
-        {/* lista de coberturas */}
+        {/* Coberturas */}
         <div className="max-w-2xl mx-auto bg-white rounded-xl shadow p-6">
           <ul className="list-disc list-inside space-y-2">
             {data.coverages.map((cov, i) => (
@@ -91,7 +144,7 @@ export default function Seguro() {
           </ul>
         </div>
 
-        {/* lista de requisitos */}
+        {/* Requisitos */}
         <div className="max-w-2xl mx-auto bg-white rounded-xl shadow p-6">
           <ul className="list-disc list-inside space-y-2">
             {data.requirements.map((req, i) => (
@@ -100,7 +153,7 @@ export default function Seguro() {
           </ul>
         </div>
 
-        {/* CTA WhatsApp / Email */}
+        {/* CTA */}
         <div className="text-center">
           <p className="mb-4">Puedes enviarnos los datos por WhatsApp o por email</p>
           <div className="space-x-4">
