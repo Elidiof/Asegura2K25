@@ -7,7 +7,7 @@ const productData = {
   coche: {
     title: 'Seguro de Coche',
     icon: '/logos/coche.png',
-    description: 'Solicita tu seguro de coche en Andújar (Jaén). Trabajamos con las mejores compañías y te asesoramos gratis.',
+    description: 'Solicita tu seguro de coche. Trabajamos con las mejores compañías y te asesoramos.',
     coverages: [
       'Responsabilidad civil obligatoria y voluntaria',
       'Defensa jurídica y reclamación de daños',
@@ -100,9 +100,9 @@ const productData = {
       'Antigüedad y estado del inquilino'
     ]
   },
-  empresa: {
+  empresas: {
     title: 'Seguro para Empresas',
-    icon: '/logos/empresa.png',
+    icon: '/logos/empresas.png',
     description: 'Coberturas integrales para proteger tu actividad empresarial.',
     coverages: [
       'Responsabilidad civil por productos y post-trabajos',
