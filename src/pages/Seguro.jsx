@@ -1,4 +1,3 @@
-// src/pages/Seguro.jsx
 import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
@@ -35,13 +34,13 @@ const productData = {
       'Robo y daños por intento de robo',
       'Daños estéticos',
       'Asistencia urgente 24 h (electricistas, fontaneros, cerrajeros…)',
-      'Responsabilidad civil de mascotas (ley para perros)'
+      'Responsabilidad civil de mascotas (cumpliendo la ley para perros)'
     ],
     requirements: [
       'Dirección completa del inmueble',
       'Año de reforma (si la hubiese)',
       'Valor aproximado del contenido',
-      'Vivienda habitual, segunda residencia, inquilino o propietario'
+      'Indica si es vivienda habitual, segunda residencia, inquilino o propietario'
     ]
   },
   vida: {
@@ -119,7 +118,7 @@ const productData = {
       'Facturación anual aproximada'
     ]
   },
-  rc: { /* … igual que antes … */ },
+  rc: { /* igual que antes */ },
   accidentes: { /* … */ },
   mascotas: { /* … */ },
   'cabeza-tractora': { /* … */ },
@@ -137,7 +136,6 @@ export default function Seguro() {
   const { name } = useParams()
   const data = productData[name]
 
-  // LOG para depurar slug
   useEffect(() => {
     console.log('slug recibido:', name)
   }, [name])
@@ -159,13 +157,13 @@ export default function Seguro() {
   return (
     <>
       <Helmet>
-        <title>{data.title} – Asegura2K25</title>
+        <title>{data.title} · Asegura2K25</title>
         <meta name="description" content={data.description} />
       </Helmet>
 
       <main className="container mx-auto p-4 mt-8 space-y-8">
         <div className="flex flex-col items-center">
-          <img src={data.icon} alt="" className="h-20 mb-2" />
+          <img src={data.icon} alt={data.title} className="h-20 mb-2" />
           <Link to="/" className="text-blue-600 hover:underline">
             ← Volver al inicio
           </Link>
@@ -174,18 +172,16 @@ export default function Seguro() {
         <p className="text-center text-gray-700">{data.description}</p>
 
         <div className="max-w-2xl mx-auto bg-white rounded-xl shadow p-6">
+          <h2 className="sr-only">Qué cubre</h2>
           <ul className="list-disc list-inside space-y-2">
-            {data.coverages.map((cov, i) => (
-              <li key={i}>{cov}</li>
-            ))}
+            {data.coverages.map((cov, i) => <li key={i}>{cov}</li>)}
           </ul>
         </div>
 
         <div className="max-w-2xl mx-auto bg-white rounded-xl shadow p-6">
+          <h2 className="sr-only">Requisitos</h2>
           <ul className="list-disc list-inside space-y-2">
-            {data.requirements.map((req, i) => (
-              <li key={i}>{req}</li>
-            ))}
+            {data.requirements.map((req, i) => <li key={i}>{req}</li>)}
           </ul>
         </div>
 
