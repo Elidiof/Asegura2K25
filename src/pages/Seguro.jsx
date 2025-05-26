@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet-async'
 
 const productData = {
   coche: {
-    title: 'Seguro de Coche',
     icon: '/logos/coche.png',
     description: 'Solicita tu seguro de coche. Trabajamos con las mejores compañías y te asesoramos.',
     coverages: [
@@ -24,7 +23,6 @@ const productData = {
     ]
   },
   hogar: {
-    title: 'Seguro de Hogar',
     icon: '/logos/hogar.png',
     description: 'Protege tu hogar con coberturas a medida: incendio, robo y responsabilidad civil.',
     coverages: [
@@ -45,7 +43,6 @@ const productData = {
     ]
   },
   vida: {
-    title: 'Seguro de Vida',
     icon: '/logos/vida.png',
     description: 'Tranquilidad para ti y tu familia con nuestra gama de seguros de vida.',
     coverages: [
@@ -64,7 +61,6 @@ const productData = {
     ]
   },
   salud: {
-    title: 'Seguro de Salud',
     icon: '/logos/salud.png',
     description: 'Accede a la mejor asistencia médica y hospitalaria sin listas de espera.',
     coverages: [
@@ -83,7 +79,6 @@ const productData = {
     ]
   },
   alquiler: {
-    title: 'Seguro de Alquiler',
     icon: '/logos/alquiler.png',
     description: 'Protege tu vivienda de alquiler ante impagos y daños.',
     coverages: [
@@ -101,7 +96,6 @@ const productData = {
     ]
   },
   empresas: {
-    title: 'Seguro para Empresas',
     icon: '/logos/empresas.png',
     description: 'Coberturas integrales para proteger tu actividad empresarial.',
     coverages: [
@@ -120,7 +114,6 @@ const productData = {
     ]
   },
   rc: {
-    title: 'Seguro de Responsabilidad Civil',
     icon: '/logos/rc.png',
     description: 'Cobertura frente a reclamaciones de terceros.',
     coverages: [
@@ -139,7 +132,6 @@ const productData = {
     ]
   },
   accidentes: {
-    title: 'Seguro de Accidentes',
     icon: '/logos/accidentes.png',
     description: 'Coberturas para accidentes personales y terceros.',
     coverages: [
@@ -158,7 +150,6 @@ const productData = {
     ]
   },
   mascotas: {
-    title: 'Seguro de Mascotas',
     icon: '/logos/mascotas.png',
     description: 'Protege a tu mascota frente a enfermedades y accidentes.',
     coverages: [
@@ -175,7 +166,6 @@ const productData = {
     ]
   },
   'cabeza-tractora': {
-    title: 'Seguro Cabeza Tractora',
     icon: '/logos/cabeza-tractora.png',
     description: 'Seguro específico para cabezas tractoras.',
     coverages: [
@@ -194,7 +184,6 @@ const productData = {
     ]
   },
   'transporte-mercancias': {
-    title: 'Seguro de Transporte de Mercancías',
     icon: '/logos/transporte-mercancias.png',
     description: 'Cobertura para transporte de mercancías.',
     coverages: [
@@ -214,7 +203,6 @@ const productData = {
     ]
   },
   agroseguro: {
-    title: 'Agroseguro',
     icon: '/logos/agroseguro.png',
     description: 'Seguros para el sector agrícola.',
     coverages: [
@@ -231,7 +219,6 @@ const productData = {
     ]
   },
   comunidades: {
-    title: 'Seguro de Comunidades',
     icon: '/logos/comunidades.png',
     description: 'Coberturas para comunidades de vecinos.',
     coverages: [
@@ -248,7 +235,6 @@ const productData = {
     ]
   },
   decesos: {
-    title: 'Seguro de Decesos',
     icon: '/logos/decesos.png',
     description: 'Servicios funerarios y trámites.',
     coverages: [
@@ -267,7 +253,6 @@ const productData = {
     ]
   },
   taxi: {
-    title: 'Seguro de Taxi',
     icon: '/logos/taxi.png',
     description: 'Seguro específico para vehículos de taxi.',
     coverages: [
@@ -285,7 +270,6 @@ const productData = {
     ]
   },
   moto: {
-    title: 'Seguro de Moto',
     icon: '/logos/moto.png',
     description: 'Cobertura para todo tipo de motocicletas.',
     coverages: [
@@ -303,7 +287,6 @@ const productData = {
     ]
   },
   patinete: {
-    title: 'Seguro de Patinete',
     icon: '/logos/patinete.png',
     description: 'Protección para patinetes eléctricos.',
     coverages: [
@@ -320,7 +303,6 @@ const productData = {
     ]
   },
   'instrumentos-musicales': {
-    title: 'Seguro de Instrumentos Musicales',
     icon: '/logos/instrumentos-musicales.png',
     description: 'Cobertura para tus instrumentos.',
     coverages: [
