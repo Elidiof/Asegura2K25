@@ -85,27 +85,34 @@ export default function Home() {
           ))}
         </section>
 
-        {/* --------- Carrusel de compañías --------- */}
-        <section className="mb-10 space-y-4">
-          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
-            Compañías aseguradoras con las que colaboramos
-          </h2>
+{/* --------- Carrusel de compañías --------- */}
+<section className="mb-10 space-y-4">
+  <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
+    Compañías aseguradoras con las que colaboramos
+  </h2>
 
-          {rows.map((row, idx) => (
-            <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={50} pauseOnHover>
-                {[...row, ...row].map((key, i) => (
-                  <img
-                    key={`${key}-${i}`}
-                    src={`/logos/${key}.svg`}
-                    alt={key.replace(/-/g, ' ')}
-                    className="inline-block h-12 mx-3 flex-shrink-0"
-                  />
-                ))}
-              </Marquee>
-            </div>
-          ))}
-        </section>
+  {rows.map((row, idx) => (
+    <div key={idx} className="overflow-hidden">
+      <Marquee gradient={false} speed={50} pauseOnHover>
+        {[...row, ...row].map((key, i) => {
+          const file = key === 'qualitas'
+            ? 'qualitas-auto.webp'   // ⭐ aquí enganchamos tu logo
+            : `${key}.svg`
+
+          return (
+            <img
+              key={`${key}-${i}`}
+              src={`/logos/${file}`}
+              alt={key.replace(/-/g, ' ')}
+              className="inline-block h-12 mx-3 flex-shrink-0"
+            />
+          )
+        })}
+      </Marquee>
+    </div>
+  ))}
+</section>
+
       </main>
     </>
   )
