@@ -365,7 +365,7 @@ export default function Seguro() {
         <meta name="description" content={data.description} />
       </Helmet>
 
-      <main className="container mx-auto p-4 mt-8">
+      <main className="container mx-auto p-4 mt-4">
         {/* Icono y título */}
         <div className="flex flex-col items-center mb-6">
           <img src={data.icon} alt={data.title} className="h-20 mb-2" />
