@@ -1,7 +1,3 @@
-// -----------------------------------------------------------------------------
-// src/pages/Home.jsx
-// Página principal con 18 productos + botón WhatsApp, sin cabecera, rutas corregidas
-// -----------------------------------------------------------------------------
 import React from 'react'
 import { Card } from '../components/ui/Card'
 import WhatsButton from '../components/WhatsButton'
