@@ -1,10 +1,10 @@
 // -----------------------------------------------------------------------------
 // src/pages/Home.jsx
-// Página principal de Asegura2K25 con 18 productos + botón flotante de WhatsApp (sin cabecera)
+// Página principal con 18 productos + botón WhatsApp, sin cabecera, rutas corregidas
 // -----------------------------------------------------------------------------
 import React from 'react'
-import { Card } from '@/components/ui/Card'
-import WhatsButton from '@/components/WhatsButton'
+import { Card } from '../components/ui/Card'
+import WhatsButton from '../components/WhatsButton'
 
 function Home() {
   const products = [
@@ -30,7 +30,6 @@ function Home() {
 
   return (
     <>
-      {/* GRID DE PRODUCTOS --------------------------------------------------- */}
       <main className="wrapper mx-auto px-4 py-12">
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {products.map((product, index) => (
@@ -42,7 +41,6 @@ function Home() {
         </section>
       </main>
 
-      {/* BOTÓN FLOTANTE DE WHATSAPP ------------------------------------------ */}
       <WhatsButton />
     </>
   )
