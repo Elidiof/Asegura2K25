@@ -1,11 +1,12 @@
-// src/components/ui/Card.jsx
+// ------------------------------------------------------------------
+// Tarjeta genérica reutilizable en toda la web Asegura2K25
+// ------------------------------------------------------------------
 import React from 'react'
 
 /**
- * Tarjeta genérica reutilizable.
- * — Fondo blanco puro
- * — Borde gris claro
- * — Sombra suave + elevación en hover
+ * Props:
+ *  - children: contenido interno
+ *  - className: clases Tailwind extra opcionales
  */
 export function Card({ children, className = '' }) {
   return (
