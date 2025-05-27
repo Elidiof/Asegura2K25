@@ -24,8 +24,8 @@ export default function App () {
           {/* Landing */}
           <Route path="/" element={<Home />} />
 
-          {/* Detalle de producto */}
-          <Route path="/seguro-:name" element={<Seguro />} />
+          {/* Detalle de producto: /seguro/coche, /seguro/hogar, etc. */}
+          <Route path="/seguro/:name" element={<Seguro />} />
 
           {/* Textos legales */}
           <Route path="/aviso-legal" element={<AvisoLegal />} />
