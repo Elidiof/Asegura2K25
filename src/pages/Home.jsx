@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// src/pages/Home.jsx
+// Página principal con 18 productos + botón WhatsApp, sin cabecera, 6 por fila
+// -----------------------------------------------------------------------------
 import React from 'react'
 import { Card } from '../components/ui/Card'
 import WhatsButton from '../components/WhatsButton'
@@ -27,7 +31,7 @@ function Home() {
   return (
     <>
       <main className="wrapper mx-auto px-4 py-12">
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
           {products.map((product, index) => (
             <Card key={index} className="text-center p-4">
               <img src={product.icon} alt={product.name} className="mx-auto h-16 mb-2" />
