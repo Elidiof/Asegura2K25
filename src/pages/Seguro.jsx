@@ -345,7 +345,7 @@ export default function Seguro() {
 
   if (!data) {
     return (
-      <main className="container mx-auto p-4 mt-8 text-center">
+      <main className="container mx-auto p-4 mt-4 text-center">
         <Helmet>
           <title>Seguro no encontrado</title>
         </Helmet>
