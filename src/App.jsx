@@ -1,36 +1,44 @@
+// src/App.jsx
 import React, { Suspense } from 'react'
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+
 import Header from './components/Header'
-import { CookieBanner } from './components/CookieBanner'
 import Footer from './components/Footer'
+import { CookieBanner } from './components/CookieBanner'
 
-const Home = React.lazy(() => import('./pages/Home'))
-const Seguro = React.lazy(() => import('./pages/Seguro'))
+// Lazy-loaded pages
+const Home               = React.lazy(() => import('./pages/Home'))
+const Seguro             = React.lazy(() => import('./pages/Seguro'))
+const AvisoLegal         = React.lazy(() => import('./pages/AvisoLegal'))
+const PoliticaPrivacidad = React.lazy(() => import('./pages/PoliticaPrivacidad'))
+const PoliticaCookies    = React.lazy(() => import('./pages/PoliticaCookies'))
 
-function App() {
+export default function App () {
   return (
     <HelmetProvider>
-      <HashRouter>
-        {/* Cabecera común */}
-        <Header />
+      <Header />
 
-        {/* Contenido principal */}
-        <main className="container mx-auto p-4">
-          <Suspense fallback={<div className="p-4 text-center">Cargando…</div>}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/seguro/:name" element={<Seguro />} />
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </Suspense>
-        </main>
+      <Suspense fallback={<div className="p-8 text-center">Cargando…</div>}>
+        <Routes>
+          {/* Landing */}
+          <Route path="/" element={<Home />} />
 
-        <CookieBanner />
-        <Footer />
-      </HashRouter>
+          {/* Detalle de producto */}
+          <Route path="/seguro-:name" element={<Seguro />} />
+
+          {/* Textos legales */}
+          <Route path="/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/privacidad"  element={<PoliticaPrivacidad />} />
+          <Route path="/cookies"     element={<PoliticaCookies />} />
+
+          {/* 404 -> inicio */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Suspense>
+
+      <Footer />
+      <CookieBanner />
     </HelmetProvider>
   )
 }
-
-export default App
