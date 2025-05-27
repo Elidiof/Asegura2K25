@@ -1,16 +1,11 @@
-/* ------------------------------------------------------------------
-   Hoja de estilos global (Tailwind) – Asegura2K25
-------------------------------------------------------------------- */
+/* src/index.css – Tailwind + fondo gris global REFORZADO */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* -------------------------------------------------------------
-   Fondo gris claro para todo el sitio.
-   Usamos @layer base para que Tailwind compile correctamente
--------------------------------------------------------------- */
+/* Capa base: aplicamos fondo a html, body y #root para evitar cualquier wrapper blanco */
 @layer base {
-  body {
+  html, body, #root {
     @apply bg-gray-100;
   }
 }
