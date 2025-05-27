@@ -1,26 +1,19 @@
-import React from 'react';
-import Navbar from './Navbar'; // Ajusta la ruta si tu Navbar está en otra carpeta
-import Footer from './Footer';
-
+// src/components/Layout.jsx
 /**
- * Componente de layout genérico.
- * Envuelve cada página con la cabecera, el contenido principal y el pie de página.
- * También actualiza dinámicamente el título de la pestaña.
+ * Layout minimal para las páginas legales.
+ * Solo envuelve el contenido y actualiza el título de la pestaña.
+ * El Header y el Footer los renderiza App.jsx, así evitamos duplicarlos.
  */
-export default function Layout({ titulo = '', children }) {
+import React from 'react'
+
+export default function Layout ({ titulo = '', children }) {
   React.useEffect(() => {
-    if (titulo) {
-      document.title = `${titulo} | Asegura2K25`;
-    }
-  }, [titulo]);
+    if (titulo) document.title = `${titulo} | Asegura2K25`
+  }, [titulo])
 
   return (
-    <>
-      <Navbar />
-      <main className="container mx-auto px-4 py-8">
-        {children}
-      </main>
-      <Footer />
-    </>
-  );
+    <main className="container mx-auto px-4 py-8">
+      {children}
+    </main>
+  )
 }
