@@ -1,12 +1,12 @@
 // -----------------------------------------------------------------------------
 // src/pages/Home.jsx
-// Página principal de Asegura2K25 con tarjetas de productos y botón flotante de WhatsApp
+// Página principal de Asegura2K25 con 18 productos + botón flotante de WhatsApp (sin cabecera)
 // -----------------------------------------------------------------------------
 import React from 'react'
-import { Card } from '../components/ui/Card'
-import WhatsButton from '../components/WhatsButton'
+import { Card } from '@/components/ui/Card'
+import WhatsButton from '@/components/WhatsButton'
 
-export default function Home() {
+function Home() {
   const products = [
     { name: 'Coche', icon: '/logos/coche.png' },
     { name: 'Hogar', icon: '/logos/hogar.png' },
@@ -30,20 +30,7 @@ export default function Home() {
 
   return (
     <>
-      {/* CABECERA HERO --------------------------------------------------------- */}
-      <header className="bg-blue-700 text-white">
-        <div className="wrapper mx-auto px-6 py-16 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Tu seguro a medida con&nbsp;Asegura2K25
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto">
-            Comparación independiente de Mapfre, Reale, Generali,
-            Allianz, AXA&nbsp;y más — en&nbsp;menos de&nbsp;5&nbsp;minutos.
-          </p>
-        </div>
-      </header>
-
-      {/* GRID DE PRODUCTOS ----------------------------------------------------- */}
+      {/* GRID DE PRODUCTOS --------------------------------------------------- */}
       <main className="wrapper mx-auto px-4 py-12">
         <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {products.map((product, index) => (
@@ -55,8 +42,10 @@ export default function Home() {
         </section>
       </main>
 
-      {/* BOTÓN FLOTANTE DE WHATSAPP -------------------------------------------- */}
+      {/* BOTÓN FLOTANTE DE WHATSAPP ------------------------------------------ */}
       <WhatsButton />
     </>
   )
 }
+
+export default Home
