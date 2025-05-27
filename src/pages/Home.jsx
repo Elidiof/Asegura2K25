@@ -3,8 +3,8 @@
 // Página principal de Asegura2K25 con tarjetas de productos y botón flotante de WhatsApp
 // -----------------------------------------------------------------------------
 import React from 'react'
-import { Card } from '@/components/ui/Card'
-import WhatsButton from '@/components/WhatsButton'
+import { Card } from '../components/ui/Card'
+import WhatsButton from '../components/WhatsButton'
 
 export default function Home() {
   const products = [
