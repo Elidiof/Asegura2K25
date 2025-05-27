@@ -4,13 +4,10 @@ import React from 'react'
 export function Card({ children, className = '' }) {
   return (
     <div
-      className={\`
-        bg-white border border-gray-200 rounded-xl
+      className={`bg-white border border-gray-200 rounded-xl
         shadow-sm hover:shadow-lg
         transition transform hover:-translate-y-1
-        p-6
-        \${className}
-      \`}
+        p-6 ${className}`}
     >
       {children}
     </div>
