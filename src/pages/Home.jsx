@@ -1,119 +1,62 @@
+// -----------------------------------------------------------------------------
+// src/pages/Home.jsx
+// Página principal de Asegura2K25 con tarjetas de productos y botón flotante de WhatsApp
+// -----------------------------------------------------------------------------
 import React from 'react'
-import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
-import Marquee from 'react-fast-marquee'
+import { Card } from '@/components/ui/Card'
+import WhatsButton from '@/components/WhatsButton'
 
 export default function Home() {
-  /* ─────────────────────────────────────────
-     Listado de productos que mostramos en la
-     cuadrícula principal
-  ────────────────────────────────────────── */
   const products = [
-    'coche', 'hogar', 'vida', 'salud', 'alquiler',
-    'empresa', 'rc', 'accidentes', 'mascotas',
-    'cabeza-tractora', 'transporte-mercancias', 'agroseguro',
-    'comunidades', 'decesos', 'taxi', 'moto', 'patinete',
-    'instrumentos-musicales'
-  ]
-
-  /* ─────────────────────────────────────────
-     Compañías aseguradoras que animamos en
-     el carrusel inferior
-  ────────────────────────────────────────── */
-  const companies = [
-    'mapfre', 'reale', 'generali', 'allianz',
-    'axa', 'asisa', 'dkv', 'helvetia',
-    'pelayo', 'aegon', 'fiatc', 'hiscox', 'zurich',
-    'adeslas', 'catalana-occidente', 'mutuamadrilena',
-    'santalucia', 'qualitas', 'race'
-  ]
-
-  /* ─────────────────────────────────────────
-     Convierte un slug (“cabeza-tractora”) en
-     un título legible (“Cabeza Tractora”)
-  ────────────────────────────────────────── */
-  const formatTitle = slug =>
-    slug
-      .replace(/-/g, ' ')
-      .replace(/\b\w/g, c => c.toUpperCase())
-
-  /* ─────────────────────────────────────────
-     Partimos el array de compañías en dos
-     filas para que sea más compacto
-  ────────────────────────────────────────── */
-  const mitad = Math.ceil(companies.length / 2)
-  const rows = [
-    companies.slice(0, mitad),
-    companies.slice(mitad)
+    { name: 'Coche', icon: '/logos/coche.png' },
+    { name: 'Hogar', icon: '/logos/hogar.png' },
+    { name: 'Vida', icon: '/logos/vida.png' },
+    { name: 'Salud', icon: '/logos/salud.png' },
+    { name: 'Alquiler', icon: '/logos/alquiler.png' },
+    { name: 'Empresas', icon: '/logos/empresas.png' },
+    { name: 'RC', icon: '/logos/rc.png' },
+    { name: 'Accidentes', icon: '/logos/accidentes.png' },
+    { name: 'Mascotas', icon: '/logos/mascotas.png' },
+    { name: 'Cabeza tractora', icon: '/logos/cabeza.png' },
+    { name: 'Transporte de mercancías', icon: '/logos/transporte.png' },
+    { name: 'Agroseguro', icon: '/logos/agro.png' },
+    { name: 'Comunidad', icon: '/logos/comunidad.png' },
+    { name: 'Decesos', icon: '/logos/decesos.png' },
+    { name: 'Taxi', icon: '/logos/taxi.png' },
+    { name: 'Moto', icon: '/logos/moto.png' },
+    { name: 'Patinete', icon: '/logos/patinete.png' },
+    { name: 'Instrumentos', icon: '/logos/instrumentos.png' }
   ]
 
   return (
     <>
-      <Helmet>
-        <title>Asegura2K25 – Seguros a tu medida</title>
-        <meta
-          name="description"
-          content="Encuentra el seguro que necesitas en Asegura2K25: coche, hogar, salud, mascotas, empresas y más."
-        />
-      </Helmet>
+      {/* CABECERA HERO --------------------------------------------------------- */}
+      <header className="bg-blue-700 text-white">
+        <div className="wrapper mx-auto px-6 py-16 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+            Tu seguro a medida con&nbsp;Asegura2K25
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto">
+            Comparación independiente de Mapfre, Reale, Generali,
+            Allianz, AXA&nbsp;y más — en&nbsp;menos de&nbsp;5&nbsp;minutos.
+          </p>
+        </div>
+      </header>
 
-      <main className="container mx-auto p-4">
-        {/* --------- Título principal --------- */}
-        <h2 className="text-center text-3xl font-bold mb-8 text-blue-800">
-          Encuentra el seguro que necesitas
-        </h2>
-
-        {/* --------- Cuadrícula de productos --------- */}
-        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
-          {products.map(slug => (
-            <Link
-              key={slug}
-              to={`/seguro/${slug}`}
-              className="block bg-white border border-gray-300 rounded-xl p-4 flex flex-col items-center hover:shadow-lg transition"
-            >
-              {/* Icono */}
-              <img
-                src={`/logos/${slug}.png`}
-                alt={formatTitle(slug)}
-                className="h-20 w-auto"
-              />
-              {/* Título debajo del icono */}
-              <span className="mt-3 text-sm sm:text-base font-medium text-gray-700 text-center">
-                {formatTitle(slug)}
-              </span>
-            </Link>
+      {/* GRID DE PRODUCTOS ----------------------------------------------------- */}
+      <main className="wrapper mx-auto px-4 py-12">
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+          {products.map((product, index) => (
+            <Card key={index} className="text-center p-4">
+              <img src={product.icon} alt={product.name} className="mx-auto h-16 mb-2" />
+              <h3 className="text-sm font-medium text-gray-800">{product.name}</h3>
+            </Card>
           ))}
         </section>
-
-{/* --------- Carrusel de compañías --------- */}
-<section className="mb-10 space-y-4">
-  <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
-    Compañías aseguradoras con las que colaboramos
-  </h2>
-
-  {rows.map((row, idx) => (
-    <div key={idx} className="overflow-hidden">
-      <Marquee gradient={false} speed={50} pauseOnHover>
-        {[...row, ...row].map((key, i) => {
-          const file = key === 'qualitas'
-            ? 'qualitas-auto.webp'   // ⭐ aquí enganchamos tu logo
-            : `${key}.svg`
-
-          return (
-            <img
-              key={`${key}-${i}`}
-              src={`/logos/${file}`}
-              alt={key.replace(/-/g, ' ')}
-              className="inline-block h-12 mx-3 flex-shrink-0"
-            />
-          )
-        })}
-      </Marquee>
-    </div>
-  ))}
-</section>
-
       </main>
+
+      {/* BOTÓN FLOTANTE DE WHATSAPP -------------------------------------------- */}
+      <WhatsButton />
     </>
   )
 }
