@@ -18,8 +18,8 @@ export default function Seguro() {
       </main>
     )
   }
-  const whatsappMessage = encodeURIComponent(\`Hola Elidio, me interesa el \${data.title} y te contacto a través de la web.\`)
-  const whatsappLink = \`https://wa.me/34658945741?text=\${whatsappMessage}\`
+const whatsappMessage = encodeURIComponent('Hola Elidio, me interesa el ' + data.title + ' y te contacto a través de la web.')
+const whatsappLink    = 'https://wa.me/34658945741?text=' + whatsappMessage
   return (
     <>
       <Helmet>
