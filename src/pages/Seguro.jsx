@@ -1,9 +1,9 @@
+
 // src/pages/Seguro.jsx
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-
-// ... (mantén tu objeto productData arriba sin cambios)
+import productData from '../data/productData'
 
 export default function Seguro () {
   const { name } = useParams()
@@ -20,9 +20,9 @@ export default function Seguro () {
     )
   }
 
-  /** mensaje personalizado para WhatsApp **/
+  // Mensaje WhatsApp
   const whatsappMessage = encodeURIComponent(
-    `Hola Elidio, te contacto a través de la web y quiero información sobre el seguro de ${data.title}.`
+    `Hola Elidio, te contacto a través de la web y quiero información sobre el ${data.title}.`
   )
   const whatsappLink = `https://wa.me/34658945741?text=${whatsappMessage}`
 
@@ -34,33 +34,28 @@ export default function Seguro () {
       </Helmet>
 
       <main className="container mx-auto p-4 mt-0">
-        {/* Icono y título */}
         <div className="flex flex-col items-center mb-6">
           <img src={data.icon} alt={data.title} className="h-20 mb-2" />
           <h1 className="text-2xl font-bold">{data.title}</h1>
           <Link to="/" className="mt-2 text-blue-600 hover:underline">← Volver al inicio</Link>
         </div>
 
-        {/* Descripción */}
         <p className="text-center text-gray-700 mb-8">{data.description}</p>
 
-        {/* Coberturas */}
         <div className="max-w-2xl mx-auto mb-8 bg-white rounded-xl shadow p-6">
           <h2 className="text-xl font-semibold mb-4">¿Qué cubre?</h2>
           <ul className="list-disc list-inside space-y-2">
-            {data.coverages.map((cov, i) => (<li key={i}>{cov}</li>))}
+            {data.coverages.map((c, i) => <li key={i}>{c}</li>)}
           </ul>
         </div>
 
-        {/* Requisitos */}
         <div className="max-w-2xl mx-auto mb-8 bg-white rounded-xl shadow p-6">
           <h2 className="text-xl font-semibold mb-4">¿Qué necesitamos para prepararte un presupuesto?</h2>
           <ul className="list-disc list-inside space-y-2">
-            {data.requirements.map((req, i) => (<li key={i}>{req}</li>))}
+            {data.requirements.map((r, i) => <li key={i}>{r}</li>)}
           </ul>
         </div>
 
-        {/* CTA WhatsApp / Email */}
         <div className="text-center">
           <p className="mb-4">Puedes enviarnos los datos por WhatsApp o por email</p>
           <div className="space-x-4">
