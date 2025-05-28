@@ -1,29 +1,31 @@
-
 // src/pages/Seguro.jsx
-import React from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
-import productData from '../data/productData'
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import productData from '../data/productData';
+import InfoCard from '../components/InfoCard';
 
-export default function Seguro () {
-  const { name } = useParams()
-  const data = productData[name]
+export default function Seguro() {
+  const { name } = useParams();
+  const data = productData[name];
 
   if (!data) {
     return (
       <main className="container mx-auto p-4 mt-0 text-center">
-        <Helmet><title>Seguro no encontrado</title></Helmet>
+        <Helmet>
+          <title>Seguro no encontrado</title>
+        </Helmet>
         <h1 className="text-2xl font-semibold mb-4">Seguro no encontrado</h1>
         <p className="mb-6">El seguro que buscas no existe.</p>
         <Link to="/" className="text-blue-600 hover:underline">Volver al inicio</Link>
       </main>
-    )
+    );
   }
 
   const whatsappMessage = encodeURIComponent(
     `Hola Elidio, me interesa el ${data.title} y te contacto a través de la web.`
-  )
-  const whatsappLink = `https://wa.me/34658945741?text=${whatsappMessage}`
+  );
+  const whatsappLink = `https://wa.me/34658945741?text=${whatsappMessage}`;
 
   return (
     <>
@@ -41,19 +43,10 @@ export default function Seguro () {
 
         <p className="text-center text-gray-700 mb-8">{data.description}</p>
 
-        <section className="max-w-2xl mx-auto mb-8 bg-white rounded-xl shadow p-6">
-          <h2 className="text-xl font-semibold mb-4">¿Qué cubre?</h2>
-          <ul className="list-disc list-inside space-y-2">
-            {data.coverages.map((c, i) => <li key={i}>{c}</li>)}
-          </ul>
-        </section>
-
-        <section className="max-w-2xl mx-auto mb-8 bg-white rounded-xl shadow p-6">
-          <h2 className="text-xl font-semibold mb-4">¿Qué necesitamos para prepararte un presupuesto?</h2>
-          <ul className="list-disc list-inside space-y-2">
-            {data.requirements.map((r, i) => <li key={i}>{r}</li>)}
-          </ul>
-        </section>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
+          <InfoCard title="¿Qué cubre?" items={data.coverages} />
+          <InfoCard title="¿Qué necesitamos para prepararte un presupuesto?" items={data.requirements} />
+        </div>
 
         <div className="text-center">
           <p className="mb-4">Puedes enviarnos los datos por WhatsApp o por email</p>
@@ -76,5 +69,5 @@ export default function Seguro () {
         </div>
       </main>
     </>
-  )
+  );
 }
