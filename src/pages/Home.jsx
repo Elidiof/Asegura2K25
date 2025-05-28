@@ -13,7 +13,7 @@ export default function Home() {
       {/* Hero dentro del fondo gris */}
       <section className="bg-slate-200 py-6">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold text-center mb-10">Encuentra el seguro que necesitas</h1>
+          <h1 className="text-4xl font-bold text-center mb-10 text-blue-900">
 
           {/* Grid de productos */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
