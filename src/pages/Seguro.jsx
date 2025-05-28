@@ -42,32 +42,35 @@ export default function Seguro() {
         </div>
 
         <p className="text-center text-gray-700 mb-8">{data.description}</p>
+      </main>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
-          <InfoCard title="¿Qué cubre?" items={data.coverages} />
-          <InfoCard title="¿Qué necesitamos para prepararte un presupuesto?" items={data.requirements} />
-        </div>
-
-        <div className="text-center">
-          <p className="mb-4">Puedes enviarnos los datos por WhatsApp o por email</p>
-          <div className="space-x-4">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
-            >
-              Enviar por WhatsApp
-            </a>
-            <a
-              href="mailto:contacto@asegura2k25.com"
-              className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
-            >
-              Enviar por Email
-            </a>
+      <section className="bg-slate-200 py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
+            <InfoCard title="¿Qué cubre?" items={data.coverages} />
+            <InfoCard title="¿Qué necesitamos para prepararte un presupuesto?" items={data.requirements} />
+          </div>
+          <div className="text-center">
+            <p className="mb-4">Puedes enviarnos los datos por WhatsApp o por email</p>
+            <div className="space-x-4">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+              >
+                Enviar por WhatsApp
+              </a>
+              <a
+                href="mailto:contacto@asegura2k25.com"
+                className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
+              >
+                Enviar por Email
+              </a>
+            </div>
           </div>
         </div>
-      </main>
+      </section>
     </>
   );
 }
