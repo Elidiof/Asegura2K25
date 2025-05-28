@@ -1,33 +1,44 @@
-// src/pages/Home.jsx
-import { Helmet } from 'react-helmet-async'
-import productData from '../data/productData'
-import ProductCard from '../components/ProductCard'
+import React from 'react'
+import { Card } from '../components/ui/Card'
+import WhatsButton from '../components/WhatsButton'
 
-export default function Home() {
+function Home() {
+  const products = [
+    { name: 'Coche', icon: '/logos/coche.png' },
+    { name: 'Hogar', icon: '/logos/hogar.png' },
+    { name: 'Vida', icon: '/logos/vida.png' },
+    { name: 'Salud', icon: '/logos/salud.png' },
+    { name: 'Alquiler', icon: '/logos/alquiler.png' },
+    { name: 'Empresas', icon: '/logos/empresas.png' },
+    { name: 'RC', icon: '/logos/rc.png' },
+    { name: 'Accidentes', icon: '/logos/accidentes.png' },
+    { name: 'Mascotas', icon: '/logos/mascotas.png' },
+    { name: 'Cabeza tractora', icon: '/logos/cabeza.png' },
+    { name: 'Transporte de mercancías', icon: '/logos/transporte.png' },
+    { name: 'Agroseguro', icon: '/logos/agro.png' },
+    { name: 'Comunidad', icon: '/logos/comunidad.png' },
+    { name: 'Decesos', icon: '/logos/decesos.png' },
+    { name: 'Taxi', icon: '/logos/taxi.png' },
+    { name: 'Moto', icon: '/logos/moto.png' },
+    { name: 'Patinete', icon: '/logos/patinete.png' },
+    { name: 'Instrumentos Musicales', icon: '/logos/instrumentos.png' }
+  ]
+
   return (
     <>
-      <Helmet>
-        <title>Asegura2K25 • Seguros a medida</title>
-      </Helmet>
-
-      {/* Hero dentro del fondo gris */}
-      <section className="bg-slate-200 py-12">
-        <div className="container mx-auto px-4">
-          <h1 className="text-xl font-bold text-center mb-10">Encuentra el seguro que necesitas</h1>
-
-          {/* Grid de productos */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {Object.entries(productData).map(([key, prod]) => (
-              <ProductCard
-                key={key}
-                to={`/seguro/${key}`}
-                icon={prod.icon}
-                title={prod.title.replace(/^Seguro de\s?/, '')}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <main className="wrapper mx-auto px-4 py-12 pb-24">
+        <h2 className="text-xl font-bold text-center my-4 md:my-6">
+          Encuentra el seguro que necesitas
+        </h2>
+        <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {products.map((product, index) => (
+            <Card key={index} product={product} />
+          ))}
+        </section>
+      </main>
+      <WhatsButton />
     </>
   )
 }
+
+export default Home
