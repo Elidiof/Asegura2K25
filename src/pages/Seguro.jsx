@@ -1,4 +1,3 @@
-
 // src/pages/Seguro.jsx
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
@@ -20,12 +19,14 @@ export default function Seguro() {
   }
   const whatsappMessage = encodeURIComponent('Hola Elidio, me interesa el ' + data.title + ' y te contacto a través de la web.')
   const whatsappLink = 'https://wa.me/34658945741?text=' + whatsappMessage
+
   return (
     <>
       <Helmet>
         <title>{data.title} - Asegura2K25</title>
         <meta name="description" content={data.description} />
       </Helmet>
+
       {/* Header + descripción con fondo gris, padding vertical reducido */}
       <section className="bg-slate-200 py-4">
         <div className="container mx-auto px-4">
@@ -39,6 +40,7 @@ export default function Seguro() {
           </div>
         </div>
       </section>
+
       {/* Info y CTA con padding vertical reducido */}
       <section className="bg-slate-200 py-4">
         <div className="container mx-auto px-4">
@@ -56,15 +58,22 @@ export default function Seguro() {
               </ul>
             </div>
           </div>
+
           <div className="text-center mb-8">
             <p className="mb-4">Puedes enviarnos los datos por WhatsApp o por email</p>
-            <div className="space-x-4">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"
-                 className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto text-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition"
+              >
                 Enviar por WhatsApp
               </a>
-              <a href="mailto:contacto@asegura2k25.com"
-                 className="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+              <a
+                href="mailto:contacto@asegura2k25.com"
+                className="w-full sm:w-auto text-center bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition"
+              >
                 Enviar por Email
               </a>
             </div>
