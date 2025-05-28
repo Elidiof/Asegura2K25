@@ -1,19 +1,15 @@
 // src/components/Layout.jsx
-/**
- * Layout minimal para las páginas legales.
- * Solo envuelve el contenido y actualiza el título de la pestaña.
- * El Header y el Footer los renderiza App.jsx, así evitamos duplicarlos.
- */
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-export default function Layout ({ titulo = '', children }) {
-  React.useEffect(() => {
-    if (titulo) document.title = `${titulo} | Asegura2K25`
-  }, [titulo])
-
+export default function Layout() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      {children}
-    </main>
+    <div>
+      <nav className="bg-blue-900 p-4 flex justify-center">
+        {/* Ajuste de tamaño de logo */}
+        <img src="/logo.svg" alt="Asegura2K25" className="h-16" />
+      </nav>
+      <Outlet />
+    </div>
   )
 }
