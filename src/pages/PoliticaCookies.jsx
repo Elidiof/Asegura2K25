@@ -1,20 +1,22 @@
-// src/pages/PoliticaCookies.jsx  (puedes cambiar la ruta/nombre si la tienes en otro sitio)
+// src/pages/PoliticaCookies.jsx
 import React from "react";
 
 const cookies = [
-  { nombre: "_ga",   tipo: "Analítica", finalidad: "Diferenciar usuarios",  retencion: "2 años",  proveedor: "Google Analytics" },
-  { nombre: "_gid",  tipo: "Analítica", finalidad: "Registrar visitas únicas", retencion: "24 h",  proveedor: "Google Analytics" },
-  { nombre: "session", tipo: "Esencial", finalidad: "Mantener sesión activa", retencion: "Sesión", proveedor: "Asegura2K25" },
-  { nombre: "user_pref", tipo: "Funcional", finalidad: "Guardar preferencias", retencion: "6 meses", proveedor: "Asegura2K25" }
+  { nombre: "_ga",      tipo: "Analítica", finalidad: "Diferenciar usuarios",     retencion: "2 años", proveedor: "Google Analytics" },
+  { nombre: "_gid",     tipo: "Analítica", finalidad: "Registrar visitas únicas", retencion: "24 h",   proveedor: "Google Analytics" },
+  { nombre: "session",  tipo: "Esencial",  finalidad: "Mantener sesión activa",   retencion: "Sesión", proveedor: "Asegura2K25" },
+  { nombre: "user_pref",tipo: "Funcional", finalidad: "Guardar preferencias",     retencion: "6 meses",proveedor: "Asegura2K25" },
 ];
 
 export default function PoliticaCookies() {
   return (
-    <section className="min-h-screen bg-[#0d2c7a] flex items-center justify-center p-4">
-      <div className="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-6 space-y-6">
+    /* 👇  Mismo azul que el header, sin centrado vertical excesivo */
+    <section className="pt-6 pb-12 bg-[#0d2c7a]">
+      {/* Bloque blanco centrado horizontalmente y con sombra */}
+      <div className="mx-auto max-w-3xl bg-white rounded-2xl shadow-xl p-6 space-y-6">
         <h1 className="text-2xl font-bold text-center">Política de Cookies</h1>
 
-        {/* 👇🏽   NUEVO contenedor scroll   👇🏽 */}
+        {/* Scroll horizontal si hace falta */}
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm">
             <thead className="bg-gray-100">
@@ -27,7 +29,7 @@ export default function PoliticaCookies() {
               </tr>
             </thead>
             <tbody>
-              {cookies.map(c => (
+              {cookies.map((c) => (
                 <tr key={c.nombre} className="odd:bg-gray-50">
                   <td className="px-4 py-2">{c.nombre}</td>
                   <td className="px-4 py-2">{c.tipo}</td>
@@ -39,12 +41,16 @@ export default function PoliticaCookies() {
             </tbody>
           </table>
         </div>
-        {/* ☝🏽  FIN contenedor scroll ☝🏽 */}
 
         <h2 className="text-xl font-semibold">¿Cómo gestionar?</h2>
-        <p>Puedes configurar o desactivar estas cookies en cualquier momento haciendo clic en el icono de cookies situado en la esquina inferior derecha de la pantalla.</p>
+        <p>
+          Puedes configurar o desactivar estas cookies en cualquier momento haciendo clic
+          en el icono de cookies situado en la esquina inferior derecha de la pantalla.
+        </p>
 
-        <a href="/" className="text-blue-600 hover:underline text-center block">← Volver a la web</a>
+        <a href="/" className="text-blue-600 hover:underline text-center block">
+          ← Volver a la web
+        </a>
       </div>
     </section>
   );
