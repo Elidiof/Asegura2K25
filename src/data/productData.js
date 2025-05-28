@@ -6,7 +6,8 @@ const productData = {
   coche: {
     title: 'Seguro de Coche',
     icon: '/logos/coche.png',
-    description: 'Proteger el coche con cobertura integral y asistencia en viaje.',
+    // Slogan
+    description: 'Conduce tranquilo, nosotros te respaldamos.',
     coverages: [
       'Responsabilidad civil obligatoria y voluntaria',
       'Defensa jurídica y reclamación de daños',
@@ -24,7 +25,7 @@ const productData = {
   hogar: {
     title: 'Seguro de Hogar',
     icon: '/logos/hogar.png',
-    description: 'Proteger la vivienda frente a daños, robos y siniestros.',
+    description: 'Tu hogar, nuestra máxima prioridad.',
     coverages: [
       'Responsabilidad civil',
       'Daños por agua y rotura de tuberías',
@@ -32,7 +33,7 @@ const productData = {
       'Rotura de cristales',
       'Robo y daños por intento de robo',
       'Daños estéticos',
-      'Asistencia urgente 24 h (electricistas, fontaneros, cerrajeros…)',
+      'Asistencia urgente 24 h (electricistas, fontaneros, cerrajeros…)',
       'Responsabilidad civil de mascotas'
     ],
     requirements: [
@@ -45,7 +46,7 @@ const productData = {
   vida: {
     title: 'Seguro de Vida',
     icon: '/logos/vida.png',
-    description: 'Garantizar protección económica ante fallecimiento o invalidez.',
+    description: 'Cuida tu vida hoy, asegura tu futuro.',
     coverages: [
       'Capital asegurado en caso de fallecimiento',
       'Adelanto de capital por enfermedad grave terminal',
@@ -64,13 +65,13 @@ const productData = {
   salud: {
     title: 'Seguro de Salud',
     icon: '/logos/salud.png',
-    description: 'Acceder a asistencia médica y hospitalaria sin listas de espera.',
+    description: 'Protegemos tu salud, cuidamos de ti.',
     coverages: [
       'Consultas médicas generales y especialistas',
       'Pruebas diagnósticas y análisis clínicos',
       'Hospitalización y urgencias',
       'Acceso a cuadro médico privado',
-      'Asistencia telefónica 24 /7',
+      'Asistencia telefónica 24 /7',
       'Reembolso de gastos médicos (opcional)'
     ],
     requirements: [
@@ -83,9 +84,9 @@ const productData = {
   alquiler: {
     title: 'Seguro de Alquiler',
     icon: '/logos/alquiler.png',
-    description: 'Cubrir impagos y daños en viviendas de alquiler.',
+    description: 'Alquila con tranquilidad y confianza.',
     coverages: [
-      'Impago de alquiler mensual hasta 12 meses',
+      'Impago de alquiler mensual hasta 12 meses',
       'Defensa jurídica y asistencia legal ilimitada',
       'Cobertura de actos vandálicos',
       'Gastos de cerrajero y cambio de cerradura',
@@ -101,11 +102,11 @@ const productData = {
   empresa: {
     title: 'Seguro para Empresas',
     icon: '/logos/empresa.png',
-    description: 'Proteger el negocio ante riesgos y responsabilidad civil.',
+    description: 'Protección integral para tu empresa.',
     coverages: [
       'Responsabilidad civil por productos y servicios',
       'Pérdida de beneficios por paralización',
-      'Asistencia urgente 24 h',
+      'Asistencia urgente 24 h',
       'Daños materiales por incendio o agua',
       'Robo y vandalismo',
       'Defensa jurídica'
@@ -120,7 +121,7 @@ const productData = {
   rc: {
     title: 'Seguro de Responsabilidad Civil',
     icon: '/logos/rc.png',
-    description: 'Cubrir reclamaciones por daños a terceros.',
+    description: 'Tu responsabilidad, nuestra cobertura.',
     coverages: [
       'Daños materiales o personales a terceros',
       'Defensa jurídica y fianzas judiciales',
@@ -139,7 +140,7 @@ const productData = {
   accidentes: {
     title: 'Seguro de Accidentes',
     icon: '/logos/accidentes.png',
-    description: 'Indemnizar y asistir ante accidentes personales.',
+    description: 'Respaldo inmediato ante cualquier imprevisto.',
     coverages: [
       'Indemnización por fallecimiento accidental',
       'Invalidez permanente parcial o total',
@@ -158,7 +159,7 @@ const productData = {
   mascotas: {
     title: 'Seguro de Mascotas',
     icon: '/logos/mascotas.png',
-    description: 'Proteger mascotas con cobertura sanitaria y RC.',
+    description: 'Tus animales, miembros de la familia con cobertura total.',
     coverages: [
       'Responsabilidad civil por daños a terceros',
       'Defensa jurídica y reclamación de daños',
@@ -175,7 +176,7 @@ const productData = {
   "cabeza-tractora": {
     title: 'Seguro Cabeza Tractora',
     icon: '/logos/cabeza-tractora.png',
-    description: 'Proteger cabezas tractoras ante robos, colisiones y asistencia.',
+    description: 'Seguridad en ruta para tu tractora.',
     coverages: [
       'Responsabilidad civil obligatoria y voluntaria',
       'Daños propios y colisión',
@@ -193,7 +194,7 @@ const productData = {
   "transporte-mercancias": {
     title: 'Seguro de Transporte de Mercancías',
     icon: '/logos/transporte-mercancias.png',
-    description: 'Cubrir daños, robos y pérdidas en transporte de mercancías.',
+    description: 'Tus mercancías aseguradas en cada viaje.',
     coverages: [
       'Todo riesgo opcional (ICC-A)',
       'Daños por accidente, robo o incendio',
@@ -212,7 +213,7 @@ const productData = {
   agroseguro: {
     title: 'Agroseguro',
     icon: '/logos/agroseguro.png',
-    description: 'Proteger cultivos y ganado frente a siniestros agrícolas.',
+    description: 'Protege tu cosecha y tu ganado ante cualquier imprevisto.',
     coverages: [
       'Daños en cultivos por pedrisco, lluvia o sequía',
       'Pérdida de producción o rendimiento',
@@ -229,13 +230,13 @@ const productData = {
   comunidades: {
     title: 'Seguro de Comunidades',
     icon: '/logos/comunidades.png',
-    description: 'Cubrir siniestros y responsabilidades en comunidades de vecinos.',
+    description: 'La tranquilidad de tu comunidad, garantizada.',
     coverages: [
       'Incendio, explosión y daños por agua',
       'Daños eléctricos y fenómenos atmosféricos',
       'Robo en zonas comunes',
       'Responsabilidad civil comunitaria',
-      'Asistencia urgente 24 h'
+      'Asistencia urgente 24 h'
     ],
     requirements: [
       'Proporcionar dirección completa del edificio',
@@ -245,7 +246,7 @@ const productData = {
   decesos: {
     title: 'Seguro de Decesos',
     icon: '/logos/decesos.png',
-    description: 'Ofrecer servicios funerarios y asistencia administrativa.',
+    description: 'A tu lado cuando más lo necesites.',
     coverages: [
       'Servicio funerario completo',
       'Traslado nacional e internacional',
@@ -261,7 +262,7 @@ const productData = {
   taxi: {
     title: 'Seguro de Taxi',
     icon: '/logos/taxi.png',
-    description: 'Proteger vehículos de taxi con asistencia y RC.',
+    description: 'Tu viaje seguro en cada trayecto.',
     coverages: [
       'RC obligatoria y voluntaria',
       'Daños propios y colisión',
@@ -278,7 +279,7 @@ const productData = {
   moto: {
     title: 'Seguro de Moto',
     icon: '/logos/moto.png',
-    description: 'Cubrir moto y conductor con asistencia en viaje.',
+    description: 'Disfruta la carretera con total confianza.',
     coverages: [
       'RC obligatoria y voluntaria',
       'Defensa jurídica y reclamación de daños',
@@ -295,7 +296,7 @@ const productData = {
   patinete: {
     title: 'Seguro de Patinete',
     icon: '/logos/patinete.png',
-    description: 'Proteger patinetes eléctricos con RC y asistencia.',
+    description: 'Movilidad urbana protegida sin complicaciones.',
     coverages: [
       'RC por daños a terceros',
       'Defensa jurídica',
@@ -310,7 +311,7 @@ const productData = {
   "instrumentos-musicales": {
     title: 'Seguro de Instrumentos Musicales',
     icon: '/logos/instrumentos-musicales.png',
-    description: 'Proteger instrumentos frente a robos y daños.',
+    description: 'Cuida tu música, protege tus instrumentos.',
     coverages: [
       'Robo o hurto en cualquier lugar',
       'Daños por accidente, incendio o agua',
