@@ -18,7 +18,7 @@ const productData = {
     requirements: [
       'Proporcionar fotografía del permiso de circulación y ficha técnica',
       'Proporcionar fotografía del carnet de conducir (anverso y reverso)',
-      'Proporcionar póliza actual en PDF (o número y compañía)'
+      'Proporcionar póliza actual en PDF (o número de póliza y compañía)'
     ]
   },
   hogar: {
