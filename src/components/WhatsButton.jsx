@@ -15,7 +15,7 @@ export default function WhatsButton() {
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
       className="
-        fixed bottom-4 right-4 md:bottom-6 md:right-6
+        fixed bottom-24 right-4 md:bottom-6 md:right-6
         w-14 h-14 md:w-16 md:h-16
         bg-[#25D366] text-white
         rounded-full shadow-lg
