@@ -26,21 +26,21 @@ export default function Seguro() {
         <title>{data.title} - Asegura2K25</title>
         <meta name="description" content={data.description} />
       </Helmet>
-      {/* Header + descripción con fondo gris */}
-      <section className="bg-slate-200 py-8">
+      {/* Header + descripción con fondo gris, padding vertical reducido */}
+      <section className="bg-slate-200 py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center mb-4">
             <img src={data.icon} alt={data.title} className="h-20 mb-2" />
             <h1 className="text-2xl font-bold mb-1">{data.title}</h1>
             <Link to="/" className="text-blue-600 hover:underline mb-2">← Volver al inicio</Link>
           </div>
-          <div className="group max-w-3xl mx-auto bg-white border border-slate-200 shadow-sm rounded-2xl p-6 mb-4 transition hover:shadow-md hover:-translate-y-1">
+          <div className="group max-w-3xl mx-auto bg-white border border-slate-200 shadow-sm rounded-2xl p-6 mb-2 transition hover:shadow-md hover:-translate-y-1">
             <p className="text-center text-lg font-semibold text-slate-900 mb-0">{data.description}</p>
           </div>
         </div>
       </section>
-      {/* Info y CTA */}
-      <section className="bg-slate-200 py-8">
+      {/* Info y CTA con padding vertical reducido */}
+      <section className="bg-slate-200 py-4">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
             <div className="group rounded-2xl bg-white border border-slate-200 shadow-sm p-6 transition hover:shadow-md hover:-translate-y-1">
