@@ -10,7 +10,7 @@ export default function Cookies() {
       </Helmet>
 
       <img
-        src="/logos/asegura2k5.png"
+        src="/logos/asegura2k25.png"
         alt="Asegura2K25"
         className="h-16 mt-6 mb-4"
       />
