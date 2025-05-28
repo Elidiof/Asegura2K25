@@ -21,7 +21,7 @@ export default function AvisoLegal() {
         <section>
           <h2 className="text-2xl font-semibold mb-2">1. Objeto</h2>
           <p>
-            El presente Aviso Legal regula el uso y acceso al sitio web
+            El presente Aviso Legal regula el uso y acceso al sitio web 
             <a href="https://asegura2k25.com" className="text-blue-600 hover:underline">
               asegura2k25.com
             </a>, propiedad de Elidio Ferrer (ASEGURA2K25).
