@@ -11,10 +11,9 @@ export default function Home () {
         <title>Asegura2K25</title>
       </Helmet>
 
-      {/* Grid de tarjetas sobre fondo más claro */}
-      <section className="bg-slate-50 py-16">
+      <section className="bg-slate-200 py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {Object.entries(productData).map(([key, prod]) => (
               <ProductCard
                 key={key}
