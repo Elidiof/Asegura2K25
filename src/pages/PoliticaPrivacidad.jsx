@@ -53,7 +53,7 @@ export default function Privacidad() {
           <h2 className="text-2xl font-semibold mb-2">4. Derechos</h2>
           <p>
             Tienes derecho a acceder, rectificar, suprimir, limitar,
-            oponerte y portar tus datos. Para ejercerlos, escribe a
+            oponerte y portar tus datos. Para ejercerlos, escribe a 
             <a href="mailto:contacto@asegura2k25.com" className="text-blue-600 hover:underline">contacto@asegura2k25.com</a>.
           </p>
         </section>
