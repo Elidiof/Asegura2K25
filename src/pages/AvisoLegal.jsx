@@ -9,12 +9,6 @@ export default function AvisoLegal() {
         <title>Aviso Legal | Asegura2K25</title>
       </Helmet>
 
-      <img
-        src="/logos/asegura2k25.png"
-        alt="Asegura2K25"
-        className="h-16 mt-6 mb-4"
-      />
-
       <h1 className="text-4xl font-bold mb-6 tracking-wide">Aviso Legal</h1>
 
       <div className="w-full max-w-2xl bg-white text-gray-800 p-8 rounded-lg shadow-lg space-y-6">
