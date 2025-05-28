@@ -3,7 +3,6 @@
 import { Helmet } from 'react-helmet-async'
 import productData from '../data/productData'
 import ProductCard from '../components/ProductCard'
-import hero from '/hero.jpg' // ajusta o elimina si no tienes imagen
 
 export default function Home () {
   return (
@@ -13,10 +12,13 @@ export default function Home () {
         <meta name="description" content="Comparador independiente con las mejores aseguradoras." />
       </Helmet>
 
-      {/* HERO opcional */}
+      {/* HERO simple sin imagen externa */}
       <section className="bg-blue-900 text-white text-center py-20">
         <h1 className="text-4xl font-bold mb-4">Tu seguro al mejor precio</h1>
-        <p className="max-w-2xl mx-auto">Trabajamos con Mapfre, Allianz, AXA, Generali y muchas más para ofrecerte la mejor póliza.</p>
+        <p className="max-w-2xl mx-auto">
+          Trabajamos con Mapfre, Allianz, AXA, Generali y muchas más para ofrecerte la
+          póliza que mejor se ajusta a tus necesidades.
+        </p>
       </section>
 
       {/* GRID DE PRODUCTOS */}
