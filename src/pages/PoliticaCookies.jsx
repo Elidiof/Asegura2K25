@@ -1,76 +1,51 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+// src/pages/PoliticaCookies.jsx  (puedes cambiar la ruta/nombre si la tienes en otro sitio)
+import React from "react";
 
-export default function Cookies() {
+const cookies = [
+  { nombre: "_ga",   tipo: "Analítica", finalidad: "Diferenciar usuarios",  retencion: "2 años",  proveedor: "Google Analytics" },
+  { nombre: "_gid",  tipo: "Analítica", finalidad: "Registrar visitas únicas", retencion: "24 h",  proveedor: "Google Analytics" },
+  { nombre: "session", tipo: "Esencial", finalidad: "Mantener sesión activa", retencion: "Sesión", proveedor: "Asegura2K25" },
+  { nombre: "user_pref", tipo: "Funcional", finalidad: "Guardar preferencias", retencion: "6 meses", proveedor: "Asegura2K25" }
+];
+
+export default function PoliticaCookies() {
   return (
-    <main className="min-h-screen bg-blue-900 text-white flex flex-col items-center pb-8">
-      <Helmet>
-        <title>Política de Cookies | Asegura2K25</title>
-      </Helmet>
+    <section className="min-h-screen bg-[#0d2c7a] flex items-center justify-center p-4">
+      <div className="w-full max-w-3xl bg-white rounded-2xl shadow-xl p-6 space-y-6">
+        <h1 className="text-2xl font-bold text-center">Política de Cookies</h1>
 
-      <h1 className="text-4xl font-bold mb-6 tracking-wide">Política de Cookies</h1>
+        {/* 👇🏽   NUEVO contenedor scroll   👇🏽 */}
+        <div className="overflow-x-auto">
+          <table className="min-w-full text-sm">
+            <thead className="bg-gray-100">
+              <tr className="text-left">
+                <th className="px-4 py-2 font-semibold">Nombre</th>
+                <th className="px-4 py-2 font-semibold">Tipo</th>
+                <th className="px-4 py-2 font-semibold">Finalidad</th>
+                <th className="px-4 py-2 font-semibold">Retención</th>
+                <th className="px-4 py-2 font-semibold">Proveedor</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cookies.map(c => (
+                <tr key={c.nombre} className="odd:bg-gray-50">
+                  <td className="px-4 py-2">{c.nombre}</td>
+                  <td className="px-4 py-2">{c.tipo}</td>
+                  <td className="px-4 py-2">{c.finalidad}</td>
+                  <td className="px-4 py-2">{c.retencion}</td>
+                  <td className="px-4 py-2">{c.proveedor}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {/* ☝🏽  FIN contenedor scroll ☝🏽 */}
 
-      <div className="w-full max-w-3xl bg-white text-gray-800 p-8 rounded-lg shadow-lg space-y-6 overflow-auto">
-        <p>En ASEGURA2K25 utilizamos distintos tipos de cookies para mejorar tu experiencia:</p>
+        <h2 className="text-xl font-semibold">¿Cómo gestionar?</h2>
+        <p>Puedes configurar o desactivar estas cookies en cualquier momento haciendo clic en el icono de cookies situado en la esquina inferior derecha de la pantalla.</p>
 
-        <table className="w-full text-left border-collapse">
-          <thead>
-            <tr>
-              <th className="border-b p-2">Nombre</th>
-              <th className="border-b p-2">Tipo</th>
-              <th className="border-b p-2">Finalidad</th>
-              <th className="border-b p-2">Retención</th>
-              <th className="border-b p-2">Proveedor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="odd:bg-gray-100">
-              <td className="p-2">_ga</td>
-              <td className="p-2">Analítica</td>
-              <td className="p-2">Diferenciar usuarios</td>
-              <td className="p-2">2 años</td>
-              <td className="p-2">Google Analytics</td>
-            </tr>
-            <tr>
-              <td className="p-2">_gid</td>
-              <td className="p-2">Analítica</td>
-              <td className="p-2">Registrar visitas únicas</td>
-              <td className="p-2">24 horas</td>
-              <td className="p-2">Google Analytics</td>
-            </tr>
-            <tr className="odd:bg-gray-100">
-              <td className="p-2">session</td>
-              <td className="p-2">Esencial</td>
-              <td className="p-2">Mantener sesión activa</td>
-              <td className="p-2">Sesión</td>
-              <td className="p-2">Asegura2K25</td>
-            </tr>
-            <tr>
-              <td className="p-2">user_pref</td>
-              <td className="p-2">Funcional</td>
-              <td className="p-2">Guardar preferencias</td>
-              <td className="p-2">6 meses</td>
-              <td className="p-2">Asegura2K25</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <hr />
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-2">¿Cómo gestionar?</h2>
-          <p>
-            Puedes configurar o desactivar estas cookies en cualquier momento
-            haciendo clic en el icono de cookies situado en la esquina inferior
-            derecha de la pantalla.
-          </p>
-        </section>
-
-        <p className="mt-8 text-center">
-          <Link to="/" className="text-blue-600 hover:underline">← Volver a la web</Link>
-        </p>
+        <a href="/" className="text-blue-600 hover:underline text-center block">← Volver a la web</a>
       </div>
-    </main>
-  )
+    </section>
+  );
 }
