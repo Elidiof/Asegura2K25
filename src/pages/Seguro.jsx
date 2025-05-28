@@ -1,3 +1,4 @@
+
 // src/pages/Seguro.jsx
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
@@ -12,9 +13,7 @@ export default function Seguro() {
   if (!data) {
     return (
       <main className="container mx-auto p-4 mt-0 text-center">
-        <Helmet>
-          <title>Seguro no encontrado</title>
-        </Helmet>
+        <Helmet><title>Seguro no encontrado</title></Helmet>
         <h1 className="text-2xl font-semibold mb-4">Seguro no encontrado</h1>
         <p className="mb-6">El seguro que buscas no existe.</p>
         <Link to="/" className="text-blue-600 hover:underline">Volver al inicio</Link>
@@ -41,7 +40,13 @@ export default function Seguro() {
           <Link to="/" className="mt-2 text-blue-600 hover:underline">← Volver al inicio</Link>
         </div>
 
-        <p className="text-center text-gray-700 mb-8">{data.description}</p>
+        {/* Descripción destacada */}
+        <div className="max-w-3xl mx-auto mb-8 bg-white border border-slate-200 shadow-sm
+                        rounded-2xl p-6">
+          <p className="text-center text-slate-900 text-lg font-semibold leading-relaxed">
+            {data.description}
+          </p>
+        </div>
       </main>
 
       <section className="bg-slate-200 py-16">
