@@ -10,14 +10,12 @@ export default function Home() {
         <title>Asegura2K25 • Seguros a medida</title>
       </Helmet>
 
-      {/* Frase introductoria */}
-      <section className="bg-blue-900 text-white text-center py-12">
-        <h1 className="text-3xl font-bold">Encuentra el seguro que necesitas</h1>
-      </section>
-
-      {/* GRID DE PRODUCTOS */}
-      <section className="bg-slate-200 py-16">
+      {/* Hero dentro del fondo gris, sobre el grid */}
+      <section className="bg-slate-200 py-12">
         <div className="container mx-auto px-4">
+          <h1 className="text-3xl font-bold text-center mb-10">Encuentra el seguro que necesitas</h1>
+
+          {/* Grid de productos */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {Object.entries(productData).map(([key, prod]) => (
               <ProductCard
