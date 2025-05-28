@@ -6,6 +6,6 @@
 /* Capa base: aplicamos fondo a html, body y #root para evitar cualquier wrapper blanco */
 @layer base {
   html, body, #root {
-    @apply bg-gray-100;
+    @apply bg-blue-900;
   }
 }
