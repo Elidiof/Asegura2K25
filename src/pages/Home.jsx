@@ -14,7 +14,7 @@ export default function Home() {
       <section className="bg-slate-200 py-6">
         <div className="container mx-auto px-4">
           {/* Título principal */}
-          <h1 className="text-4xl font-bold text-center mb-10 text-blue-900">
+          <h1 className="text-3xl font-bold text-center mb-10 text-blue-900">
             Encuentra el seguro que necesitas
           </h1>
 
