@@ -13,20 +13,20 @@ function Home() {
     { name: 'RC', icon: '/logos/rc.png' },
     { name: 'Accidentes', icon: '/logos/accidentes.png' },
     { name: 'Mascotas', icon: '/logos/mascotas.png' },
-    { name: 'Cabeza tractora', icon: '/logos/cabeza.png' },
-    { name: 'Transporte de mercancías', icon: '/logos/transporte.png' },
-    { name: 'Agroseguro', icon: '/logos/agro.png' },
-    { name: 'Comunidad', icon: '/logos/comunidad.png' },
+    { name: 'Cabeza tractora', icon: '/logos/cabeza-tractora.png' },
+    { name: 'Transporte de mercancías', icon: '/logos/transporte-mercancias.png' },
+    { name: 'Agroseguro', icon: '/logos/agroseguro.png' },
+    { name: 'Comunidad', icon: '/logos/comunidades.png' },
     { name: 'Decesos', icon: '/logos/decesos.png' },
     { name: 'Taxi', icon: '/logos/taxi.png' },
     { name: 'Moto', icon: '/logos/moto.png' },
     { name: 'Patinete', icon: '/logos/patinete.png' },
-    { name: 'Instrumentos Musicales', icon: '/logos/instrumentos.png' }
+    { name: 'Instrumentos Musicales', icon: '/logos/instrumentos-musicales.png' }
   ]
 
   return (
     <>
-      <main className="wrapper mx-auto px-4 py-12 pb-24">
+      <main className="wrapper mx-auto px-4 pt-6 pb-24">
         <h2 className="text-xl font-bold text-center my-4 md:my-6">
           Encuentra el seguro que necesitas
         </h2>
