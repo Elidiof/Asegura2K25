@@ -23,7 +23,7 @@ export default function AvisoLegal() {
           <p>
             El presente Aviso Legal regula el uso y acceso al sitio web 
             <a href="https://asegura2k25.com" className="text-blue-600 hover:underline">
-              asegura2k25.com
+               asegura2k25.com
             </a>, propiedad de Elidio Ferrer (ASEGURA2K25).
           </p>
         </section>
