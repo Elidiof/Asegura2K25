@@ -1,7 +1,7 @@
 {
   "name": "Asegura2K25",
   "short_name": "Asegura2K25",
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#143C96",
   "theme_color": "#143C96",
@@ -10,7 +10,4 @@
     {
       "src": "/favicon.ico",
       "sizes": "48x48 32x32 16x16",
-      "type": "image/x-icon"
-    }
-  ]
-}
+      "type"
