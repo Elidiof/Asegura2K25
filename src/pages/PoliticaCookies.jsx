@@ -18,7 +18,7 @@ export default function PoliticaCookies () {
       </Helmet>
 
       {/* Mismo azul que el componente Header */}
-      <section className="pt-6 pb-12 bg-[#1e3a8a]">
+      <section className="pt-6 pb-8 bg-[#1e3a8a]">
         {/* Título FUERA de la tarjeta, como en la Política de Privacidad */}
         <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-8">
           Política de Cookies
