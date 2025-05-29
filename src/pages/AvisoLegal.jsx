@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 
 export default function AvisoLegal() {
   return (
-    <main className="min-h-screen bg-blue-900 text-white flex flex-col items-center pb-8">
+    <main className="bg-blue-900 text-white flex flex-col items-center pb-8">
       <Helmet>
         <title>Aviso Legal | Asegura2K25</title>
       </Helmet>
@@ -68,7 +68,7 @@ export default function AvisoLegal() {
         <p className="text-center">
           Consulta también nuestra <Link to="/cookies" className="text-blue-600 hover:underline">Política de Cookies</Link>.
         </p>
-        <p className="mt-4 text-center">
+        <p className="mt-6 text-center">
           <Link to="/" className="text-blue-600 hover:underline">← Volver a la web</Link>
         </p>
       </div>
