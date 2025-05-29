@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 
 export default function Privacidad() {
   return (
-    <main className="min-h-screen bg-blue-900 text-white flex flex-col items-center pb-4">
+    <main className="min-h-screen bg-blue-900 text-white flex flex-col items-center pb-8">
       <Helmet>
         <title>Política de Privacidad | Asegura2K25</title>
       </Helmet>
@@ -60,9 +60,8 @@ export default function Privacidad() {
           </p>
         </section>
 
-        {/* Parte baja optimizada */}
-        <p className="text-center text-sm text-gray-700">
-          ← <Link to="/" className="text-blue-600 hover:underline">Volver a la web</Link>
+        <p className="mt-6 text-center">
+          <Link to="/" className="text-blue-600 hover:underline">← Volver a la web</Link>
         </p>
       </div>
     </main>
