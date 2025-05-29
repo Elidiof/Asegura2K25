@@ -1,4 +1,3 @@
-// src/pages/PoliticaCookies.jsx
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
@@ -17,16 +16,12 @@ export default function PoliticaCookies () {
         <title>Política de Cookies | Asegura2K25</title>
       </Helmet>
 
-      {/* Mismo azul que el componente Header */}
       <section className="pt-6 pb-8 bg-[#1e3a8a]">
-        {/* Título FUERA de la tarjeta, como en la Política de Privacidad */}
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-white mb-8">
+        <h1 className="text-4xl font-bold text-center text-white mb-6">
           Política de Cookies
         </h1>
 
-        {/* Tarjeta blanca con la tabla */}
-        <div className="mx-auto max-w-3xl bg-white rounded-2xl shadow-xl p-6 space-y-6">
-          {/* Scroll horizontal solo si hace falta */}
+        <div className="mx-auto max-w-2xl bg-white rounded-2xl shadow-xl p-6 space-y-6">
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead className="bg-gray-100">
