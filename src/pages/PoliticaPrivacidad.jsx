@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'
 
 export default function Privacidad() {
   return (
-    <main className="min-h-screen bg-blue-900 text-white flex flex-col items-center pb-8">
+    <main className="min-h-screen bg-blue-900 text-white flex flex-col items-center pb-4">
       <Helmet>
         <title>Política de Privacidad | Asegura2K25</title>
       </Helmet>
@@ -56,12 +56,13 @@ export default function Privacidad() {
         <section>
           <h2 className="text-2xl font-semibold mb-2">5. Cookies</h2>
           <p>
-            Para gestionar tus preferencias de cookies, visita la <Link to="/cookies" className="text-blue-600 hover:underline"> Política de Cookies</Link> o usa el botón de configuración en la esquina inferior.
+            Para gestionar tus preferencias de cookies, visita la <Link to="/cookies" className="text-blue-600 hover:underline">Política de Cookies</Link> o usa el botón de configuración en la esquina inferior.
           </p>
         </section>
 
-        <p className="mt-6 text-center">
-          <Link to="/" className="text-blue-600 hover:underline">← Volver a la web</Link>
+        {/* Parte baja optimizada */}
+        <p className="text-center text-sm text-gray-700">
+          ← <Link to="/" className="text-blue-600 hover:underline">Volver a la web</Link>
         </p>
       </div>
     </main>
