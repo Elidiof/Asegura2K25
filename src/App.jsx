@@ -6,7 +6,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import ScrollToTop from './ScrollToTop'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import { CookieBanner } from './components/CookieBanner'
+// usamos cookiebot.com import { CookieBanner } from './components/CookieBanner'
 
 // Lazy-loaded pages
 const Home               = React.lazy(() => import('./pages/Home'))
