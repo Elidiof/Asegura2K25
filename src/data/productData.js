@@ -6,20 +6,19 @@ const productData = {
   coche: {
     title: 'Seguro de Coche',
     icon: '/logos/coche.png',
-    // Slogan
     description: 'Conduce tranquilo, nosotros te respaldamos.',
     coverages: [
       'Responsabilidad civil obligatoria y voluntaria',
       'Defensa jurídica y reclamación de daños',
       'Asistencia en viaje desde el km 0',
       'Robo, incendio y lunas',
-      'Colisión con animal, daños atmosféricos',
+      'Colisión con animales y daños atmosféricos',
       'Daños propios con o sin franquicia'
     ],
     requirements: [
-      'Proporcionar fotografía del permiso de circulación y ficha técnica',
-      'Proporcionar fotografía del carnet de conducir (anverso y reverso)',
-      'Proporcionar póliza actual en PDF (o número de póliza y compañía)'
+      'Envíanos fotografía del permiso de circulación y ficha técnica',
+      'Envíanos fotografía del carnet de conducir (anverso y reverso)',
+      'Envíanos póliza actual en PDF (o número de póliza y compañía)'
     ]
   },
   hogar: {
@@ -33,14 +32,14 @@ const productData = {
       'Rotura de cristales',
       'Robo y daños por intento de robo',
       'Daños estéticos',
-      'Asistencia urgente 24 h (electricistas, fontaneros, cerrajeros…)',
+      'Asistencia urgente 24 h (electricistas, fontaneros, cerrajeros...)',
       'Responsabilidad civil de mascotas'
     ],
     requirements: [
-      'Proporcionar dirección completa del inmueble',
-      'Indicar año de reforma (si aplica)',
-      'Proporcionar valor aproximado del contenido',
-      'Indicar tipo de ocupación (propietario, inquilino, segunda residencia)'
+      'Proporciónanos la dirección completa del inmueble',
+      'Indica año de reforma (si lo hubiese)',
+      'Indícanos el valor aproximado del contenido',
+      'Indícanos el tipo de ocupación (propietario, inquilino, segunda residencia)'
     ]
   },
   vida: {
@@ -56,10 +55,10 @@ const productData = {
       'Servicios de orientación médica y psicológica'
     ],
     requirements: [
-      'Proporcionar nombre completo y fecha de nacimiento',
-      'Indicar capital a asegurar',
-      'Especificar coberturas adicionales deseadas',
-      'Proporcionar compañía actual (si aplica)'
+      'Indícanos nombre completo y fecha de nacimiento',
+      'Indícanos capital a asegurar',
+      'Especifica coberturas adicionales deseadas',
+      'Indícanos compañía actual (si la hubiese)'
     ]
   },
   salud: {
@@ -71,14 +70,14 @@ const productData = {
       'Pruebas diagnósticas y análisis clínicos',
       'Hospitalización y urgencias',
       'Acceso a cuadro médico privado',
-      'Asistencia telefónica 24 /7',
+      'Asistencia telefónica 24/7',
       'Reembolso de gastos médicos (opcional)'
     ],
     requirements: [
-      'Proporcionar nombre completo y fecha de nacimiento',
-      'Indicar código postal de residencia',
-      'Proporcionar compañía actual (si aplica)',
-      'Especificar coberturas opcionales deseadas'
+      'Indícanos nombre completo y fecha de nacimiento',
+      'Indícanos tu código postal de residencia',
+      'Indícanos compañía actual (si aplica)',
+      'Especifica coberturas opcionales deseadas'
     ]
   },
   alquiler: {
@@ -93,10 +92,10 @@ const productData = {
       'Monitorio y desahucio judicial'
     ],
     requirements: [
-      'Proporcionar dirección exacta del inmueble',
-      'Indicar importe mensual del alquiler',
-      'Especificar tipo de contrato (habitual, vacacional)',
-      'Indicar antigüedad y estado del inquilino'
+      'Indícanos la dirección exacta del inmueble',
+      'Indícanos el importe mensual del alquiler',
+      'Especifica tipo de contrato (habitual, vacacional)',
+      'Indícanos antigüedad y estado del inquilino'
     ]
   },
   empresa: {
@@ -112,10 +111,10 @@ const productData = {
       'Defensa jurídica'
     ],
     requirements: [
-      'Proporcionar CIF y razón social',
-      'Proporcionar dirección del local o nave',
-      'Indicar tipo de actividad',
-      'Especificar facturación anual'
+      'Proporciónanos CIF y razón social',
+      'Proporciónanos la dirección del local o nave',
+      'Indícanos tipo de actividad',
+      'Especifica facturación anual'
     ]
   },
   rc: {
@@ -131,10 +130,10 @@ const productData = {
       'RC inquilino o arrendador'
     ],
     requirements: [
-      'Indicar actividad profesional',
-      'Proporcionar dirección completa',
-      'Especificar facturación anual',
-      'Indicar número de empleados (si aplica)'
+      'Indícanos actividad profesional',
+      'Proporciona la dirección completa',
+      'Especifica la facturación anual',
+      'Indica el número de empleados (si los hubiese)'
     ]
   },
   accidentes: {
@@ -150,10 +149,10 @@ const productData = {
       'Asistencia y orientación médica'
     ],
     requirements: [
-      'Proporcionar nombre completo y fecha de nacimiento',
-      'Indicar actividad profesional',
-      'Especificar capital deseado',
-      'Proporcionar compañía actual (si aplica)'
+      'Proporciona nombre completo y fecha de nacimiento',
+      'Indícanos actividad profesional',
+      'Especifica el capital deseado',
+      'Proporciona la compañía actual (si la hubiese)'
     ]
   },
   mascotas: {
@@ -167,10 +166,10 @@ const productData = {
       'Cobertura en caso de fallecimiento o extravío'
     ],
     requirements: [
-      'Proporcionar nombre y DNI del propietario',
-      'Indicar raza, edad y nombre del animal',
-      'Proporcionar número de microchip',
-      'Proporcionar dirección de residencia'
+      'Indícanos el nombre, apellidos y DNI del propietario',
+      'Indícanos la raza, edad y nombre del animal',
+      'Proporciona el número de microchip',
+      'Proporciona la dirección de residencia'
     ]
   },
   "cabeza-tractora": {
@@ -185,10 +184,10 @@ const productData = {
       'Accidentes del conductor'
     ],
     requirements: [
-      'Proporcionar permiso de circulación y ficha técnica',
-      'Indicar uso (nacional o internacional)',
-      'Especificar tipo de mercancías',
-      'Proporcionar póliza actual o datos de la compañía'
+      'Envíanos el permiso de circulación y ficha técnica',
+      'Indica el uso (nacional o internacional)',
+      'Especifica tipo de mercancías',
+      'Envíanos póliza actual en PDF (o número de póliza y compañía)'
     ]
   },
   "transporte-mercancias": {
@@ -204,16 +203,17 @@ const productData = {
       'Gastos por paralización'
     ],
     requirements: [
-      'Indicar tipo de mercancía',
-      'Proporcionar CIF o DNI',
-      'Especificar alcance del transporte',
-      'Indicar número de vehículos'
+      'Indícanos el tipo de mercancía',
+      'Proporciona CIF o DNI',
+      'Especifica alcance del transporte',
+      'Indícanos el número de vehículos', 
+      'Indícanos la facturación anual'
     ]
   },
   agroseguro: {
     title: 'Agroseguro',
     icon: '/logos/agroseguro.png',
-    description: 'Protege tu cosecha y tu ganado ante cualquier imprevisto.',
+    description: 'Protege tus cosechas y tu ganado ante cualquier imprevisto.',
     coverages: [
       'Daños en cultivos por pedrisco, lluvia o sequía',
       'Pérdida de producción o rendimiento',
@@ -221,10 +221,10 @@ const productData = {
       'Cobertura para ganado'
     ],
     requirements: [
-      'Proporcionar nombre y DNI',
-      'Indicar parcela o explotación (SIGPAC)',
-      'Especificar tipo de cultivo o ganado',
-      'Indicar ubicación y término municipal'
+      'Proporciona nombre, apellidos y DNI',
+      'Indica parcela o explotación (SIGPAC)',
+      'Especifica el tipo de cultivo o ganado',
+      'Indica la ubicación y término municipal'
     ]
   },
   comunidades: {
@@ -239,8 +239,8 @@ const productData = {
       'Asistencia urgente 24 h'
     ],
     requirements: [
-      'Proporcionar dirección completa del edificio',
-      'Indicar año de reforma de tuberías'
+      'Proporciona la dirección completa del edificio',
+      'Indica año de reforma'
     ]
   },
   decesos: {
@@ -255,8 +255,8 @@ const productData = {
       'Atención psicológica'
     ],
     requirements: [
-      'Proporcionar nombre y fecha de nacimiento de asegurados',
-      'Indicar código postal de residencia'
+      'Proporciona nombre, apellidos y fecha de nacimiento de los asegurados',
+      'Indica código postal de residencia'
     ]
   },
   taxi: {
@@ -271,9 +271,9 @@ const productData = {
       'Accidentes del conductor'
     ],
     requirements: [
-      'Proporcionar permiso de circulación y ficha técnica',
-      'Proporcionar carnet de conducir vigente',
-      'Proporcionar póliza actual o compañía'
+      'Envíanos el permiso de circulación y ficha técnica',
+      'Envíanos el carnet de conducir vigente',
+      'Envíanos la póliza actual o compañía'
     ]
   },
   moto: {
@@ -288,9 +288,9 @@ const productData = {
       'Daños propios'
     ],
     requirements: [
-      'Proporcionar permiso de circulación y ficha técnica',
-      'Proporcionar carnet de conducir vigente',
-      'Proporcionar póliza actual o compañía'
+      'Envíanos el permiso de circulación y ficha técnica',
+      'Envíanos el carnet de conducir vigente',
+      'Envíanos la póliza actual o número de póliza y compañía'
     ]
   },
   patinete: {
@@ -303,9 +303,9 @@ const productData = {
       'Asistencia en viaje'
     ],
     requirements: [
-      'Proporcionar nombre y DNI',
-      'Indicar ciudad y código postal',
-      'Proporcionar foto del patinete'
+      'Proporciónanos el nombre, apellidos y DNI',
+      'Indícanos tu ciudad y código postal',
+      'Proporciónanos foto del patinete'
     ]
   },
   "instrumentos-musicales": {
@@ -318,9 +318,9 @@ const productData = {
       'Responsabilidad civil'
     ],
     requirements: [
-      'Proporcionar nombre y DNI',
-      'Indicar tipo y marca del instrumento',
-      'Especificar valor aproximado'
+      'Proporciónanos nombre, apellidos y DNI',
+      'Indícanos el tipo y marca del instrumento',
+      'Especifícanos el valor aproximado'
     ]
   }
 };
