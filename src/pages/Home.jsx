@@ -7,10 +7,8 @@ import ProductCard from '../components/ProductCard'
 
 export default function Home() {
   /* ─────────────────────────────────────────
-     Listado de productos que mostramos en la
-     cuadrícula principal (tu código original)
+     Prepara el array de productos
   ────────────────────────────────────────── */
-  // (productData es un objeto donde cada key es el slug y cada value contiene icon y title)
   const products = Object.entries(productData).map(([key, prod]) => ({
     slug: key,
     icon: prod.icon,
@@ -18,8 +16,7 @@ export default function Home() {
   }))
 
   /* ─────────────────────────────────────────
-     Compañías aseguradoras que animamos en
-     el carrusel inferior
+     Listado de compañías para el carrusel
   ────────────────────────────────────────── */
   const companies = [
     'mapfre', 'reale', 'generali', 'allianz',
@@ -30,8 +27,7 @@ export default function Home() {
   ]
 
   /* ─────────────────────────────────────────
-     Convierte un slug (“cabeza-tractora”) en
-     un título legible (“Cabeza Tractora”)
+     Función para convertir slug en título
   ────────────────────────────────────────── */
   const formatTitle = slug =>
     slug
@@ -39,8 +35,7 @@ export default function Home() {
       .replace(/\b\w/g, c => c.toUpperCase())
 
   /* ─────────────────────────────────────────
-     Partimos el array de compañías en dos
-     filas para que sea más compacto
+     Partir en dos filas para mostrar más compacto
   ────────────────────────────────────────── */
   const mitad = Math.ceil(companies.length / 2)
   const rows = [
@@ -50,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-      {/* ─────── SEO: Helmet ─────── */}
+      {/* ─────── SEO ─────── */}
       <Helmet>
         <title>Asegura2K25 • Seguros a medida</title>
         <meta
@@ -62,12 +57,9 @@ export default function Home() {
       {/* ─────── Hero + Grid de productos ─────── */}
       <section className="bg-slate-200 py-6">
         <div className="container mx-auto px-4">
-          {/* Título principal */}
           <h1 className="text-3xl font-bold text-center mb-10 text-blue-900">
             Encuentra el seguro que necesitas
           </h1>
-
-          {/* Grid de productos */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {products.map(({ slug, icon, title }) => (
               <ProductCard
@@ -81,10 +73,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─────── Carrusel de compañías ─────── */}
-      <section className="mb-10 space-y-4">
-        <div className="container mx-auto px-4">
-          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl mb-4">
+      {/* ─────── Carrusel de compañías SOBRE FONDO BLANCO ─────── */}
+      <section className="bg-white py-8 mb-10">
+        <div className="container mx-auto px-4 space-y-4">
+          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl">
             Compañías aseguradoras con las que colaboramos
           </h2>
 
@@ -92,11 +84,9 @@ export default function Home() {
             <div key={idx} className="overflow-hidden">
               <Marquee gradient={false} speed={50} pauseOnHover>
                 {[...row, ...row].map((key, i) => {
-                  // Si el slug es 'qualitas', carga un nombre de fichero distinto
                   const file = key === 'qualitas'
                     ? 'qualitas-auto.webp'
                     : `${key}.svg`
-
                   return (
                     <img
                       key={`${key}-${i}`}
