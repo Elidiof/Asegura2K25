@@ -1,4 +1,3 @@
-// src/data/productData.js
 /**
  * Datos completos de los 18 productos.
  */
@@ -12,7 +11,7 @@ const productData = {
       'Defensa jurídica y reclamación de daños',
       'Asistencia en viaje desde el km 0',
       'Robo, incendio y lunas',
-      'Colisión con animales y daños atmosféricos',
+      'Colisión con animal y daños atmosféricos',
       'Daños propios con o sin franquicia'
     ],
     requirements: [
@@ -27,302 +26,272 @@ const productData = {
     description: 'Tu hogar, nuestra máxima prioridad.',
     coverages: [
       'Responsabilidad civil',
-      'Daños por agua y rotura de tuberías',
-      'Incendio, explosión y caída de rayo',
-      'Rotura de cristales',
-      'Robo y daños por intento de robo',
-      'Daños estéticos',
-      'Asistencia urgente 24 h (electricistas, fontaneros, cerrajeros...)',
-      'Responsabilidad civil de mascotas'
+      'Daños por agua, fuego y fenómenos meteorológicos',
+      'Robo en vivienda habitual',
+      'Daños eléctricos y asistencia 24h'
     ],
     requirements: [
-      'Proporciónanos la dirección completa del inmueble',
-      'Indica año de reforma (si lo hubiese)',
-      'Indícanos el valor aproximado del contenido',
-      'Indícanos el tipo de ocupación (propietario, inquilino, segunda residencia)'
+      'Dirección completa del inmueble',
+      'Año de construcción y superficie',
+      'Valor contenido y continente'
     ]
   },
   vida: {
     title: 'Seguro de Vida',
     icon: '/logos/vida.png',
-    description: 'Cuida tu vida hoy, asegura tu futuro.',
+    description: 'Protege el futuro de los tuyos.',
     coverages: [
-      'Capital asegurado en caso de fallecimiento',
-      'Adelanto de capital por enfermedad grave terminal',
-      'Invalidez absoluta y permanente (opcional)',
-      'Asistencia familiar y testamento online',
-      'Repatriación en caso de fallecimiento',
-      'Servicios de orientación médica y psicológica'
+      'Fallecimiento por cualquier causa',
+      'Invalidez absoluta y permanente',
+      'Asistencia psicológica y orientación legal',
+      'Anticipo para gastos del sepelio'
     ],
     requirements: [
-      'Indícanos nombre completo y fecha de nacimiento',
-      'Indícanos capital a asegurar',
-      'Especifica coberturas adicionales deseadas',
-      'Indícanos compañía actual (si la hubiese)'
+      'DNI o NIE del asegurado',
+      'Formulario de salud',
+      'Edad y profesión actual'
     ]
   },
   salud: {
     title: 'Seguro de Salud',
     icon: '/logos/salud.png',
-    description: 'Protegemos tu salud, cuidamos de ti.',
+    description: 'Accede a la mejor sanidad privada.',
     coverages: [
-      'Consultas médicas generales y especialistas',
-      'Pruebas diagnósticas y análisis clínicos',
-      'Hospitalización y urgencias',
-      'Acceso a cuadro médico privado',
-      'Asistencia telefónica 24/7',
-      'Reembolso de gastos médicos (opcional)'
+      'Cuadro médico completo y libre elección',
+      'Hospitalización, pruebas y consultas',
+      'Cobertura dental incluida',
+      'Sin copagos (según modalidad)'
     ],
     requirements: [
-      'Indícanos nombre completo y fecha de nacimiento',
-      'Indícanos tu código postal de residencia',
-      'Indícanos compañía actual (si aplica)',
-      'Especifica coberturas opcionales deseadas'
+      'DNI de todos los asegurados',
+      'Formulario de salud por asegurado',
+      'Código postal de residencia'
     ]
   },
   alquiler: {
     title: 'Seguro de Alquiler',
     icon: '/logos/alquiler.png',
-    description: 'Alquila con tranquilidad y confianza.',
+    description: 'Protege tu vivienda y garantiza tus ingresos.',
     coverages: [
-      'Impago de alquiler mensual hasta 12 meses',
-      'Defensa jurídica y asistencia legal ilimitada',
-      'Cobertura de actos vandálicos',
-      'Gastos de cerrajero y cambio de cerradura',
-      'Monitorio y desahucio judicial'
+      'Impago de alquiler hasta 12 meses',
+      'Actos vandálicos del inquilino',
+      'Asistencia legal y desahucio',
+      'Daños materiales por siniestro'
     ],
     requirements: [
-      'Indícanos la dirección exacta del inmueble',
-      'Indícanos el importe mensual del alquiler',
-      'Especifica tipo de contrato (habitual, vacacional)',
-      'Indícanos antigüedad y estado del inquilino'
+      'DNI del propietario',
+      'Contrato de alquiler',
+      'IBI o escritura del inmueble'
     ]
   },
-  empresa: {
+  empresas: {
     title: 'Seguro para Empresas',
-    icon: '/logos/empresa.png',
-    description: 'Protección integral para tu empresa.',
+    icon: '/logos/empresas.png',
+    description: 'Coberturas a medida para tu negocio.',
     coverages: [
-      'Responsabilidad civil por productos y servicios',
-      'Pérdida de beneficios por paralización',
-      'Asistencia urgente 24 h',
-      'Daños materiales por incendio o agua',
-      'Robo y vandalismo',
+      'Responsabilidad civil general y patronal',
+      'Daños materiales y lucro cesante',
+      'Robo, incendio y agua',
+      'Seguros para autónomos y sociedades'
+    ],
+    requirements: [
+      'Datos fiscales de la empresa',
+      'Actividad y superficie del local',
+      'Valor del contenido y maquinaria'
+    ]
+  },
+  responsabilidad: {
+    title: 'Responsabilidad Civil',
+    icon: '/logos/responsabilidad.png',
+    description: 'Responde ante terceros con total tranquilidad.',
+    coverages: [
+      'RC general y de explotación',
+      'RC profesional',
+      'RC inquilinos y propietarios',
       'Defensa jurídica'
     ],
     requirements: [
-      'Proporciónanos CIF y razón social',
-      'Proporciónanos la dirección del local o nave',
-      'Indícanos tipo de actividad',
-      'Especifica facturación anual'
-    ]
-  },
-  rc: {
-    title: 'Seguro de Responsabilidad Civil',
-    icon: '/logos/rc.png',
-    description: 'Tu responsabilidad, nuestra cobertura.',
-    coverages: [
-      'Daños materiales o personales a terceros',
-      'Defensa jurídica y fianzas judiciales',
-      'RC patronal: accidentes laborales',
-      'RC por explotación de actividad',
-      'RC por productos o servicios',
-      'RC inquilino o arrendador'
-    ],
-    requirements: [
-      'Indícanos actividad profesional',
-      'Proporciona la dirección completa',
-      'Especifica la facturación anual',
-      'Indica el número de empleados (si los hubiese)'
+      'Actividad o profesión',
+      'Volumen estimado de ingresos',
+      'Cobertura deseada'
     ]
   },
   accidentes: {
     title: 'Seguro de Accidentes',
     icon: '/logos/accidentes.png',
-    description: 'Respaldo inmediato ante cualquier imprevisto.',
+    description: 'Tu seguridad personal protegida ante cualquier imprevisto.',
     coverages: [
-      'Indemnización por fallecimiento accidental',
-      'Invalidez permanente parcial o total',
-      'Gastos médicos derivados del accidente',
-      'Asistencia sanitaria urgente',
-      'Ayuda económica por hospitalización',
-      'Asistencia y orientación médica'
+      'Indemnización por accidente grave',
+      'Gastos médicos incluidos',
+      'Cobertura 24/7 en todo el mundo',
+      'Protección para autónomos y particulares'
     ],
     requirements: [
-      'Proporciona nombre completo y fecha de nacimiento',
-      'Indícanos actividad profesional',
-      'Especifica el capital deseado',
-      'Proporciona la compañía actual (si la hubiese)'
+      'DNI o NIE del asegurado',
+      'Cuestionario de salud básico',
+      'Antigüedad laboral si es para autónomos'
     ]
   },
   mascotas: {
-    title: 'Seguro de Mascotas',
+    title: 'Seguro para Mascotas',
     icon: '/logos/mascotas.png',
-    description: 'Tus animales, miembros de la familia con cobertura total.',
+    description: 'Protección médica y legal para tu compañero peludo.',
     coverages: [
-      'Responsabilidad civil por daños a terceros',
-      'Defensa jurídica y reclamación de daños',
       'Asistencia veterinaria por accidente',
-      'Cobertura en caso de fallecimiento o extravío'
+      'Cobertura por robo o extravío',
+      'Responsabilidad civil',
+      'Sacrificio y gastos de sepelio'
     ],
     requirements: [
-      'Indícanos el nombre, apellidos y DNI del propietario',
-      'Indícanos la raza, edad y nombre del animal',
-      'Proporciona el número de microchip',
-      'Proporciona la dirección de residencia'
+      'Edad y raza del animal',
+      'Cartilla veterinaria',
+      'Microchip obligatorio'
     ]
   },
-  "cabeza-tractora": {
+  tractora: {
     title: 'Seguro Cabeza Tractora',
-    icon: '/logos/cabeza-tractora.png',
-    description: 'Seguridad en ruta para tu tractora.',
+    icon: '/logos/tractora.png',
+    description: 'Diseñado para profesionales del transporte.',
     coverages: [
-      'Responsabilidad civil obligatoria y voluntaria',
-      'Daños propios y colisión',
-      'Robo e incendio',
-      'Lunas y asistencia en carretera',
-      'Accidentes del conductor'
+      'RC obligatoria y voluntaria',
+      'Asistencia en viaje específica para tractora',
+      'Lunas, incendio, robo y daños propios',
+      'Paralización opcional'
     ],
     requirements: [
-      'Envíanos el permiso de circulación y ficha técnica',
-      'Indica el uso (nacional o internacional)',
-      'Especifica tipo de mercancías',
-      'Envíanos póliza actual en PDF (o número de póliza y compañía)'
+      'Permiso de circulación y ficha técnica',
+      'Carnet de conducir del titular',
+      'Póliza anterior (si hay)'
     ]
   },
-  "transporte-mercancias": {
-    title: 'Seguro de Transporte de Mercancías',
-    icon: '/logos/transporte-mercancias.png',
-    description: 'Tus mercancías aseguradas en cada viaje.',
+  transporte: {
+    title: 'Transporte de Mercancías',
+    icon: '/logos/transporte.png',
+    description: 'Protege tus envíos en carretera, mar o aire.',
     coverages: [
-      'Todo riesgo opcional (ICC-A)',
-      'Daños por accidente, robo o incendio',
-      'Responsabilidad según CMR',
-      'Daños por mojadura o mala estiba',
-      'Cobertura nacional e internacional',
-      'Gastos por paralización'
+      'Daños o pérdida de la carga',
+      'Robo y vuelco',
+      'Cobertura internacional',
+      'Opciones para CMR, paquetería, ADR...'
     ],
     requirements: [
-      'Indícanos el tipo de mercancía',
-      'Proporciona CIF o DNI',
-      'Especifica alcance del transporte',
-      'Indícanos el número de vehículos', 
-      'Indícanos la facturación anual'
+      'Tipo de mercancía',
+      'Facturación anual',
+      'Zona geográfica de cobertura'
     ]
   },
   agroseguro: {
     title: 'Agroseguro',
     icon: '/logos/agroseguro.png',
-    description: 'Protege tus cosechas y tu ganado ante cualquier imprevisto.',
+    description: 'Protección integral para agricultores y ganaderos.',
     coverages: [
-      'Daños en cultivos por pedrisco, lluvia o sequía',
-      'Pérdida de producción o rendimiento',
-      'Reposición de plantas dañadas',
-      'Cobertura para ganado'
+      'Daños por climatología',
+      'Pérdidas de producción',
+      'Muerte de ganado',
+      'Cobertura estatal subvencionada'
     ],
     requirements: [
-      'Proporciona nombre, apellidos y DNI',
-      'Indica parcela o explotación (SIGPAC)',
-      'Especifica el tipo de cultivo o ganado',
-      'Indica la ubicación y término municipal'
+      'Cultivo o actividad ganadera',
+      'Localización de la finca',
+      'CIF/NIF del titular'
     ]
   },
   comunidades: {
-    title: 'Seguro de Comunidades',
+    title: 'Comunidades',
     icon: '/logos/comunidades.png',
-    description: 'La tranquilidad de tu comunidad, garantizada.',
+    description: 'Protege el edificio y la convivencia.',
     coverages: [
-      'Incendio, explosión y daños por agua',
-      'Daños eléctricos y fenómenos atmosféricos',
-      'Robo en zonas comunes',
-      'Responsabilidad civil comunitaria',
-      'Asistencia urgente 24 h'
+      'Daños por agua, incendio, actos vandálicos',
+      'RC comunidad, presidente y empleados',
+      'Asistencia 24h',
+      'Reclamación de impagos'
     ],
     requirements: [
-      'Proporciona la dirección completa del edificio',
-      'Indica año de reforma'
+      'Dirección del edificio',
+      'Número de viviendas',
+      'Año de construcción y superficie'
     ]
   },
   decesos: {
-    title: 'Seguro de Decesos',
+    title: 'Decesos',
     icon: '/logos/decesos.png',
-    description: 'A tu lado cuando más lo necesites.',
+    description: 'Tranquilidad para ti y tu familia.',
     coverages: [
       'Servicio funerario completo',
       'Traslado nacional e internacional',
-      'Gestión administrativa del fallecimiento',
-      'Asistencia en viaje y repatriación',
-      'Atención psicológica'
+      'Asistencia jurídica y psicológica',
+      'Coberturas complementarias opcionales'
     ],
     requirements: [
-      'Proporciona nombre, apellidos y fecha de nacimiento de los asegurados',
-      'Indica código postal de residencia'
+      'Edad del asegurado',
+      'Localidad de residencia',
+      'Modalidad deseada'
     ]
   },
   taxi: {
-    title: 'Seguro de Taxi',
+    title: 'Taxi',
     icon: '/logos/taxi.png',
-    description: 'Tu viaje seguro en cada trayecto.',
+    description: 'Tu herramienta de trabajo siempre protegida.',
     coverages: [
       'RC obligatoria y voluntaria',
-      'Daños propios y colisión',
-      'Robo, incendio y lunas',
-      'Asistencia en carretera',
-      'Accidentes del conductor'
+      'Asistencia en viaje con vehículo de sustitución',
+      'Daños propios y lunas',
+      'Pérdida de ingresos por inmovilización'
     ],
     requirements: [
-      'Envíanos el permiso de circulación y ficha técnica',
-      'Envíanos el carnet de conducir vigente',
-      'Envíanos la póliza actual o compañía'
+      'Permiso de circulación y ficha técnica',
+      'Licencia de taxi',
+      'Póliza anterior (si hay)'
     ]
   },
   moto: {
-    title: 'Seguro de Moto',
+    title: 'Moto',
     icon: '/logos/moto.png',
-    description: 'Disfruta la carretera con total confianza.',
+    description: 'Disfruta de tu moto con total seguridad.',
     coverages: [
-      'RC obligatoria y voluntaria',
-      'Defensa jurídica y reclamación de daños',
-      'Asistencia en viaje',
-      'Robo, incendio y lunas',
-      'Daños propios'
+      'Responsabilidad civil y defensa jurídica',
+      'Asistencia en carretera',
+      'Robo e incendio',
+      'Cobertura de equipación'
     ],
     requirements: [
-      'Envíanos el permiso de circulación y ficha técnica',
-      'Envíanos el carnet de conducir vigente',
-      'Envíanos la póliza actual o número de póliza y compañía'
+      'Permiso de circulación y ficha técnica',
+      'Carnet de conducir',
+      'Póliza anterior si la hay'
     ]
   },
   patinete: {
-    title: 'Seguro de Patinete',
+    title: 'Patinete',
     icon: '/logos/patinete.png',
-    description: 'Movilidad urbana protegida sin complicaciones.',
+    description: 'Protección esencial para movilidad urbana.',
     coverages: [
-      'RC por daños a terceros',
-      'Defensa jurídica',
-      'Asistencia en viaje'
+      'RC obligatoria',
+      'Daños a terceros',
+      'Asistencia jurídica',
+      'Cobertura nacional'
     ],
     requirements: [
-      'Proporciónanos el nombre, apellidos y DNI',
-      'Indícanos tu ciudad y código postal',
-      'Proporciónanos foto del patinete'
+      'Edad del conductor',
+      'Tipo de uso (privado o laboral)',
+      'Ciudad de circulación habitual'
     ]
   },
-  "instrumentos-musicales": {
-    title: 'Seguro de Instrumentos Musicales',
-    icon: '/logos/instrumentos-musicales.png',
-    description: 'Cuida tu música, protege tus instrumentos.',
+  instrumentos: {
+    title: 'Instrumentos Musicales',
+    icon: '/logos/instrumentos.png',
+    description: 'Asegura tu instrumento frente a cualquier imprevisto.',
     coverages: [
-      'Robo o hurto en cualquier lugar',
-      'Daños por accidente, incendio o agua',
-      'Responsabilidad civil'
+      'Daños accidentales',
+      'Robo dentro y fuera del domicilio',
+      'Cobertura en giras o desplazamientos',
+      'Valor convenido o reposición'
     ],
     requirements: [
-      'Proporciónanos nombre, apellidos y DNI',
-      'Indícanos el tipo y marca del instrumento',
-      'Especifícanos el valor aproximado'
+      'Tipo de instrumento',
+      'Valor asegurado',
+      'Uso (aficionado o profesional)'
     ]
   }
-};
+}
 
-export default productData;
+export default productData
