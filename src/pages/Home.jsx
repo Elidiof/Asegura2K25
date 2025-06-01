@@ -75,33 +75,34 @@ export default function Home() {
       </section>
 
       {/* ─────── Carrusel de compañías SOBRE FONDO BLANCO ─────── */}
-      <section className="bg-white py-8 mb-10">
-        <div className="container mx-auto px-4 space-y-4">
-          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl">
-            Compañías aseguradoras con las que colaboramos
-          </h2>
+<section className="bg-white py-8 mb-10">
+  <div className="container mx-auto px-4 space-y-4">
+    <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl">
+      Compañías aseguradoras con las que colaboramos
+    </h2>
 
-          {rows.map((row, idx) => (
-            <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={50} pauseOnHover>
-                {[...row, ...row].map((key, i) => {
-                  const file = key === 'qualitas'
-                    ? 'qualitas-auto.webp'
-                    : `${key}.svg`
-                  return (
-                    <img
-                      key={`${key}-${i}`}
-                      src={`/logos/${file}`}
-                      alt={formatTitle(key)}
-                      className="inline-block h-12 mx-3 flex-shrink-0"
-                    />
-                  )
-                })}
-              </Marquee>
-            </div>
-          ))}
-        </div>
-      </section>
+    {rows.map((row, idx) => (
+      <div key={idx} className="overflow-hidden">
+        <Marquee gradient={false} speed={50} pauseOnHover>
+          {[...row, ...row].map((key, i) => {
+            const file = key === 'qualitas'
+              ? 'qualitas-auto.webp'
+              : `${key}.webp`
+
+            return (
+              <img
+                key={`${key}-${i}`}
+                src={`/logos/${file}`}
+                alt={formatTitle(key)}
+                className="inline-block h-12 mx-3 flex-shrink-0"
+              />
+            )
+          })}
+        </Marquee>
+      </div>
+    ))}
+  </div>
+</section>
     </>
   )
 }
