@@ -20,11 +20,10 @@ export default function Home() {
   ────────────────────────────────────────── */
   const companies = [
     'mapfre', 'reale', 'generali', 'allianz',
-    'axa', 'asisa', 'dkv', 'helvetia', 'pelayo',
-    'aegon', 'fiatc', 'hiscox', 'zurich',
+    'axa', 'asisa', 'dkv', 'helvetia',
+    'pelayo', 'aegon', 'fiatc', 'hiscox', 'zurich',
     'adeslas', 'catalana-occidente', 'mutuamadrilena',
-    'santalucia', 'qualitas', 'race', 'Occident',
-    'divina', 'segurmoto', 'mmt', 'cleverea'
+    'santalucia', 'qualitas', 'race'
   ]
 
   /* ─────────────────────────────────────────
@@ -83,27 +82,17 @@ export default function Home() {
 
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={30} pauseOnHover autoFill>
-                {row.map((key, i) => {
-                  const basePath = '/logos/'
-                  const baseName = key === 'qualitas' ? 'qualitas-auto' : key
-
+              <Marquee gradient={false} speed={50} pauseOnHover>
+                {[...row, ...row].map((key, i) => {
+                  const file = key === 'qualitas'
+                    ? 'qualitas-auto.webp'
+                    : `${key}.svg`
                   return (
                     <img
                       key={`${key}-${i}`}
-                      src={`${basePath}${baseName}.webp`}
+                      src={`/logos/${file}`}
                       alt={formatTitle(key)}
                       className="inline-block h-12 mx-3 flex-shrink-0"
-                      onError={(e) => {
-                        e.target.onerror = null
-                        e.target.src = `${basePath}${baseName}.svg`
-                        setTimeout(() => {
-                          if (e.target.src.includes('.svg')) {
-                            e.target.onerror = null
-                            e.target.src = `${basePath}${baseName}.png`
-                          }
-                        }, 100)
-                      }}
                     />
                   )
                 })}
