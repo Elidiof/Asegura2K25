@@ -75,34 +75,43 @@ export default function Home() {
       </section>
 
       {/* ─────── Carrusel de compañías SOBRE FONDO BLANCO ─────── */}
-<section className="bg-white py-8 mb-10">
-  <div className="container mx-auto px-4 space-y-4">
-    <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl">
-      Compañías aseguradoras con las que colaboramos
-    </h2>
+      <section className="bg-white py-8 mb-10">
+        <div className="container mx-auto px-4 space-y-4">
+          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl">
+            Compañías aseguradoras con las que colaboramos
+          </h2>
 
-    {rows.map((row, idx) => (
-      <div key={idx} className="overflow-hidden">
-        <Marquee gradient={false} speed={50} pauseOnHover>
-          {[...row, ...row].map((key, i) => {
-            const file = key === 'qualitas'
-              ? 'qualitas-auto.webp'
-              : `${key}.webp`
+          {rows.map((row, idx) => (
+            <div key={idx} className="overflow-hidden">
+              <Marquee gradient={false} speed={50} pauseOnHover>
+                {[...row, ...row].map((key, i) => {
+                  const basePath = '/logos/'
+                  const baseName = key === 'qualitas' ? 'qualitas-auto' : key
 
-            return (
-              <img
-                key={`${key}-${i}`}
-                src={`/logos/${file}`}
-                alt={formatTitle(key)}
-                className="inline-block h-12 mx-3 flex-shrink-0"
-              />
-            )
-          })}
-        </Marquee>
-      </div>
-    ))}
-  </div>
-</section>
+                  return (
+                    <img
+                      key={`${key}-${i}`}
+                      src={`${basePath}${baseName}.webp`}
+                      alt={formatTitle(key)}
+                      className="inline-block h-12 mx-3 flex-shrink-0"
+                      onError={(e) => {
+                        e.target.onerror = null
+                        e.target.src = `${basePath}${baseName}.svg`
+                        setTimeout(() => {
+                          if (e.target.src.includes('.svg')) {
+                            e.target.onerror = null
+                            e.target.src = `${basePath}${baseName}.png`
+                          }
+                        }, 100)
+                      }}
+                    />
+                  )
+                })}
+              </Marquee>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   )
 }
