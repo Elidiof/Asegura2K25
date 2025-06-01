@@ -7,13 +7,24 @@ import ProductCard from '../components/ProductCard'
 
 export default function Home() {
   /* ─────────────────────────────────────────
+     Orden por prioridad comercial realista
+  ────────────────────────────────────────── */
+  const order = [
+    'coche', 'hogar', 'salud', 'vida', 'decesos', 'empresa', 'rc',
+    'transporte-mercancias', 'cabeza-tractora', 'comunidades', 'accidentes',
+    'alquiler', 'mascotas', 'taxi', 'moto', 'patinete', 'instrumentos-musicales', 'agroseguro'
+  ]
+
+  /* ─────────────────────────────────────────
      Prepara el array de productos
   ────────────────────────────────────────── */
-  const products = Object.entries(productData).map(([key, prod]) => ({
-    slug: key,
-    icon: prod.icon,
-    title: prod.title.replace(/^Seguro de\s?/, ''),
-  }))
+  const products = Object.entries(productData)
+    .map(([key, prod]) => ({
+      slug: key,
+      icon: prod.icon,
+      title: prod.title.replace(/^Seguro de\s?/, ''),
+    }))
+    .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug))
 
   /* ─────────────────────────────────────────
      Listado de compañías para el carrusel
