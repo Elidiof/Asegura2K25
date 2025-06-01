@@ -17,8 +17,8 @@ export default function Home() {
     'axa', 'asisa', 'dkv', 'helvetia', 'pelayo',
     'aegon', 'fiatc', 'hiscox', 'zurich',
     'adeslas', 'catalana-occidente', 'mutuamadrilena',
-    'santalucia', 'qualitas', 'race', 'Occident',
-    'divina', 'segurmoto', 'mmt', 'cleverea'
+    'santalucia', 'qualitas', 'race', 'Occident'//,
+    //'divina', 'segurmoto', 'mmt', 'cleverea'
   ]
 
   const formatTitle = slug =>
