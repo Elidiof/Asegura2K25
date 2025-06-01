@@ -20,12 +20,24 @@ export default function Home() {
   ────────────────────────────────────────── */
   const companies = [
     'mapfre', 'reale', 'generali', 'allianz',
-    'axa', 'asisa', 'dkv', 'helvetia', 'pelayo',
-    'aegon', 'fiatc', 'hiscox', 'zurich',
+    'axa', 'asisa', 'dkv', 'helvetia',
+    'pelayo', 'aegon', 'fiatc', 'hiscox', 'zurich',
     'adeslas', 'catalana-occidente', 'mutuamadrilena',
-    'santalucia', 'qualitas', 'race', 'Occident',
-    'divina', 'segurmoto', 'mmt', 'cleverea'
+    'santalucia', 'qualitas', 'race',
+    'Occident', 'divina', 'segurmoto', 'mmt', 'cleverea'
   ]
+
+  /* ─────────────────────────────────────────
+     Mapeo de archivos con extensiones específicas
+  ────────────────────────────────────────── */
+  const logoFiles = {
+    qualitas: 'qualitas-auto.webp',
+    Occident: 'Occident.webp',
+    divina: 'divina.webp',
+    segurmoto: 'segurmoto.webp',
+    mmt: 'mmt.webp',
+    cleverea: 'cleverea.webp'
+  }
 
   /* ─────────────────────────────────────────
      Función para convertir slug en título
@@ -85,9 +97,7 @@ export default function Home() {
             <div key={idx} className="overflow-hidden">
               <Marquee gradient={false} speed={50} pauseOnHover>
                 {[...row, ...row].map((key, i) => {
-                  const file = key === 'qualitas'
-                    ? 'qualitas-auto.webp'
-                    : `${key}.svg`
+                  const file = logoFiles[key] || `${key}.svg`
                   return (
                     <img
                       key={`${key}-${i}`}
