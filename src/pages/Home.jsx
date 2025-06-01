@@ -20,10 +20,11 @@ export default function Home() {
   ────────────────────────────────────────── */
   const companies = [
     'mapfre', 'reale', 'generali', 'allianz',
-    'axa', 'asisa', 'dkv', 'helvetia',
-    'pelayo', 'aegon', 'fiatc', 'hiscox', 'zurich',
+    'axa', 'asisa', 'dkv', 'helvetia', 'pelayo',
+    'aegon', 'fiatc', 'hiscox', 'zurich',
     'adeslas', 'catalana-occidente', 'mutuamadrilena',
-    'santalucia', 'qualitas', 'race'
+    'santalucia', 'qualitas', 'race', 'Occident',
+    'divina', 'segurmoto', 'mmt', 'cleverea'
   ]
 
   /* ─────────────────────────────────────────
