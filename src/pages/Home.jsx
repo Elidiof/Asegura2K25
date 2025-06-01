@@ -36,7 +36,7 @@ export default function Home() {
     divina: 'divina.webp',
     segurmoto: 'segurmoto.webp',
     mmt: 'mmt.webp',
-    cleverea: 'cleverea.webp'
+    cleverea: 'cleverea.webp',
     pelayo: 'pelayo.png'
   }
 
