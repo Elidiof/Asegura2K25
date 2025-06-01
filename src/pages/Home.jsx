@@ -37,6 +37,7 @@ export default function Home() {
     segurmoto: 'segurmoto.webp',
     mmt: 'mmt.webp',
     cleverea: 'cleverea.webp'
+    pelayo: 'pelayo.png'
   }
 
   /* ─────────────────────────────────────────
