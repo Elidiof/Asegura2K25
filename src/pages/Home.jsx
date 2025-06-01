@@ -6,18 +6,12 @@ import productData from '../data/productData'
 import ProductCard from '../components/ProductCard'
 
 export default function Home() {
-  /* ─────────────────────────────────────────
-     Prepara el array de productos
-  ────────────────────────────────────────── */
   const products = Object.entries(productData).map(([key, prod]) => ({
     slug: key,
     icon: prod.icon,
     title: prod.title.replace(/^Seguro de\s?/, ''),
   }))
 
-  /* ─────────────────────────────────────────
-     Listado de compañías para el carrusel
-  ────────────────────────────────────────── */
   const companies = [
     'mapfre', 'reale', 'generali', 'allianz',
     'axa', 'asisa', 'dkv', 'helvetia', 'pelayo',
@@ -27,17 +21,11 @@ export default function Home() {
     'divina', 'segurmoto', 'mmt', 'cleverea'
   ]
 
-  /* ─────────────────────────────────────────
-     Función para convertir slug en título
-  ────────────────────────────────────────── */
   const formatTitle = slug =>
     slug
       .replace(/-/g, ' ')
       .replace(/\b\w/g, c => c.toUpperCase())
 
-  /* ─────────────────────────────────────────
-     Partir en dos filas para mostrar más compacto
-  ────────────────────────────────────────── */
   const mitad = Math.ceil(companies.length / 2)
   const rows = [
     companies.slice(0, mitad),
@@ -46,7 +34,6 @@ export default function Home() {
 
   return (
     <>
-      {/* ─────── SEO ─────── */}
       <Helmet>
         <title>Asegura2K25 • Seguros a medida</title>
         <meta
@@ -55,7 +42,6 @@ export default function Home() {
         />
       </Helmet>
 
-      {/* ─────── Hero + Grid de productos ─────── */}
       <section className="bg-slate-200 py-6">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-center mb-10 text-blue-900">
@@ -74,7 +60,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─────── Carrusel de compañías SOBRE FONDO BLANCO ─────── */}
       <section className="bg-white py-8 mb-10">
         <div className="container mx-auto px-4 space-y-4">
           <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl">
@@ -83,8 +68,8 @@ export default function Home() {
 
           {rows.map((row, idx) => (
             <div key={idx} className="overflow-hidden">
-              <Marquee gradient={false} speed={50} pauseOnHover>
-                {[...row, ...row].map((key, i) => {
+              <Marquee gradient={false} speed={30} pauseOnHover autoFill>
+                {row.map((key, i) => {
                   const basePath = '/logos/'
                   const baseName = key === 'qualitas' ? 'qualitas-auto' : key
 
