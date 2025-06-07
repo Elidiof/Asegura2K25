@@ -9,10 +9,8 @@ export default function Contacto() {
         <title>Contacto – Asegura2K25</title>
       </Helmet>
 
-      <header className="text-center">
-        <h1 className="text-4xl font-bold text-white bg-blue-900 inline-block px-4 py-2 rounded-xl">
-          Contáctenos
-        </h1>
+      <header className="text-center bg-blue-900 py-6">
+        <h1 className="text-4xl font-bold text-white">Contáctenos</h1>
       </header>
 
       <main className="max-w-7xl mx-auto p-6 space-y-8 pb-16">
@@ -53,7 +51,7 @@ export default function Contacto() {
           <div className="text-center">
             <Link
               to="/"
-              className="underline text-gray-600 hover:text-gray-800"
+              className="text-blue-500 hover:text-blue-700 underline text-sm font-medium"
             >
               ← Volver al inicio
             </Link>
