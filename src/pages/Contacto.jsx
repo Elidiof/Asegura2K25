@@ -49,12 +49,9 @@ export default function Contacto() {
           </p>
 
           <div className="text-center">
-            <Link
-              to="/"
-              className="text-blue-500 hover:text-blue-700 underline text-sm font-medium"
-            >
-              ← Volver al inicio
-            </Link>
+          <Link to="/" className="text-blue-600 hover:underline text-center block">
+            ← Volver a la web
+          </Link>
           </div>
         </section>
       </main>
