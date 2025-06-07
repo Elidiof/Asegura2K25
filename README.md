@@ -26,4 +26,8 @@ npm run preview
 📞 658 945 741  
 💬 WhatsApp directo desde la web
 
+## Licencia
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más información.
+
+
 © 2025 Asegura2K25. Todos los derechos reservados.
