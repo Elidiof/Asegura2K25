@@ -8,13 +8,6 @@ export default function NotFound() {
       <Helmet>
         <title>Página no encontrada | Asegura2K25</title>
       </Helmet>
-
-      <img
-        src="https://asegura2k25.netlify.app/logo.png"
-        alt="Asegura2K25"
-        className="w-56 mb-6"
-      />
-
       <h1 className="text-2xl font-bold mb-2">Página no encontrada</h1>
       <p className="text-sm mb-4 text-gray-200">
         La página que buscas no existe.
