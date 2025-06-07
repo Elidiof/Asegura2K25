@@ -1,6 +1,6 @@
 // src/components/Layout.jsx
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
@@ -11,5 +11,5 @@ export default function Layout() {
       </nav>
       <Outlet />
     </div>
-  )
+  );
 }
