@@ -10,15 +10,9 @@ export default function Contacto() {
       </Helmet>
 
       <header className="text-center">
-        <h1 className="text-4xl font-bold text-blue-900">Contáctenos</h1>
-        <nav className="mt-2">
-          <Link
-            to="/"
-            className="underline text-gray-600 hover:text-gray-800"
-          >
-            ← Volver al inicio
-          </Link>
-        </nav>
+        <h1 className="text-4xl font-bold text-white bg-blue-900 inline-block px-4 py-2 rounded-xl">
+          Contáctenos
+        </h1>
       </header>
 
       <main className="max-w-7xl mx-auto p-6 space-y-8 pb-16">
@@ -55,6 +49,15 @@ export default function Contacto() {
               contacto@asegura2k25.com
             </a>
           </p>
+
+          <div className="text-center">
+            <Link
+              to="/"
+              className="underline text-gray-600 hover:text-gray-800"
+            >
+              ← Volver al inicio
+            </Link>
+          </div>
         </section>
       </main>
     </>
