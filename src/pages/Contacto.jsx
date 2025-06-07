@@ -9,13 +9,8 @@ export default function Contacto() {
         <title>Contacto – Asegura2K25</title>
       </Helmet>
 
-      <header className="text-center">
-        <h1 className="text-4xl font-bold text-blue-900">Contáctenos</h1>
-        <nav className="mt-2">
-          <Link to="/" className="underline text-gray-600 hover:text-gray-800">
-            ← Volver al inicio
-          </Link>
-        </nav>
+      <header className="text-center bg-blue-900 py-6 rounded-2xl">
+        <h1 className="text-4xl font-bold text-white">Contáctenos</h1>
       </header>
 
       <section className="bg-white rounded-2xl shadow p-6 space-y-6">
@@ -63,6 +58,12 @@ export default function Contacto() {
             </svg>
             Email
           </a>
+        </div>
+
+        <div className="text-center pt-4">
+          <Link to="/" className="underline text-sm">
+            ← Volver al inicio
+          </Link>
         </div>
       </section>
     </main>
