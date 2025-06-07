@@ -11,6 +11,16 @@
 ## 📦 Despliegue en Vercel
 Este proyecto está preparado para desplegarse automáticamente con Vercel.
 
+## Desarrollo local
+Para trabajar con este proyecto en tu máquina:
+
+```bash
+npm install
+npm run dev
+npm run build
+npm run preview
+```
+
 ## 📞 Contacto
 **Elidio Ferrer**  
 📞 658 945 741  
