@@ -1,12 +1,19 @@
+import React from "react";
 import FooterLinks from "./FooterLinks";
 
+/**
+ * Footer principal con fondo negro
+ * Incluye <FooterLinks/> y el copyright.
+ */
 export default function Footer() {
   return (
-    <footer className="bg-blue-900 py-6 text-center">
+    <footer className="bg-black py-8 flex flex-col items-center space-y-6 text-center">
+      {/* Botones legales */}
       <FooterLinks />
-      <p className="text-xs text-white/70 mt-4">
-        © {new Date().getFullYear()} Asegura2K25. Todos los derechos
-        reservados.
+
+      {/* Copyright */}
+      <p className="text-white text-sm">
+        © 2025 Asegura2K25. Todos los derechos reservados.
       </p>
     </footer>
   );
