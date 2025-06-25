@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * Botones de contacto para Asegura2K25
- * - WhatsApp: verde corporativo + icono SVG correcto (24×24)
+ * - WhatsApp: verde corporativo + icono SVG correcto (24 × 24)
  * - Email: azul (bg-sky-600) + icono email outline
  *
  * Copia/pega este archivo completo en: src/components/ContactButtons.jsx
@@ -12,7 +12,7 @@ export default function ContactButtons() {
     <div className="flex flex-wrap justify-center gap-6 mt-6">
       {/* Botón WhatsApp */}
       <a
-        href="https://wa.me/34658945741" // cambia al número que uses
+        href="https://wa.me/34658945741"  /* cambia al número que uses */
         target="_blank"
         rel="noopener noreferrer"
         className="
@@ -24,7 +24,7 @@ export default function ContactButtons() {
           transition-all
         "
       >
-        {/* Icono WhatsApp SVG (proporción correcta 1:1) */}
+        {/* Icono WhatsApp SVG (proporción 1:1) */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -48,7 +48,7 @@ export default function ContactButtons() {
           transition-all
         "
       >
-        {/* Icono Email outline (24×24) */}
+        {/* Icono Email outline (24 × 24) */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
