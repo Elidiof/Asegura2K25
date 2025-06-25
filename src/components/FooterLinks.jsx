@@ -1,27 +1,33 @@
-import { Link } from "react-router-dom";
+import React from "react";
 
 /**
- * Botonera para las políticas legales.
- * Reutiliza estilos Tailwind y añade accesibilidad con focus-visible.
+ * Botones legales (versión blanco invertido + sombras)
+ * Se usa dentro de <Footer/>.
  */
-const Item = ({ to, children }) => (
-  <Link
-    to={to}
-    className="rounded-full bg-slate-800 px-5 py-2 text-white text-sm
-               transition hover:bg-slate-700 focus-visible:outline
-               focus-visible:outline-2 focus-visible:outline-offset-2
-               focus-visible:outline-white"
-  >
-    {children}
-  </Link>
-);
-
 export default function FooterLinks() {
+  // Lista de enlaces para que puedas añadir / quitar fácilmente
+  const links = [
+    { href: "/aviso-legal", label: "Aviso Legal" },
+    { href: "/privacidad",  label: "Privacidad"  },
+    { href: "/cookies",     label: "Cookies"     },
+  ];
+
   return (
-    <div className="flex flex-wrap gap-3 items-center justify-center">
-      <Item to="/aviso-legal">Aviso Legal</Item>
-      <Item to="/privacidad">Privacidad</Item>
-      <Item to="/cookies">Cookies</Item>
+    <div className="flex flex-wrap justify-center gap-4">
+      {links.map(({ href, label }) => (
+        <a
+          key={href}
+          href={href}
+          className="
+            bg-white hover:bg-gray-200 text-black
+            font-medium py-2 px-6 rounded-full
+            shadow-lg shadow-black/30 hover:shadow-black/50
+            transition-shadow
+          "
+        >
+          {label}
+        </a>
+      ))}
     </div>
   );
 }
