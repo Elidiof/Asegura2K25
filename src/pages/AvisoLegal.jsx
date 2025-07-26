@@ -4,16 +4,16 @@ import { Helmet } from 'react-helmet-async'
 
 export default function AvisoLegal() {
   return (
-    <main className="bg-blue-900 text-white flex flex-col items-center pb-8">
+    <main className="flex flex-col items-center bg-blue-900 pb-8 text-white">
       <Helmet>
         <title>Aviso Legal | Asegura2K25</title>
       </Helmet>
 
-      <h1 className="text-4xl font-bold mb-6 tracking-wide">Aviso Legal</h1>
+      <h1 className="mb-6 text-4xl font-bold tracking-wide">Aviso Legal</h1>
 
-      <div className="w-full max-w-2xl bg-white text-gray-800 p-8 rounded-lg shadow-lg space-y-6">
+      <div className="w-full max-w-2xl space-y-6 rounded-lg bg-white p-8 text-gray-800 shadow-lg">
         <section>
-          <h2 className="text-2xl font-semibold mb-2">1. Objeto</h2>
+          <h2 className="mb-2 text-2xl font-semibold">1. Objeto</h2>
           <p>
             El presente Aviso Legal regula el uso y acceso al sitio web <a href="https://asegura2k25.com" className="text-blue-600 hover:underline">
               asegura2k25.com
@@ -24,7 +24,7 @@ export default function AvisoLegal() {
         <hr />
 
         <section>
-          <h2 className="text-2xl font-semibold mb-2">2. Titularidad</h2>
+          <h2 className="mb-2 text-2xl font-semibold">2. Titularidad</h2>
           <p><strong>Titular:</strong> Elidio Ferrer</p>
           <p><strong>Domicilio:</strong> Calle Pino 27, Andújar (Jaén), 23740, España</p>
           <p><strong>Email:</strong> <a href="mailto:contacto@asegura2k25.com" className="text-blue-600 hover:underline">contacto@asegura2k25.com</a></p>
@@ -34,7 +34,7 @@ export default function AvisoLegal() {
         <hr />
 
         <section>
-          <h2 className="text-2xl font-semibold mb-2">3. Propiedad intelectual</h2>
+          <h2 className="mb-2 text-2xl font-semibold">3. Propiedad intelectual</h2>
           <p>
             Todos los contenidos (textos, imágenes, logotipos, etc.) están
             protegidos por la legislación de propiedad intelectual y son
@@ -45,7 +45,7 @@ export default function AvisoLegal() {
         <hr />
 
         <section>
-          <h2 className="text-2xl font-semibold mb-2">4. Responsabilidad</h2>
+          <h2 className="mb-2 text-2xl font-semibold">4. Responsabilidad</h2>
           <p>
             ASEGURA2K25 no se responsabiliza de errores u omisiones en los
             contenidos ni de los daños derivados de su uso, salvo negligencia
@@ -56,7 +56,7 @@ export default function AvisoLegal() {
         <hr />
 
         <section>
-          <h2 className="text-2xl font-semibold mb-2">5. Legislación aplicable</h2>
+          <h2 className="mb-2 text-2xl font-semibold">5. Legislación aplicable</h2>
           <p>
             La relación con el usuario se rige por la normativa española.
             Cualquier controversia se someterá a los tribunales de Andújar (Jaén).
