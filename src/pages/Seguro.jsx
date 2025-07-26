@@ -8,6 +8,7 @@ import ContactButtons from "../components/ContactButtons";
 export default function Seguro() {
   const { name } = useParams();
   const data = productData[name];
+
   if (!data) {
     return (
       <main className="container mx-auto mt-0 p-4 text-center">
@@ -22,3 +23,15 @@ export default function Seguro() {
       </main>
     );
   }
+
+  return (
+    <main className="container mx-auto mt-0 p-4">
+      <Helmet>
+        <title>{data.title} | Asegura2K25</title>
+      </Helmet>
+      <h1 className="mb-4 text-2xl font-semibold">{data.title}</h1>
+      <p className="mb-6">{data.description}</p>
+      <ContactButtons />
+    </main>
+  );
+}
