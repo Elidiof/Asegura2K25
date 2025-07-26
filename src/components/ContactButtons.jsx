@@ -12,7 +12,7 @@ export default function ContactButtons() {
     <div className="mt-6 flex flex-wrap justify-center gap-6">
       {/* Botón WhatsApp */}
       <a
-        href="https://wa.me/34658945741"  /* cambia al número que uses */
+        href="https://wa.me/34658945741" /* cambia al número que uses */
         target="_blank"
         rel="noopener noreferrer"
         className="
