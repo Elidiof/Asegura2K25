@@ -16,12 +16,12 @@ export default function PoliticaCookies () {
         <title>Política de Cookies | Asegura2K25</title>
       </Helmet>
 
-      <section className="pt-6 pb-8 bg-[#1e3a8a]">
-        <h1 className="text-4xl font-bold text-center text-white mb-6">
+      <section className="bg-[#1e3a8a] pb-8 pt-6">
+        <h1 className="mb-6 text-center text-4xl font-bold text-white">
           Política de Cookies
         </h1>
 
-        <div className="mx-auto max-w-2xl bg-white rounded-2xl shadow-xl p-6 space-y-6">
+        <div className="mx-auto max-w-2xl space-y-6 rounded-2xl bg-white p-6 shadow-xl">
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead className="bg-gray-100">
@@ -53,7 +53,7 @@ export default function PoliticaCookies () {
             en el icono de cookies situado en la esquina inferior derecha de la pantalla.
           </p>
 
-          <Link to="/" className="text-blue-600 hover:underline text-center block">
+          <Link to="/" className="block text-center text-blue-600 hover:underline">
             ← Volver a la web
           </Link>
         </div>
