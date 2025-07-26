@@ -4,20 +4,20 @@ import { Helmet } from "react-helmet-async";
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-blue-900 text-white px-4">
+    <main className="min-h-screen bg-blue-900 px-4 text-white">
       <Helmet>
         <title>Página no encontrada | Asegura2K25</title>
       </Helmet>
 
-      <div className="max-w-xl mx-auto pt-32 text-center">
-        <h1 className="text-3xl font-extrabold mb-4">Página no encontrada</h1>
-        <p className="text-base text-gray-200 mb-6">
+      <div className="mx-auto max-w-xl pt-32 text-center">
+        <h1 className="mb-4 text-3xl font-extrabold">Página no encontrada</h1>
+        <p className="mb-6 text-base text-gray-200">
           La página que buscas no existe.
         </p>
 
         <Link
           to="/"
-          className="text-blue-300 hover:text-blue-100 underline text-sm font-medium"
+          className="text-sm font-medium text-blue-300 underline hover:text-blue-100"
         >
           ← Volver al inicio
         </Link>
