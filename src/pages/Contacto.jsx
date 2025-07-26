@@ -6,8 +6,9 @@ import ContactButtons from "../components/ContactButtons";
 export default function Contacto() {
   return (
     <>
-      </Helmet>
 
+<Helmet>
+  <title>Contacto | Asegura2K25</title>
       <section className="pt-6 pb-8 bg-[#1e3a8a]">
         <h1 className="text-4xl font-bold text-center text-white mb-6">
           Contáctenos
