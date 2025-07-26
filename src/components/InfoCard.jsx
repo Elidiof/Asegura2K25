@@ -10,11 +10,11 @@ import React from "react";
 export default function InfoCard({ title, items }) {
   return (
     <div
-      className="group rounded-2xl bg-white border border-slate-200 shadow-sm
-                    p-6 transition hover:shadow-md hover:-translate-y-1"
+      className="group rounded-2xl border border-slate-200 bg-white p-6
+                    shadow-sm transition hover:-translate-y-1 hover:shadow-md"
     >
-      <h2 className="text-xl font-semibold mb-4">{title}</h2>
-      <ul className="list-disc list-inside space-y-2">
+      <h2 className="mb-4 text-xl font-semibold">{title}</h2>
+      <ul className="list-inside list-disc space-y-2">
         {items.map((item, idx) => (
           <li key={idx} className="text-gray-700">
             {item}
