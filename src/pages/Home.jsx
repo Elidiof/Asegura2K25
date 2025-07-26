@@ -82,10 +82,10 @@ export default function Home() {
       {/* ─────── Hero + Grid de productos ─────── */}
       <section className="bg-slate-200 py-6">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl font-bold text-center mb-10 text-blue-900">
+          <h1 className="mb-10 text-center text-3xl font-bold text-blue-900">
             Encuentra el seguro que necesitas
           </h1>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {products.map(({ slug, icon, title }) => (
               <ProductCard
                 key={slug}
@@ -99,9 +99,9 @@ export default function Home() {
       </section>
 
       {/* ─────── Carrusel de compañías SOBRE FONDO BLANCO ─────── */}
-      <section className="bg-white py-8 mb-10">
-        <div className="container mx-auto px-4 space-y-4">
-          <h2 className="text-gray-700 text-center font-semibold text-lg sm:text-xl">
+      <section className="mb-10 bg-white py-8">
+        <div className="container mx-auto space-y-4 px-4">
+          <h2 className="text-center text-lg font-semibold text-gray-700 sm:text-xl">
             Compañías aseguradoras con las que colaboramos
           </h2>
 
@@ -115,7 +115,7 @@ export default function Home() {
                       key={`${key}-${i}`}
                       src={`/logos/${file}`}
                       alt={formatTitle(key)}
-                      className="inline-block h-12 mx-3 flex-shrink-0"
+                      className="mx-3 inline-block h-12 shrink-0"
                     />
                   )
                 })}
