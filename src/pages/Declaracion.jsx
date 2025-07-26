@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { PDFDocument, StandardFonts } from 'pdf-lib'
 
 export default function Declaracion () {
   const [nombre, setNombre] = useState('')
@@ -8,6 +7,7 @@ export default function Declaracion () {
   const [imagen, setImagen] = useState(null)
 
   const generarPdf = async () => {
+    const { PDFDocument, StandardFonts } = await import('pdf-lib')
     const templateBytes = await fetch(`${import.meta.env.BASE_URL}accident-template.pdf`).then(r => r.arrayBuffer())
     const pdfDoc = await PDFDocument.load(templateBytes)
     const page = pdfDoc.getPage(0)
