@@ -7,12 +7,12 @@ import FooterLinks from "./FooterLinks";
  */
 export default function Footer() {
   return (
-    <footer className="bg-black py-8 flex flex-col items-center space-y-6 text-center">
+    <footer className="flex flex-col items-center space-y-6 bg-black py-8 text-center">
       {/* Botones legales */}
       <FooterLinks />
 
       {/* Copyright */}
-      <p className="text-white text-sm">
+      <p className="text-sm text-white">
         © 2025 Asegura2K25. Todos los derechos reservados.
       </p>
     </footer>
