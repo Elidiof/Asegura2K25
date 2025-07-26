@@ -16,6 +16,7 @@ const PoliticaPrivacidad = React.lazy(
 );
 const PoliticaCookies = React.lazy(() => import("./pages/PoliticaCookies"));
 const Contacto = React.lazy(() => import("./pages/Contacto"));
+const Declaracion = React.lazy(() => import("./pages/Declaracion"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/cookies" element={<PoliticaCookies />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/declaracion" element={<Declaracion />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
