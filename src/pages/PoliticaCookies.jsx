@@ -16,12 +16,12 @@ export default function PoliticaCookies () {
         <title>Política de Cookies | Asegura2K25</title>
       </Helmet>
 
-      <section className="bg-[#1e3a8a] pb-8 pt-6">
-        <h1 className="mb-6 text-center text-4xl font-bold text-white">
+      <section className="bg-black text-white pb-8 pt-6">
+        <h1 className="mb-6 text-center text-4xl font-bold">
           Política de Cookies
         </h1>
 
-        <div className="mx-auto max-w-2xl space-y-6 rounded-2xl bg-white p-6 shadow-xl">
+        <div className="mx-auto max-w-2xl space-y-6 rounded-2xl bg-white p-6 shadow-xl text-black">
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead className="bg-gray-100">
