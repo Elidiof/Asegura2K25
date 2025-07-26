@@ -19,10 +19,10 @@ export default function FooterLinks() {
           key={href}
           href={href}
           className="
-            bg-white hover:bg-gray-200 text-black
-            font-medium py-2 px-6 rounded-full
-            shadow-lg shadow-black/30 hover:shadow-black/50
-            transition-shadow
+            rounded-full bg-white px-6
+            py-2 font-medium text-black shadow-lg
+            shadow-black/30 transition-shadow hover:bg-gray-200
+            hover:shadow-black/50
           "
         >
           {label}
