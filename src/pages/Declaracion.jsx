@@ -55,7 +55,7 @@ export default function Declaracion () {
       alert('Error al generar el PDF')
       console.error(error)
     }
-  }
+    }
 
   return (
     <main className='container mx-auto p-4'>
@@ -80,3 +80,11 @@ export default function Declaracion () {
         <button
           type='button'
           onClick={generarPdf}
+          className='bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded'
+        >
+          Generar PDF
+        </button>
+      </div>
+    </main>
+  )
+}
