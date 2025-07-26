@@ -5,10 +5,9 @@ export function Card({ children, className = "" }) {
   return (
     <div
       className={`
-        bg-white border border-gray-200 rounded-xl
-        shadow-sm hover:shadow-lg
-        transition transform hover:-translate-y-1
-        p-6
+        rounded-xl border border-gray-200 bg-white
+        p-6 shadow-sm
+        transition hover:-translate-y-1 hover:shadow-lg
         ${className}
       `}
     >
