@@ -8,7 +8,7 @@ export default function Declaracion () {
   const [imagen, setImagen] = useState(null)
 
   const generarPdf = async () => {
-    const templateBytes = await fetch('/accident-template.pdf').then(r => r.arrayBuffer())
+    const templateBytes = await fetch(`${import.meta.env.BASE_URL}accident-template.pdf`).then(r => r.arrayBuffer())
     const pdfDoc = await PDFDocument.load(templateBytes)
     const page = pdfDoc.getPage(0)
     const font = await pdfDoc.embedFont(StandardFonts.Helvetica)
