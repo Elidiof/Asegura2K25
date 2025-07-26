@@ -7,35 +7,54 @@ export default function Declaracion () {
   const [imagen, setImagen] = useState(null)
 
   const generarPdf = async () => {
-    const { PDFDocument, StandardFonts } = await import('pdf-lib')
-    const templateBytes = await fetch(`${import.meta.env.BASE_URL}accident-template.pdf`).then(r => r.arrayBuffer())
-    const pdfDoc = await PDFDocument.load(templateBytes)
-    const page = pdfDoc.getPage(0)
-    const font = await pdfDoc.embedFont(StandardFonts.Helvetica)
-
-    page.drawText(`Nombre: ${nombre}`, { x: 50, y: 760, size: 12, font })
-    page.drawText(`Descripción: ${descripcion}`, { x: 50, y: 740, size: 12, font })
-
-    if (imagen) {
-      const bytes = await imagen.arrayBuffer()
-      let img
+    try {
+      const { PDFDocument, StandardFonts } = await import('pdf-lib')
+      let templateBytes
       try {
-        img = await pdfDoc.embedPng(bytes)
-      } catch {
-        img = await pdfDoc.embedJpg(bytes)
+        const response = await fetch(`${import.meta.env.BASE_URL}accident-template.pdf`)
+        if (!response.ok) throw new Error('Template fetch failed')
+        templateBytes = await response.arrayBuffer()
+      } catch (err) {
+        alert('Error al cargar la plantilla PDF')
+        return
       }
-      const dims = img.scale(0.25)
-      page.drawImage(img, { x: 50, y: 650, width: dims.width, height: dims.height })
-    }
 
-    const pdfBytes = await pdfDoc.save()
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = 'declaracion.pdf'
-    a.click()
-    URL.revokeObjectURL(url)
+      const pdfDoc = await PDFDocument.load(templateBytes)
+      const page = pdfDoc.getPage(0)
+      const font = await pdfDoc.embedFont(StandardFonts.Helvetica)
+
+      page.drawText(`Nombre: ${nombre}`, { x: 50, y: 760, size: 12, font })
+      page.drawText(`Descripción: ${descripcion}`, { x: 50, y: 740, size: 12, font })
+
+      if (imagen) {
+        const bytes = await imagen.arrayBuffer()
+        let img
+        try {
+          img = await pdfDoc.embedPng(bytes)
+        } catch {
+          try {
+            img = await pdfDoc.embedJpg(bytes)
+          } catch {
+            alert('Error al procesar la imagen')
+            return
+          }
+        }
+        const dims = img.scale(0.25)
+        page.drawImage(img, { x: 50, y: 650, width: dims.width, height: dims.height })
+      }
+
+      const pdfBytes = await pdfDoc.save()
+      const blob = new Blob([pdfBytes], { type: 'application/pdf' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'declaracion.pdf'
+      a.click()
+      URL.revokeObjectURL(url)
+    } catch (error) {
+      alert('Error al generar el PDF')
+      console.error(error)
+    }
   }
 
   return (
@@ -61,11 +80,3 @@ export default function Declaracion () {
         <button
           type='button'
           onClick={generarPdf}
-          className='bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700'
-        >
-          Descargar PDF
-        </button>
-      </div>
-    </main>
-  )
-}
