@@ -9,11 +9,11 @@ export default function Seguro() {
   const data = productData[name];
   if (!data) {
     return (
-      <main className="container mx-auto p-4 mt-0 text-center">
+      <main className="container mx-auto mt-0 p-4 text-center">
         <Helmet>
           <title>Seguro no encontrado</title>
         </Helmet>
-        <h1 className="text-2xl font-semibold mb-4">Seguro no encontrado</h1>
+        <h1 className="mb-4 text-2xl font-semibold">Seguro no encontrado</h1>
         <p className="mb-6">El seguro que buscas no existe.</p>
         <Link to="/" className="text-blue-600 hover:underline">
           Volver al inicio
@@ -37,15 +37,15 @@ export default function Seguro() {
       {/* Header + descripción con fondo gris, padding vertical reducido */}
       <section className="bg-slate-200 py-4">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center mb-4">
-            <img src={data.icon} alt={data.title} className="h-20 mb-2" />
-            <h1 className="text-2xl font-bold mb-1">{data.title}</h1>
-            <Link to="/" className="text-blue-600 hover:underline mb-2">
+          <div className="mb-4 flex flex-col items-center">
+            <img src={data.icon} alt={data.title} className="mb-2 h-20" />
+            <h1 className="mb-1 text-2xl font-bold">{data.title}</h1>
+            <Link to="/" className="mb-2 text-blue-600 hover:underline">
               ← Volver al inicio
             </Link>
           </div>
-          <div className="group max-w-3xl mx-auto bg-white border border-slate-200 shadow-sm rounded-2xl p-6 mb-2 transition hover:shadow-md hover:-translate-y-1">
-            <p className="text-center text-lg font-semibold text-slate-900 mb-0">
+          <div className="group mx-auto mb-2 max-w-3xl rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+            <p className="mb-0 text-center text-lg font-semibold text-slate-900">
               {data.description}
             </p>
           </div>
@@ -55,20 +55,20 @@ export default function Seguro() {
       {/* Info y CTA con padding vertical reducido */}
       <section className="bg-slate-200 py-4">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
-            <div className="group rounded-2xl bg-white border border-slate-200 shadow-sm p-6 transition hover:shadow-md hover:-translate-y-1">
-              <h2 className="text-xl font-semibold mb-4">¿Qué cubre?</h2>
-              <ul className="list-disc list-inside space-y-2">
+          <div className="mx-auto mb-8 grid max-w-3xl grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <h2 className="mb-4 text-xl font-semibold">¿Qué cubre?</h2>
+              <ul className="list-inside list-disc space-y-2">
                 {data.coverages.map((c, i) => (
                   <li key={i}>{c}</li>
                 ))}
               </ul>
             </div>
-            <div className="group rounded-2xl bg-white border border-slate-200 shadow-sm p-6 transition hover:shadow-md hover:-translate-y-1">
-              <h2 className="text-xl font-semibold mb-4">
+            <div className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <h2 className="mb-4 text-xl font-semibold">
                 ¿Qué necesitamos para prepararte un presupuesto?
               </h2>
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-inside list-disc space-y-2">
                 {data.requirements.map((r, i) => (
                   <li key={i}>{r}</li>
                 ))}
@@ -77,21 +77,21 @@ export default function Seguro() {
           </div>
 
           {/* Botones de contacto */}
-          <div className="text-center mb-8">
+          <div className="mb-8 text-center">
             <p className="mb-4">
               Puedes enviarnos los datos por WhatsApp o por email
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <a
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white font-medium text-lg px-6 py-3 rounded-xl inline-flex items-center justify-center transition"
+                className="inline-flex items-center justify-center rounded-xl bg-green-500 px-6 py-3 text-lg font-medium text-white transition hover:bg-green-600"
               >
 <svg
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"
-  className="w-6 h-6 mr-2"
+  className="mr-2 size-6"
   fill="currentColor"
   aria-hidden="true"
 >
@@ -103,11 +103,11 @@ export default function Seguro() {
 
               <a
                 href="mailto:contacto@asegura2k25.com"
-                className="bg-sky-600 hover:bg-sky-700 text-white font-medium text-lg px-6 py-3 rounded-xl inline-flex items-center justify-center transition"
+                className="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 text-lg font-medium text-white transition hover:bg-sky-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-2"
+                  className="mr-2 size-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
