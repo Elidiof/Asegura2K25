@@ -1,9 +1,8 @@
 // src/pages/Home.jsx
-
-import { Helmet } from 'react-helmet-async'
-import Marquee from 'react-fast-marquee'
-import productData from '../data/productData'
-import ProductCard from '../components/ProductCard'
+import { Helmet } from 'react-helmet-async';
+import Marquee from 'react-fast-marquee';
+import productData from '../data/productData';
+import ProductCard from '../components/ProductCard';
 
 export default function Home() {
   /* ─────────────────────────────────────────
@@ -13,7 +12,7 @@ export default function Home() {
     'coche', 'hogar', 'salud', 'vida', 'decesos', 'empresa', 'rc',
     'transporte-mercancias', 'cabeza-tractora', 'comunidades', 'accidentes',
     'alquiler', 'mascotas', 'taxi', 'moto', 'patinete', 'instrumentos-musicales', 'agroseguro'
-  ]
+  ];
 
   /* ─────────────────────────────────────────
      Prepara el array de productos
@@ -24,7 +23,7 @@ export default function Home() {
       icon: prod.icon,
       title: prod.title.replace(/^Seguro de\s?/, ''),
     }))
-    .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug))
+    .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
 
   /* ─────────────────────────────────────────
      Listado de compañías para el carrusel
@@ -36,7 +35,7 @@ export default function Home() {
     'adeslas', 'catalana-occidente', 'mutuamadrilena',
     'santalucia', 'qualitas', 'race',
     'Occident', 'divina', 'segurmoto', 'mmt', 'cleverea'
-  ]
+  ];
 
   /* ─────────────────────────────────────────
      Mapeo de archivos con extensiones específicas
@@ -49,7 +48,7 @@ export default function Home() {
     mmt: 'mmt.webp',
     cleverea: 'cleverea.webp',
     pelayo: 'pelayo.png'
-  }
+  };
 
   /* ─────────────────────────────────────────
      Función para convertir slug en título
@@ -57,16 +56,16 @@ export default function Home() {
   const formatTitle = slug =>
     slug
       .replace(/-/g, ' ')
-      .replace(/\b\w/g, c => c.toUpperCase())
+      .replace(/\b\w/g, c => c.toUpperCase());
 
   /* ─────────────────────────────────────────
      Partir en dos filas para mostrar más compacto
   ────────────────────────────────────────── */
-  const mitad = Math.ceil(companies.length / 2)
+  const mitad = Math.ceil(companies.length / 2);
   const rows = [
     companies.slice(0, mitad),
     companies.slice(mitad)
-  ]
+  ];
 
   return (
     <>
@@ -109,7 +108,7 @@ export default function Home() {
             <div key={idx} className="overflow-hidden">
               <Marquee gradient={false} speed={50} pauseOnHover>
                 {[...row, ...row].map((key, i) => {
-                  const file = logoFiles[key] || `${key}.svg`
+                  const file = logoFiles[key] || `${key}.svg`;
                   return (
                     <img
                       key={`${key}-${i}`}
@@ -125,5 +124,6 @@ export default function Home() {
         </div>
       </section>
     </>
-  )
+  );
 }
+
