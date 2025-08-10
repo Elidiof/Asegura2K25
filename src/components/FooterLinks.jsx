@@ -11,7 +11,6 @@ export default function FooterLinks() {
     { href: "/aviso-legal", label: "Aviso Legal" },
     { href: "/privacidad", label: "Privacidad" },
     { href: "/cookies", label: "Cookies" },
-    { href: "/declaracion", label: "Declarar accidente" },
   ];
 
   return (
