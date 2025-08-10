@@ -30,13 +30,12 @@ export default function Home() {
     title: productData[key].title,
   }));
 
-  // Añadimos los dos nuevos productos a la lista
-  const allProducts = [
-    ...existingProducts,
+  // Definimos los nuevos productos
+  const newProducts = [
     {
       link: 'https://asegura2k25.com/daa.html',
       icon: <DaaIcon />,
-      title: 'Declaración Accidente',
+      title: 'Declarar Siniestro Auto', // <-- TÍTULO CAMBIADO
       isExternal: true,
     },
     {
@@ -45,6 +44,9 @@ export default function Home() {
       title: 'Asistencia en Viaje',
     },
   ];
+
+  // Unimos los arrays, poniendo los nuevos productos primero
+  const allProducts = [...newProducts, ...existingProducts];
 
   return (
     <>
