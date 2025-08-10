@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 // Lazy-loaded pages
 const Home = React.lazy(() => import("./pages/Home"));
 const Seguro = React.lazy(() => import("./pages/Seguro"));
+const AsistenciaViaje = React.lazy(() => import("./pages/AsistenciaViaje")); // <-- AÑADIDO
 const AvisoLegal = React.lazy(() => import("./pages/AvisoLegal"));
 const PoliticaPrivacidad = React.lazy(
   () => import("./pages/PoliticaPrivacidad"),
@@ -29,6 +30,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/seguro/:name" element={<Seguro />} />
+          <Route path="/asistencia-viaje" element={<AsistenciaViaje />} /> {/* <-- AÑADIDO */}
           <Route path="/aviso-legal" element={<AvisoLegal />} />
           <Route path="/privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/cookies" element={<PoliticaCookies />} />
