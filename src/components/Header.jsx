@@ -3,10 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    // Se ha añadido 'sticky top-0 z-50' para que el header se quede fijo al hacer scroll
-    // y 'shadow-md' para darle una ligera sombra.
     <header className="bg-white sticky top-0 z-50 shadow-md">
-      {/* Sección del Logo */}
+      {/* Sección del Logo (Tu código original) */}
       <div className="bg-blue-900 py-6 text-white">
         <div className="container mx-auto px-4 text-center">
           <Link to="/">
@@ -20,7 +18,7 @@ export default function Header() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center gap-4">
             <Link
-              to="/declarar-siniestro" // Enlaza a la página que ya tienes
+              to="/declaracion" // Enlaza a la página que ya tienes
               className="w-full sm:w-auto text-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 transition"
             >
               Declarar Siniestro
@@ -37,4 +35,3 @@ export default function Header() {
     </header>
   );
 }
-
