@@ -81,7 +81,7 @@ export default function Home() {
       {/* ─────── Hero + Grid de productos ─────── */}
       <section className="bg-slate-200 py-2">
         <div className="container mx-auto px-4">
-          <h1 className="mb-6 text-center text-3xl font-bold text-blue-900">
+          <h1 className="mb-2 text-center text-3xl font-bold text-blue-900">
             Encuentra el seguro que necesitas
           </h1>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
