@@ -17,7 +17,6 @@ const PoliticaPrivacidad = React.lazy(
 );
 const PoliticaCookies = React.lazy(() => import("./pages/PoliticaCookies"));
 const Contacto = React.lazy(() => import("./pages/Contacto"));
-const Declaracion = React.lazy(() => import("./pages/Declaracion"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 // Se ha eliminado la importación de 'DeclararSiniestro'
 
