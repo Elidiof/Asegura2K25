@@ -79,7 +79,7 @@ export default function Home() {
       </Helmet>
 
       {/* ─────── Hero + Grid de productos ─────── */}
-      <section className="bg-slate-200 py-6">
+      <section className="bg-slate-200 py-2">
         <div className="container mx-auto px-4">
           <h1 className="mb-10 text-center text-3xl font-bold text-blue-900">
             Encuentra el seguro que necesitas
