@@ -41,14 +41,14 @@ export default function AsistenciaViaje() {
           <div className="bg-white rounded-lg shadow-md">
               <ul className="divide-y divide-slate-200">
                   {companies.map((company) => (
-                      <li key={company.name} className="px-6 py-4 flex items-center justify-between flex-wrap gap-x-6 gap-y-2">
+                      <li key={company.name} className="px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                           <span className="text-lg font-medium text-slate-800">{company.name}</span>
-                          <div className="flex flex-wrap gap-x-4 gap-y-1 justify-end">
-                            {company.phones.map(phone => (
-                                <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`} className="text-lg font-semibold text-blue-600 hover:underline whitespace-nowrap">
-                                    {phone}
-                                </a>
-                            ))}
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 justify-start sm:justify-end">
+                              {company.phones.map(phone => (
+                                  <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`} className="text-lg font-semibold text-blue-600 hover:underline whitespace-nowrap">
+                                      {phone}
+                                  </a>
+                              ))}
                           </div>
                       </li>
                   ))}
