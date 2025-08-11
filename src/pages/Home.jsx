@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* ─────── Carrusel de compañías SOBRE FONDO BLANCO ─────── */}
-      <section className="mb-10 bg-white py-4">
+      <section className="bg-white py-4">
         <div className="container mx-auto space-y-2 px-4">
           <h2 className="text-center text-lg font-semibold text-gray-700 sm:text-xl">
             Compañías aseguradoras con las que colaboramos
