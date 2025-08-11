@@ -218,15 +218,17 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <div class="relative max-w-7xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-2xl">
-        <!-- BOTÓN DE CIERRE -->
-        <a href="/" 
-           aria-label="Cerrar y volver a la página principal"
-           class="absolute top-4 right-5 text-gray-400 hover:text-gray-700 transition-colors"
-           title="Volver a la página principal">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </a>
+<!-- BOTÓN DE CIERRE MEJORADO -->
+<a href="/" 
+   aria-label="Cerrar y volver a la página principal"
+   class="absolute top-2 right-2 sm:top-4 sm:right-4 group"
+   title="Volver a la página principal">
+    <div class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gray-200 rounded-full group-hover:bg-red-500 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-gray-600 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </div>
+</a>
 
         <h1 class="text-2xl sm:text-3xl font-bold text-center mb-2 text-slate-800">Declaración Amistosa de Accidente</h1>
         <p class="text-center text-sm text-slate-500 mb-6">Rellena el formulario para generar el parte oficial.</p>
