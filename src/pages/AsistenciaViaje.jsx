@@ -9,7 +9,6 @@ export default function AsistenciaViaje() {
         { name: 'AXA', phones: ['911 119 543', '918 070 050'] },
         { name: 'Catalana Occidente', phones: ['913 939 030'] },
         { name: 'Divina Pastora', phones: ['915 949 328'] },
-        { name: 'DKV', phones: ['976 506 000'] },
         { name: 'Generali', phones: ['911 123 443', '900 903 326'] },
         { name: 'Helvetia', phones: ['900 106 010', '900 810 464'] },
         { name: 'Liberty Seguros', phones: ['900 101 369'] },
@@ -19,7 +18,6 @@ export default function AsistenciaViaje() {
         { name: 'Occident', phones: ['917 838 383'] },
         { name: 'Qualitas Auto', phones: ['900 901 281'] },
         { name: 'Reale Seguros', phones: ['918 073 737', '900 365 900'] },
-        { name: 'Santalucía', phones: ['915 728 219'] },
         { name: 'Zurich', phones: ['932 671 040'] },
     ].sort((a, b) => a.name.localeCompare(b.name)); // Ordenar alfabéticamente
 
