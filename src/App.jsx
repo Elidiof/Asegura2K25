@@ -35,7 +35,6 @@ export default function App() {
           <Route path="/privacidad" element={<PoliticaPrivacidad />} />
           <Route path="/cookies" element={<PoliticaCookies />} />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/declaracion" element={<Declaracion />} />
           {/* Se ha eliminado la ruta '/declarar-siniestro' */}
           <Route path="*" element={<NotFound />} />
         </Routes>
