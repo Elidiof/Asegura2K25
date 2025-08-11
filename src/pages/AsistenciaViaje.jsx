@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 export default function AsistenciaViaje() {
     // Lista ampliada y actualizada con múltiples teléfonos por compañía.
     const companies = [
-        { name: 'Allianz', phones: ['914 522 912', '900 300 250', '913 255 242'] },
+        { name: 'Allianz', phones: ['900 300 250', '913 255 242'] },
         { name: 'AXA', phones: ['911 119 543', '918 070 050'] },
         { name: 'Catalana Occidente', phones: ['913 939 030'] },
         { name: 'Divina Pastora', phones: ['915 949 328'] },
