@@ -7,7 +7,7 @@ import FooterLinks from "./FooterLinks";
  */
 export default function Footer() {
   return (
-    <footer className="flex flex-col items-center space-y-6 bg-black py-8 text-center">
+    <footer className="flex flex-col items-center space-y-6 bg-black py-4 text-center">
       {/* Botones legales */}
       <FooterLinks />
 
